@@ -23,6 +23,9 @@ let sausageDogImage;
 // Sausage dog object
 let sausageDog;
 
+// State variable, holds the function for the current state of the program (Title screen, inGame, Finished, etc.)
+let state = new State;
+
 // Load all the animal images and the sausage dog image
 function preload() {
 
@@ -58,7 +61,7 @@ function createAnimals() {
   // Create the correct number of animals
   for (let i = 0; i < NUM_ANIMALS; i++) {
 
-    // Create one random animal
+    // Create a random animal
     let animal = createRandomAnimal();
 
     // Add it to the animals array
@@ -99,15 +102,7 @@ function createSausageDog() {
 
 // Draws the background then updates all animals and the sausage dog (called 60 times a second)
 function draw() {
-
-  // White background
-  background(255);
-
-  // Update the animals
-  updateAnimals();
-
-  // Update the SD
-  updateSausageDog();
+  state.stage();
 }
 
 // Calls the update() method for all animals
@@ -136,3 +131,32 @@ function mousePressed() {
   sausageDog.mousePressed();
 
 }
+
+// Handles keyboard input
+function keyPressed(){
+
+  switch(keyCode){
+
+    case 13: // 13 = ENTER
+
+      if(state.stage == state.title){
+        state.stage = state.inGame;
+        console.log("Game started");
+      }
+
+      break;
+
+    case 82: // 82 = Restart
+
+      if(state.stage == state.finishedGame){
+        state.restartGame();
+      }
+
+      break;
+
+  }
+}
+
+
+
+
