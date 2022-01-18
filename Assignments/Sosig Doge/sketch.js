@@ -26,6 +26,9 @@ let sausageDog;
 // State variable, holds the function for the current state of the program (Title screen, inGame, Finished, etc.)
 let state = new State;
 
+// Variable to hold sound file
+let music = undefined;
+
 // Load all the animal images and the sausage dog image
 function preload() {
 
@@ -37,6 +40,9 @@ function preload() {
 
     // Add the image to the array for use later when randomly selecting
     animalImages.push(animalImage);
+
+    // Load music
+    music = loadSound("Assets/Audio/music.mp3");
 
   }
 
@@ -100,6 +106,14 @@ function createSausageDog() {
   sausageDog = new SausageDog(x, y, sausageDogImage);
 }
 
+// Checks to see if the music is still playing
+function checkMusicPlaying(){
+
+  // Check and return if the music is playing
+  return music.isPlaying();
+
+}
+
 // Draws the background then updates all animals and the sausage dog (called 60 times a second)
 function draw() {
   state.stage();
@@ -139,17 +153,30 @@ function keyPressed(){
 
     case 13: // 13 = ENTER
 
+      // If it's the title screen,
       if(state.stage == state.title){
+
+        // Change the state to InGame
         state.stage = state.inGame;
-        console.log("Game started");
+
+        // Start the music..
+        music.play();
+
       }
 
       break;
 
     case 82: // 82 = Restart
 
+      // If it's the end of the game,
       if(state.stage == state.finishedGame){
-        state.restartGame();
+
+        // Set score back to 0
+        state.score = 0;
+
+        // Restart the game
+        state.stage = state.title;
+
       }
 
       break;

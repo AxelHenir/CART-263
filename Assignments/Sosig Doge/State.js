@@ -11,13 +11,7 @@ class State{
     }
 
     // Restarts the game
-    restartGame(){
-
-        // Back to the title screen
-        this.stage = this.title;
-
-        // Reset score to 0
-        this.score = 0;
+    newLevel(){
 
         // Make new animal search
         animals = [];
@@ -56,10 +50,18 @@ class State{
         // Update the SD
         updateSausageDog();
 
-        // If the SD was found, end game
+        // If the music isn't playing, stop the game
+        if(!checkMusicPlaying()){
+
+            // Set the state to finished game
+            this.stage = this.finishedGame;
+
+        }
+
+        // If the SD was found, start a new level
         if(sausageDog.found){
             this.score++;
-            this.stage = this.finishedGame;
+            this.newLevel();
 
         }
         
@@ -82,4 +84,5 @@ class State{
         pop();
 
     }
+
 }
