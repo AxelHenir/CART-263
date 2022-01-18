@@ -81,8 +81,8 @@ function createAnimals() {
 function createRandomAnimal() {
 
   // Select a random position for the animal
-  let x = random(0, width);
-  let y = random(0, height);
+  let x = random(0, width-50);
+  let y = random(0, height-50);
 
   // Select a random image for the animal
   let animalImage = random(animalImages);
@@ -99,8 +99,8 @@ function createRandomAnimal() {
 function createSausageDog() {
 
   // Select a random position for the sausage dog
-  let x = random(0, width);
-  let y = random(0, height);
+  let x = random(0, width-50);
+  let y = random(0, height-50);
 
   // Generate new SD object and assign it to the global variable
   sausageDog = new SausageDog(x, y, sausageDogImage);
