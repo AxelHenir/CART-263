@@ -2,20 +2,39 @@
 Class Animal
   - Animal objects have a position (x,y), an image, and an angle
   - Animal objects have a method which updates them (redraw, reposition, etc.)
+  - Animals can be idle or can be walking, this movement is handled by walking()
+  - Animals cannot walk off the screen, handled by checkBoundaries()
+  - Animals have a difficulty, it determines their size
 */
 
 class Animal {
     
   // Constructor
-  constructor(x, y, image) {
+  constructor(x, y, image, diff) {
+
+    // Position
     this.x = x;
     this.y = y;
+
+    // Level = the height they spawn at, needed for walking()
     this.level = this.y;
+
+    // What the animal is
     this.image = image;
+
+    // Angle
     this.angle = 0;
+
+    // Spawns walking or idle, can switch at any time in walking()
     this.idle = random([true,false]);
+
+    // 2D direction, an animal will have a combination of left/right and up/down
     this.facing = random(["left","right"]);
     this.heading = random(["up","down"]);
+
+    // Difficulty of the animal - Adjusts size of the animal
+    this.difficulty = diff;
+
   }
   
   // Updates the animal
@@ -40,26 +59,32 @@ class Animal {
     rotate(this.angle);
     if(this.facing == "left"){
       // Reflect the image
-      scale(-1,1);
+      scale(-1*this.difficulty,1*this.difficulty);
     }
     else{
-      scale(1,1);
+      scale(1*this.difficulty,1*this.difficulty);
     }
     image(this.image, 0, 0);
     pop();
 
   }
 
+  // Checks if an animal is trying to run off the screen, turns them around if they do
   checkBoundaries(){
+
+    // Too far right?
     if(this.x>=950){
       this.facing = "left";
     }
+    // Too far left?
     else if (this.x <=50){
       this.facing = "right";
     }
+    // Too far up?
     if(this.y<=50){
       this.heading = "down";
     }
+    // Too far down?
     else if(this.y >=950){
       this.heading = "up";
     }

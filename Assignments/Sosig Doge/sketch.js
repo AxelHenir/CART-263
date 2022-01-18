@@ -7,6 +7,8 @@ To begin, press enter.
 Find as many Sausage Dogs as possible before the song ends!
 Click the sausage dog on each level to move to the next level.
 
+DEBUG: Press W to win instantly.
+
 */
 
 "use strict";
@@ -16,7 +18,7 @@ const ANIMAL_IMAGE_PREFIX = `Assets/Images/animal`; // File location as string (
 const SAUSAGE_DOG_IMAGE = `Assets/Images/sausage-dog.png`; // File location of sausage dog
 
 // Number of images to display
-const NUM_ANIMALS = 100;
+let NUM_ANIMALS = 100;
 
 // Array of the loaded animal images
 let animalImages = [];
@@ -71,8 +73,12 @@ function setup() {
 // Creates all the animals at random positions with random animal images
 function createAnimals() {
 
+  // Number of animals will scale with difficulty, which scales with your score
+  let moreAnimals = -50 + (state.score*12);
+  moreAnimals = constrain(moreAnimals,-50,150);
+
   // Create the correct number of animals
-  for (let i = 0; i < NUM_ANIMALS; i++) {
+  for (let i = 0; i < (NUM_ANIMALS + moreAnimals); i++) {
 
     // Create a random animal
     let animal = createRandomAnimal();
@@ -94,8 +100,11 @@ function createRandomAnimal() {
   // Select a random image for the animal
   let animalImage = random(animalImages);
 
+  // Difficulty scales with your score
+  let diff = 1 - (state.score*0.015);
+
   // Make a new Animal object
-  let animal = new Animal(x, y, animalImage);
+  let animal = new Animal(x, y, animalImage, diff);
 
   // Return the animal object
   return animal;
@@ -109,8 +118,11 @@ function createSausageDog() {
   let x = random(0, width-50);
   let y = random(0, height-50);
 
+  // Difficulty scales with your score
+  let diff = 1 - (state.score*0.015);
+
   // Generate new SD object and assign it to the global variable
-  sausageDog = new SausageDog(x, y, sausageDogImage);
+  sausageDog = new SausageDog(x, y, sausageDogImage, diff);
 }
 
 // Checks to see if the music is still playing
@@ -186,6 +198,14 @@ function keyPressed(){
 
       }
 
+      break;
+
+    case 87: // W = Win
+
+      // Instantly win the game
+      music.stop();
+      state.stage = state.finishedGame;
+      
       break;
 
   }

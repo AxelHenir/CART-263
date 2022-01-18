@@ -9,10 +9,10 @@ Class Sausage Dog
 class SausageDog extends Animal {
     
   // Constructor
-  constructor(x, y, image) {
+  constructor(x, y, image, diff) {
 
     // Use the animal constructor to make the base of the object
-    super(x, y, image);
+    super(x, y, image, diff);
   
     // New property: found = SD is found or not
     this.found = false;

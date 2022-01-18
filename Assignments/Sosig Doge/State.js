@@ -76,11 +76,11 @@ class State{
         textAlign(CENTER);
         textSize(24);
         fill(255);
-        text("Find as many",width/2,height*0.4);
+        text("Find as many",width/2,height*0.425);
         imageMode(CENTER);
         image(sausageDogImage,width/2,height/2);
-        text("before time runs out!",width/2,height*0.6);
-        text("Press ENTER to begin",width/2,height*0.9);
+        text("before the music stops!",width/2,height*0.6);
+        text("Press ENTER to start",width/2,height*0.9);
         pop();
 
     }
