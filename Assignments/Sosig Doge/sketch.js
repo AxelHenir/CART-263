@@ -178,6 +178,9 @@ function keyPressed(){
         // Change the state to InGame
         state.stage = state.inGame;
 
+        // Make a new level
+        state.newLevel();
+
         // Start the music..
         music.play();
 
