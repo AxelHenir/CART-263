@@ -1,4 +1,11 @@
 /*
+SAUSAGE DOG NG+
+Alex Henri 40108348
+January 18th, 2022
+
+To begin, press enter.
+Find as many Sausage Dogs as possible before the song ends!
+Click the sausage dog on each level to move to the next level.
 
 */
 
