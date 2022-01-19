@@ -102,6 +102,7 @@ function createRandomAnimal() {
 
   // Difficulty scales with your score
   let diff = 1 - (state.score*0.015);
+  diff = constrain(diff,0.05,1);
 
   // Make a new Animal object
   let animal = new Animal(x, y, animalImage, diff);
@@ -120,6 +121,7 @@ function createSausageDog() {
 
   // Difficulty scales with your score
   let diff = 1 - (state.score*0.015);
+  diff = constrain(diff,0.05,1);
 
   // Generate new SD object and assign it to the global variable
   sausageDog = new SausageDog(x, y, sausageDogImage, diff);

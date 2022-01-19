@@ -110,13 +110,18 @@ class Animal {
 
       // Check which direction
       if(this.facing == "left"){
-        // move in that direction
+
+        // move left
         this.x--;
+
       }
       else{
+
+        // move right
         this.x++;
       }
 
+      // We want absolute value of sin function
       let y = 25*sin(0.01*this.x);
       if (y>= 0 ){
         this.y = y + this.level;
