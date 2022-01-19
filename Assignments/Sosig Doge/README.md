@@ -1,7 +1,7 @@
 # EXERCISE 1 - Sausage Dog NG+
 
 # Alex Henri - 40108348 - January 18th, 2022
-In this program, you will be shown many animals and you must simply find and click on the sausage dog. Finding him will let you continue tot he next level. Find as many as you can before the music stops! Every level becomes increasingly difficult so prepare yourself for a challenge and keep those eyes peeled for the SD. Good luck and have fun! :)
+In this program, you will be shown many animals and you must simply find and click on the sausage dog. Finding him will let you continue to the next level. Find as many as you can before the music stops! Every level becomes increasingly difficult so prepare yourself for a challenge and keep those eyes peeled for the SD. Good luck and have fun! :)
 
 Controls:
 - ENTER to begin the game
