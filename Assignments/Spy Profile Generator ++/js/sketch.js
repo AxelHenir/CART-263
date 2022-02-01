@@ -31,6 +31,8 @@ let objectsData;
 let instrumentsData;
 let eyeColorData;
 
+// State variable to hold the state object, tracks the current state of the program
+let state = undefined;
 
 // Loads the JSON data used to generate the profile
 function preload() {
@@ -44,103 +46,19 @@ function preload() {
 // Creates a canvas then handles loading profile data, checking password,and generating a profile as necessary.
 function setup() {
 
+  // Create a new state object to track what the program is doing at a given point in time.
+  state = new State();
+
   // Create the canvas
   createCanvas(windowWidth, windowHeight);
 
-  // Try to load the data
-  let data = JSON.parse(localStorage.getItem(PROFILE_DATA_KEY));
-
-  // Check if there was data to load
-  if (data) {
-
-    // If so, ask for the password
-    let password = prompt("PASSWORD:");
-
-    // Check if the password is correct
-    if (password === data.password) {
-
-      // If is is, then setup the spy profile with the data
-      setupSpyProfile(data);
-
-    }
-  }
-  else {
-
-    // If there is no data, generate a spy profile for the user
-    generateSpyProfile();
-
-  }
 }
 
-
-// Assigns across the profile properties from the data to the current profile
-function setupSpyProfile(data) {
-
-  spyProfile.name = data.name;
-  spyProfile.alias = data.alias;
-  spyProfile.secretWeapon = data.secretWeapon;
-  spyProfile.password = data.password;
-  spyProfile.eyeColor = data.eyeColor;
-  spyProfile.height = data.height;
-  spyProfile.weight = data.weight;
-
-}
-
-
-// Generates a spy profile from JSON data
-function generateSpyProfile() {
-
-  // Ask for the user's name and store it
-  spyProfile.name = prompt("ENTER YOUR NAME");
-
-  // Generate an alias from a random instrument
-  spyProfile.alias = `The ${random(instrumentsData.instruments)}`;
-
-  // Generate a secret weapon from a random object
-  spyProfile.secretWeapon = random(objectsData.objects);
-
-  // Generate a password from a random keyword for a random tarot card
-  let card = random(tarotData.tarot_interpretations);
-  spyProfile.password = random(card.keywords);
-
-  // Generate a random height (in cm)
-  spyProfile.height = Math.floor(Math.random() * 110) + 100 + " cm";
-
-  // Generate a random weight (in lbs)
-  spyProfile.weight = Math.floor(Math.random() * 160) + 70 + " lbs";
-
-  // Generate a random eye color from my JSON file.
-  spyProfile.eyeColor = random(eyeColorData.colors);
-
-  // Save the resulting profile to local storage
-  localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(spyProfile));
-
-}
-
-
+// Enacts the state function
 function draw() {
 
-  background(255);
+  state.stage();
 
-  // Generate the profile as a string using the data
-  let spyText = `** TOP SECRET SPY PROFILE ** 
-Name: ${spyProfile.name}
-Alias: ${spyProfile.alias}
-Secret Weapon: ${spyProfile.secretWeapon}
-Password: ${spyProfile.password}
-Height: ${spyProfile.height}
-Weight: ${spyProfile.weight}
-Eye Color: ${spyProfile.eyeColor}
-`;
-
-  // Display the profile
-  push();
-  textSize(32);
-  textAlign(CENTER, CENTER);
-  textFont(`Courier, monospace`);
-  fill(0);
-  text(spyText, width/2, height/2);
-  pop();
 }
 
 // Handles keyboard input
@@ -151,6 +69,7 @@ function keyPressed(){
     
     case 66: // 66 = B = Burn current profile (clear it from data)
       localStorage.clear();
+      state = new State();
       break;
 
   }
