@@ -16,13 +16,20 @@ let spyProfile = {
   name: `**REDACTED**`,
   alias: `**REDACTED**`,
   secretWeapon: `**REDACTED**`,
-  password: `**REDACTED**`
+  password: `**REDACTED**`,
+
+  // Some traits of my own..
+  height: `**REDACTED**`,
+  weight: `**REDACTED**`,
+  eyeColor: `**REDACTED**`,
+
 };
 
 // Variables to store JSON data for generating the profile
 let tarotData;
 let objectsData;
 let instrumentsData;
+let eyeColorData;
 
 
 // Loads the JSON data used to generate the profile
@@ -30,6 +37,7 @@ function preload() {
   tarotData = loadJSON(TAROT_DATA_URL);
   objectsData = loadJSON(OBJECT_DATA_URL);
   instrumentsData = loadJSON(INSTRUMENT_DATA_URL);
+  eyeColorData = loadJSON("assets/json/colors.json");
 }
 
 
@@ -46,7 +54,7 @@ function setup() {
   if (data) {
 
     // If so, ask for the password
-    let password = prompt(`What's ya password?`);
+    let password = prompt("PASSWORD:");
 
     // Check if the password is correct
     if (password === data.password) {
@@ -72,6 +80,9 @@ function setupSpyProfile(data) {
   spyProfile.alias = data.alias;
   spyProfile.secretWeapon = data.secretWeapon;
   spyProfile.password = data.password;
+  spyProfile.eyeColor = data.eyeColor;
+  spyProfile.height = data.height;
+  spyProfile.weight = data.weight;
 
 }
 
@@ -80,7 +91,7 @@ function setupSpyProfile(data) {
 function generateSpyProfile() {
 
   // Ask for the user's name and store it
-  spyProfile.name = prompt(`What's ya name?`);
+  spyProfile.name = prompt("ENTER YOUR NAME");
 
   // Generate an alias from a random instrument
   spyProfile.alias = `The ${random(instrumentsData.instruments)}`;
@@ -91,6 +102,15 @@ function generateSpyProfile() {
   // Generate a password from a random keyword for a random tarot card
   let card = random(tarotData.tarot_interpretations);
   spyProfile.password = random(card.keywords);
+
+  // Generate a random height (in cm)
+  spyProfile.height = Math.floor(Math.random() * 110) + 100 + " cm";
+
+  // Generate a random weight (in lbs)
+  spyProfile.weight = Math.floor(Math.random() * 160) + 70 + " lbs";
+
+  // Generate a random eye color from my JSON file.
+  spyProfile.eyeColor = random(eyeColorData.colors);
 
   // Save the resulting profile to local storage
   localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(spyProfile));
@@ -107,7 +127,11 @@ function draw() {
 Name: ${spyProfile.name}
 Alias: ${spyProfile.alias}
 Secret Weapon: ${spyProfile.secretWeapon}
-Password: ${spyProfile.password}`;
+Password: ${spyProfile.password}
+Height: ${spyProfile.height}
+Weight: ${spyProfile.weight}
+Eye Color: ${spyProfile.eyeColor}
+`;
 
   // Display the profile
   push();
@@ -117,4 +141,17 @@ Password: ${spyProfile.password}`;
   fill(0);
   text(spyText, width/2, height/2);
   pop();
+}
+
+// Handles keyboard input
+function keyPressed(){
+
+  // Check which key was pressed
+  switch(keyCode){
+    
+    case 66: // 66 = B = Burn current profile (clear it from data)
+      localStorage.clear();
+      break;
+
+  }
 }
