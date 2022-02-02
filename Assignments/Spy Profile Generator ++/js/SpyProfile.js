@@ -14,12 +14,9 @@ class SpyProfile{
             height: `**REDACTED**`,
             weight: `**REDACTED**`,
             eyeColor: `**REDACTED**`,
-            countryOfOrigin: `**REDACTED**`,
+            homeCountry: `**REDACTED**`,
             stationedCountry: `**REDACTED**`,
         }
-
-        // Now that all the variables are made, check if we have saved data
-        this.checkExistingProfile();
 
     }
 
@@ -32,28 +29,45 @@ class SpyProfile{
         // Check if there was data to load
         if (data) {
 
-            // If so, ask for the password
-            let password = prompt("PASSWORD:");
+            // If so, ask for their name
+            let name = prompt("NAME:");
 
-            // Check if the password is correct
-            if (password === data.password) {
+            if(name === data.name){
 
-                // If is is, then setup the spy profile with the data
-                this.setupSpyProfile(data);
+                // if name is correct, ask for password
+                let password = prompt("PASSWORD:");
+
+                // Check if the password is correct
+                if (password === data.password) {
+
+                    // If is is, then setup the spy profile with the saved data
+                    this.setupSpyProfile(data);
+
+                } else {
+
+                    // If the password was incorrect, set the state to "badLogin"
+                    state.stage = state.badLogin;
+
+                }
+                
+            } else {
+
+                // If the name was incorrect, set the state to "BadLogin"
+                state.stage = state.badLogin;
 
             }
+
+        } else {
+
+            // If there was no stored data, set the state to the "noData" state.
+            state.stage = state.noData;
+
         }
 
-        else {
-
-            // If there is no data, generate a spy profile for the user
-            this.generateSpyProfile();
-
-        }
     }
 
-    // Generates a spy profile from JSON data
-    generateSpyProfile() {
+    // Generates a random spy profile from JSON data
+    generateRandomSpyProfile() {
 
         // Ask for the user's name and store it
         this.profileData.name = prompt("ENTER YOUR NAME:");
@@ -92,6 +106,44 @@ class SpyProfile{
 
     }
 
+    generateCustomSpyProfile() {
+
+        // Ask for the user's name and store it
+        this.profileData.name = prompt("ENTER YOUR NAME:");
+
+        // Generate an alias from a random instrument
+        this.profileData.alias = prompt("WHAT IS YOUR CODENAME? ");
+
+        // Generate a secret weapon from a random object
+        this.profileData.secretWeapon = prompt("WHAT IS YOUR WEAPON? ");
+
+        // Generate a password from a random keyword for a random tarot card
+        this.profileData.password = prompt("SET YOUR PASSWORD:");
+
+        // Generate a random height (in cm)
+        this.profileData.height = prompt("ENTER YOUR HEIGHT (IN CM):");
+
+        // Generate a random weight (in lbs)
+        this.profileData.weight = prompt("ENTER YOUR WEIGHT (IN LBS):");
+
+        // Generate a random eye color from my JSON file.
+        this.profileData.eyeColor = prompt("ENTER YOUR EYE COLOR:");
+
+        // Generate a random home country
+        this.profileData.homeCountry = prompt("ENTER YOUR HOME COUNTRY:");
+
+        // Generate a random country that the spy is stationed in
+        this.profileData.stationedCountry = prompt("ENTER YOUR STATIONED COUNTRY:");
+
+        // Save the resulting profile to local storage
+        console.log(JSON.stringify(this.profileData));
+        localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(this.profileData));
+
+        // Set the state to display the profile
+        state.stage = state.displayingProfile;
+
+    }
+
     // Assigns the profile properties from the data to the current profile
     setupSpyProfile(data) {
 
@@ -118,7 +170,7 @@ class SpyProfile{
 
         // Generate the profile as a string using the data
         let spyText = `** TOP SECRET SPY PROFILE **
-        
+
 Name: ${this.profileData.name}
 Alias: ${this.profileData.alias}
 Secret Weapon: ${this.profileData.secretWeapon}
@@ -139,6 +191,7 @@ Currently Sationed in: ${this.profileData.stationedCountry}
         text(spyText, width/2, height/2);
         textSize(24);
         text("Press 'B' to BURN this profile", width/2, height*0.75);
+        text("Press 'R' to RETURN to the login page", width/2, height*0.775);
         pop();
     }
 

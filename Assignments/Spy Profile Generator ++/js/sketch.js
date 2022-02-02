@@ -34,9 +34,6 @@ function setup() {
   // Create a new state object to track what the program is doing at a given point in time
   state = new State();
 
-  // Create new profile object to hold the current profile
-  profile = new SpyProfile();
-
   // Create the canvas
   createCanvas(windowWidth, windowHeight);
 
@@ -56,23 +53,63 @@ function keyPressed(){
   switch(keyCode){
     
     case 66: // 66 = B = Burn current profile (clear it from data)
-      localStorage.clear();
-      state.stage = state.homescreen;
+
+      if(state.stage == state.displayingProfile){
+        // Clear all storage
+        localStorage.clear();
+
+        // Go back to homescreen
+        state.stage = state.homescreen;
+
+      }
+      
       break;
 
     case 49: // 49 = 1 = Generate random profile
+
+      if(state.stage == state.homescreen){
+
+        // Create new profile object to hold the current profile
+        profile = new SpyProfile();
+
+        // Generate the ne wspy profile with random data
+        profile.generateRandomSpyProfile();
+
+      }
+      
       break;
 
     case 50: // 50 = 2 = Genrate custom profile
+
+      if(state.stage == state.homescreen){
+
+        // Create new profile object to hold the current profile
+        profile = new SpyProfile();
+
+        // Generate the ne wspy profile with random data
+        profile.generateCustomSpyProfile();
+
+      }
+      break;
+
+    case 51: // 51 = 3 = Login to existing profile
+
+      if(state.stage == state.homescreen){
+
+        profile = new SpyProfile();
+
+        // Check for and login to existing profile if found
+        profile.checkExistingProfile();
+
+      }
+      break;
+
+    case 82: // 82 = R = Return to home
+      if(state.stage == state.badLogin || state.stage == state.displayingProfile || state.stage == state.noData){
+        state.stage = state.homescreen;
+      }
       break;
 
   }
 }
 
-// Saves the profile to storage
-function saveProfile(){
-
-  // Strigify and store the profile to localstorage
-  localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(profile));
-  
-}
