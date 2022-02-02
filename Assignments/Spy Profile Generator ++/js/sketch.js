@@ -7,15 +7,13 @@
 const TAROT_DATA_URL = `https://raw.githubusercontent.com/dariusk/corpora/master/data/divination/tarot_interpretations.json`;
 const OBJECT_DATA_URL = `https://raw.githubusercontent.com/dariusk/corpora/master/data/objects/objects.json`;
 const INSTRUMENT_DATA_URL = `https://raw.githubusercontent.com/dariusk/corpora/master/data/music/instruments.json`;
+const COUNTRY_DATA_URL = `https://raw.githubusercontent.com/dariusk/corpora/master/data/geography/countries.json`;
 
 // The key used to save and load the data for this program
 const PROFILE_DATA_KEY = `spy-profile-data`;
 
 // Variables to store JSON data for generating the profile
-let tarotData;
-let objectsData;
-let instrumentsData;
-let eyeColorData;
+let tarotData ,objectsData, instrumentsData, eyeColorData, countryData;
 
 // State and Profile variables to hodl their respective objects
 let state = undefined;
@@ -26,6 +24,7 @@ function preload() {
   tarotData = loadJSON(TAROT_DATA_URL);
   objectsData = loadJSON(OBJECT_DATA_URL);
   instrumentsData = loadJSON(INSTRUMENT_DATA_URL);
+  countryData = loadJSON(COUNTRY_DATA_URL);
   eyeColorData = loadJSON("assets/json/colors.json");
 }
 
@@ -68,4 +67,12 @@ function keyPressed(){
       break;
 
   }
+}
+
+// Saves the profile to storage
+function saveProfile(){
+
+  // Strigify and store the profile to localstorage
+  localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(profile));
+  
 }

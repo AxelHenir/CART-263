@@ -3,22 +3,27 @@ class SpyProfile{
     // constructor
     constructor(){
 
-        // Basic default traits
-        this.name = `**REDACTED**`;
-        this.alias = `**REDACTED**`;
-        this.secretWeapon = `**REDACTED**`;
-        this.password = `**REDACTED**`;
-    
-        // Some traits of my own..
-        this.height = `**REDACTED**`;
-        this.weight = `**REDACTED**`;
-        this.eyeColor = `**REDACTED**`;
+        this.profileData = {
+            // Basic default traits
+            name: `**REDACTED**`,
+            alias: `**REDACTED**`,
+            secretWeapon: `**REDACTED**`,
+            password: `**REDACTED**`,
 
+            // Some traits of my own...
+            height: `**REDACTED**`,
+            weight: `**REDACTED**`,
+            eyeColor: `**REDACTED**`,
+            countryOfOrigin: `**REDACTED**`,
+            stationedCountry: `**REDACTED**`,
+        }
+
+        // Now that all the variables are made, check if we have saved data
         this.checkExistingProfile();
 
     }
 
-    // Checks for existing profile adn loads it if the right password is entered. TOherwise, generates new profile.
+    // Checks for existing profile and loads it if the right password is entered. Otherwise, generates new profile.
     checkExistingProfile(){
 
         // Try to load the data
@@ -51,46 +56,55 @@ class SpyProfile{
     generateSpyProfile() {
 
         // Ask for the user's name and store it
-        this.name = prompt("ENTER YOUR NAME:");
+        this.profileData.name = prompt("ENTER YOUR NAME:");
 
         // Generate an alias from a random instrument
-        this.alias = `The ${random(instrumentsData.instruments)}`;
+        this.profileData.alias = `The ${random(instrumentsData.instruments)}`;
 
         // Generate a secret weapon from a random object
-        this.secretWeapon = random(objectsData.objects);
+        this.profileData.secretWeapon = random(objectsData.objects);
 
         // Generate a password from a random keyword for a random tarot card
         let card = random(tarotData.tarot_interpretations);
-        this.password = random(card.keywords);
+        this.profileData.password = random(card.keywords);
 
         // Generate a random height (in cm)
-        this.height = Math.floor(Math.random() * 110) + 100 + " cm";
+        this.profileData.height = Math.floor(Math.random() * 110) + 100 + " cm";
 
         // Generate a random weight (in lbs)
-        this.weight = Math.floor(Math.random() * 160) + 70 + " lbs";
+        this.profileData.weight = Math.floor(Math.random() * 160) + 70 + " lbs";
 
         // Generate a random eye color from my JSON file.
-        this.eyeColor = random(eyeColorData.colors);
+        this.profileData.eyeColor = random(eyeColorData.colors);
+
+        // Generate a random home country
+        this.profileData.homeCountry = random(countryData.countries);
+
+        // Generate a random country that the spy is stationed in
+        this.profileData.stationedCountry = random(countryData.countries);
 
         // Save the resulting profile to local storage
-        localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(profile));
+        console.log(JSON.stringify(this.profileData));
+        localStorage.setItem(PROFILE_DATA_KEY, JSON.stringify(this.profileData));
 
         // Set the state to display the profile
         state.stage = state.displayingProfile;
 
     }
 
-    // Assigns across the profile properties from the data to the current profile
+    // Assigns the profile properties from the data to the current profile
     setupSpyProfile(data) {
 
         // Assignments
-        this.name = data.name;
-        this.alias = data.alias;
-        this.secretWeapon = data.secretWeapon;
-        this.password = data.password;
-        this.eyeColor = data.eyeColor;
-        this.height = data.height;
-        this.weight = data.weight;
+        this.profileData.name = data.name;
+        this.profileData.alias = data.alias;
+        this.profileData.secretWeapon = data.secretWeapon;
+        this.profileData.password = data.password;
+        this.profileData.eyeColor = data.eyeColor;
+        this.profileData.height = data.height;
+        this.profileData.weight = data.weight;
+        this.profileData.homeCountry = data.homeCountry;
+        this.profileData.stationedCountry = data.stationedCountry;
 
         // Set the state to display the profile
         state.stage = state.displayingProfile;
@@ -103,14 +117,17 @@ class SpyProfile{
         background(255);
 
         // Generate the profile as a string using the data
-        let spyText = `** TOP SECRET SPY PROFILE ** 
-Name: ${this.name}
-Alias: ${this.alias}
-Secret Weapon: ${this.secretWeapon}
-Password: ${this.password}
-Height: ${this.height}
-Weight: ${this.weight}
-Eye Color: ${this.eyeColor}
+        let spyText = `** TOP SECRET SPY PROFILE **
+        
+Name: ${this.profileData.name}
+Alias: ${this.profileData.alias}
+Secret Weapon: ${this.profileData.secretWeapon}
+Password: ${this.profileData.password}
+Height: ${this.profileData.height}
+Weight: ${this.profileData.weight}
+Eye Color: ${this.profileData.eyeColor}
+Home Country: ${this.profileData.homeCountry}
+Currently Sationed in: ${this.profileData.stationedCountry}
 `;
 
         // Display the profile
@@ -120,6 +137,8 @@ Eye Color: ${this.eyeColor}
         textFont(`Courier, monospace`);
         fill(0);
         text(spyText, width/2, height/2);
+        textSize(24);
+        text("Press 'B' to BURN this profile", width/2, height*0.75);
         pop();
     }
 
