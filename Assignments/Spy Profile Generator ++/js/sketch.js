@@ -1,6 +1,8 @@
 // Spy Profile Generator
 // Uses: Darius Kazemi's corpora project: https://github.com/dariusk/corpora/
 
+// sketch.js is the driver script for the Spy profile generator.
+
 "use strict";
 
 // URLs to JSON data
@@ -96,6 +98,7 @@ function keyPressed(){
 
       if(state.stage == state.homescreen){
 
+        // Make a new profile
         profile = new SpyProfile();
 
         // Check for and login to existing profile if found

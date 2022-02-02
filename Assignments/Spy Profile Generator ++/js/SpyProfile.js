@@ -1,3 +1,6 @@
+// SpyProfile class contains data and functions for the profile.
+// Allows user to generate, store and recall profiles.
+
 class SpyProfile{
 
     // constructor
@@ -20,7 +23,7 @@ class SpyProfile{
 
     }
 
-    // Checks for existing profile and loads it if the right password is entered. Otherwise, generates new profile.
+    // Checks for existing profile and loads it if the right password is entered. Otherwise, generates new profile
     checkExistingProfile(){
 
         // Try to load the data
@@ -106,33 +109,34 @@ class SpyProfile{
 
     }
 
+    // Generates a custom spy profile by having the user enter the data manually
     generateCustomSpyProfile() {
 
         // Ask for the user's name and store it
         this.profileData.name = prompt("ENTER YOUR NAME:");
 
-        // Generate an alias from a random instrument
+        // Ask the user for their codename
         this.profileData.alias = prompt("WHAT IS YOUR CODENAME? ");
 
-        // Generate a secret weapon from a random object
+        // Ask the user for their weapon
         this.profileData.secretWeapon = prompt("WHAT IS YOUR WEAPON? ");
 
-        // Generate a password from a random keyword for a random tarot card
+        // Ask the user to set their password
         this.profileData.password = prompt("SET YOUR PASSWORD:");
 
-        // Generate a random height (in cm)
+        // Asks the user to enter their height
         this.profileData.height = prompt("ENTER YOUR HEIGHT (IN CM):");
 
-        // Generate a random weight (in lbs)
+        // Asks the user to enter their weight
         this.profileData.weight = prompt("ENTER YOUR WEIGHT (IN LBS):");
 
-        // Generate a random eye color from my JSON file.
+        // Asks the user to enter their eye color
         this.profileData.eyeColor = prompt("ENTER YOUR EYE COLOR:");
 
-        // Generate a random home country
+        // Asks the user to enter their home country
         this.profileData.homeCountry = prompt("ENTER YOUR HOME COUNTRY:");
 
-        // Generate a random country that the spy is stationed in
+        // Asks the user to enter the ocuntry they are stationed in
         this.profileData.stationedCountry = prompt("ENTER YOUR STATIONED COUNTRY:");
 
         // Save the resulting profile to local storage
@@ -163,6 +167,7 @@ class SpyProfile{
 
     }
 
+    // Displays the profile to the screen
     displaySpyProfile(){
 
         // Background color

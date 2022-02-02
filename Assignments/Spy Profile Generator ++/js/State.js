@@ -1,8 +1,12 @@
+// State class tracks the state of the program
+// User can swap between the homescreen, displayingProfile, badLogin, noData
+// Each state is a function which is run by the draw() loop in sketch.js
+
 class State{
 
     constructor(){
 
-        // Stage = the stage of the program (enterName, enterPass, display)
+        // Stage = the stage of the program (homescreen, displayingProfile, badLogin, noData)
         this.stage = this.homescreen;
     
     }
