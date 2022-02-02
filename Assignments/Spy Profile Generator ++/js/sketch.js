@@ -11,28 +11,15 @@ const INSTRUMENT_DATA_URL = `https://raw.githubusercontent.com/dariusk/corpora/m
 // The key used to save and load the data for this program
 const PROFILE_DATA_KEY = `spy-profile-data`;
 
-// The spy profile data while the program is running
-let spyProfile = {
-  name: `**REDACTED**`,
-  alias: `**REDACTED**`,
-  secretWeapon: `**REDACTED**`,
-  password: `**REDACTED**`,
-
-  // Some traits of my own..
-  height: `**REDACTED**`,
-  weight: `**REDACTED**`,
-  eyeColor: `**REDACTED**`,
-
-};
-
 // Variables to store JSON data for generating the profile
 let tarotData;
 let objectsData;
 let instrumentsData;
 let eyeColorData;
 
-// State variable to hold the state object, tracks the current state of the program
+// State and Profile variables to hodl their respective objects
 let state = undefined;
+let profile = undefined;
 
 // Loads the JSON data used to generate the profile
 function preload() {
@@ -42,12 +29,14 @@ function preload() {
   eyeColorData = loadJSON("assets/json/colors.json");
 }
 
-
-// Creates a canvas then handles loading profile data, checking password,and generating a profile as necessary.
+// Setup function. Creates state and profile objects. Creates the p5.js canvas
 function setup() {
 
-  // Create a new state object to track what the program is doing at a given point in time.
+  // Create a new state object to track what the program is doing at a given point in time
   state = new State();
+
+  // Create new profile object to hold the current profile
+  profile = new SpyProfile();
 
   // Create the canvas
   createCanvas(windowWidth, windowHeight);
@@ -69,7 +58,13 @@ function keyPressed(){
     
     case 66: // 66 = B = Burn current profile (clear it from data)
       localStorage.clear();
-      state = new State();
+      state.stage = state.homescreen;
+      break;
+
+    case 49: // 49 = 1 = Generate random profile
+      break;
+
+    case 50: // 50 = 2 = Genrate custom profile
       break;
 
   }
