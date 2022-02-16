@@ -1,0 +1,31 @@
+{
+    "description":"This is the script for the story portion of the game and will also serve as the instruction manual on how to display each scene",
+    "script": {"scene":[
+
+        {"line":[
+
+            "This is scene 0, line 0.",
+            "This is scene 0, line 1.",
+            "bOO! did I get you?",
+            "This will be some text you would want to speed up: HAHAHAHAHAHHAHAH"
+
+
+        ]},
+        {"line":[
+
+            "This is scene 1, line 0.",
+            "This is scene 1, line 1.",
+            "bOO! did I get you?"
+
+        ]},
+        {"line":[
+
+            "This is scene 2, line 0.",
+            "This is scene 2, line 1.",
+            "bOO! did I get you?"
+
+        ]}
+
+    ]}
+
+}

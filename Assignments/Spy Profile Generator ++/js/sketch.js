@@ -88,7 +88,7 @@ function keyPressed(){
         // Create new profile object to hold the current profile
         profile = new SpyProfile();
 
-        // Generate the ne wspy profile with random data
+        // Generate the new spy profile with random data
         profile.generateCustomSpyProfile();
 
       }
