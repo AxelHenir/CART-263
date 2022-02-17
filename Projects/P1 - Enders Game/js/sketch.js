@@ -6,7 +6,7 @@ let state = undefined;
 
 // Typewriter for typing effects on screen
 let typeWriter = undefined;
-const TYPEWRITER_SPEED = 50;
+const TYPEWRITER_SPEED = 25;
 
 // Script for the game
 let script = undefined;
@@ -25,23 +25,29 @@ function setup() {
 
   // New state object, pass it the script too.
   state = new State(script.script);
-  console.log(state);
-  typeWriter = new Typewriter(TYPEWRITER_SPEED,"HELLO! HELLO! HELLO! HELLO!");
-  console.log(typeWriter);
+
+  // New typewriter object, it requires a speed (delay between characters (ms))
+  typeWriter = new Typewriter(TYPEWRITER_SPEED);
+
+  // Various display settings
+  textAlign(CENTER, CENTER);
 
 }
 
 function draw() {
 
   background(200);
-  fill(0);
-  textAlign(CENTER, CENTER);
-
+  
   // Updates the typewriter's clock
   typeWriter.updateTypewriter();
 
   // Print the text
+  push();
+  fill(0);
   text(typeWriter.typedText(state.line),width/2,height/2);
+  pop();
+
+  // Draw the scene
 
 }
 

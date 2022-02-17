@@ -12,7 +12,7 @@ class State{
 
         // Scene counter
         this.sceneCounter = 0;
-        this.scene = this.script.scene[this.sceneCounter];
+        this.scene = this.script[this.sceneCounter];
 
         // Line counter
         this.lineCounter = 0; 
@@ -26,15 +26,18 @@ class State{
 
         // Increase scene counter
         this.sceneCounter++;
+        console.log(this.sceneCounter);
 
         // Update scene
-        this.scene = this.script.scene[this.sceneCounter];
+        this.scene = this.script[this.sceneCounter];
+        console.log(this.scene);
 
         // Set line to 0 (new scene)
         this.lineCounter = 0;
 
         // Update line
         this.line = this.scene.line[this.lineCounter];
+        console.log(this.line);
 
     }
 
@@ -44,10 +47,19 @@ class State{
         // Increase the line counter
         this.lineCounter++;
 
-        // Update the line
-        this.line = this.scene.line[this.lineCounter];
+        // If there are no more lines, trigger the next scene
+        if(this.lineCounter > this.scene.line.length-1){
+
+            console.log("next scene...");
+            // Next scene
+            this.nextScene();
+        } else {
+            // Update the line
+            this.line = this.scene.line[this.lineCounter];
+        }
 
         
+
     }
 
     getSpeaker(){

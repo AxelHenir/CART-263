@@ -1,31 +1,42 @@
 {
     "description":"This is the script for the story portion of the game and will also serve as the instruction manual on how to display each scene",
-    "script": {"scene":[
+    "script": [
 
-        {"line":[
+        {
+            "background":"01.png",
+            "speaker":"Ender",
+            "recipient":"Axel",
+            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
+        },
 
-            "This is scene 0, line 0.",
-            "This is scene 0, line 1.",
-            "bOO! did I get you?",
-            "This will be some text you would want to speed up: HAHAHAHAHAHHAHAH"
+        {
+            "background":"01.png",
+            "speaker":"Ender",
+            "recipient":"Axel",
+            "line":["We made it to line 2","We cqn rejoice!", "Hurrah!"]
+        },
 
+        {
+            "background":"01.png",
+            "speaker":"Ender",
+            "recipient":"Axel",
+            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
+        },
 
-        ]},
-        {"line":[
+        {
+            "background":"01.png",
+            "speaker":"Ender",
+            "recipient":"Axel",
+            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
+        },
 
-            "This is scene 1, line 0.",
-            "This is scene 1, line 1.",
-            "bOO! did I get you?"
+        {
+            "background":"01.png",
+            "speaker":"Ender",
+            "recipient":"Axel",
+            "line":["The end!"]
+        }
 
-        ]},
-        {"line":[
-
-            "This is scene 2, line 0.",
-            "This is scene 2, line 1.",
-            "bOO! did I get you?"
-
-        ]}
-
-    ]}
+    ]
 
 }
