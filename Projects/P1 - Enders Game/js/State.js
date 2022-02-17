@@ -37,7 +37,9 @@ class State{
 
         // Update line
         this.line = this.scene.line[this.lineCounter];
-        console.log(this.line);
+
+        // Send scene info to graphics
+        gpu.displayScene(this.scene);
 
     }
 
@@ -50,15 +52,15 @@ class State{
         // If there are no more lines, trigger the next scene
         if(this.lineCounter > this.scene.line.length-1){
 
-            console.log("next scene...");
             // Next scene
             this.nextScene();
+
         } else {
+
             // Update the line
             this.line = this.scene.line[this.lineCounter];
-        }
 
-        
+        }
 
     }
 

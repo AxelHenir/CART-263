@@ -3,38 +3,31 @@
     "script": [
 
         {
-            "background":"01.png",
-            "speaker":"Ender",
-            "recipient":"Axel",
+            "bg":"0",
+            "slot1":"0",
+            "slot2":"1",
             "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
         },
 
         {
-            "background":"01.png",
-            "speaker":"Ender",
-            "recipient":"Axel",
-            "line":["We made it to line 2","We cqn rejoice!", "Hurrah!"]
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["What you just watched","... was a miracle, haha."]
         },
 
         {
-            "background":"01.png",
-            "speaker":"Ender",
-            "recipient":"Axel",
-            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"1",
+            "line":["Hey, that's me!", "This is weird!","eat your beans!","Ok bye."]
         },
 
         {
-            "background":"01.png",
-            "speaker":"Ender",
-            "recipient":"Axel",
-            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
-        },
-
-        {
-            "background":"01.png",
-            "speaker":"Ender",
-            "recipient":"Axel",
-            "line":["The end!"]
+            "bg":"0",
+            "slot1":"0",
+            "slot2":"0",
+            "line":["SPACE JAM!!!!!!!!"]
         }
 
     ]

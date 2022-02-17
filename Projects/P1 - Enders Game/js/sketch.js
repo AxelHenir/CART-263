@@ -4,13 +4,12 @@
 // State machine to track program state
 let state = undefined;
 
-// Typewriter for typing effects on screen
-let typeWriter = undefined;
-const TYPEWRITER_SPEED = 25;
-
 // Script for the game
 let script = undefined;
 const SCRIPT_LOCATION = "assets/json/script.json";
+
+// A graphics object for all images
+let gpu = undefined;
 
 function preload(){
 
@@ -26,8 +25,8 @@ function setup() {
   // New state object, pass it the script too.
   state = new State(script.script);
 
-  // New typewriter object, it requires a speed (delay between characters (ms))
-  typeWriter = new Typewriter(TYPEWRITER_SPEED);
+  // New Graphics object, responsible for visuals using images
+  gpu = new Graphics();
 
   // Various display settings
   textAlign(CENTER, CENTER);
@@ -36,18 +35,7 @@ function setup() {
 
 function draw() {
 
-  background(200);
-  
-  // Updates the typewriter's clock
-  typeWriter.updateTypewriter();
-
-  // Print the text
-  push();
-  fill(0);
-  text(typeWriter.typedText(state.line),width/2,height/2);
-  pop();
-
-  // Draw the scene
+  gpu.displayScene(state.scene);
 
 }
 
@@ -57,8 +45,9 @@ function keyPressed(){
   switch(keyCode){
 
     case 81: // Q = next line
-    state.nextLine();
-    typeWriter.index = 0;
+
+    gpu.next();
+
     break;
 
   }
