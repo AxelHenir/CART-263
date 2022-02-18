@@ -164,7 +164,7 @@ class Game{
 
                 let d = dist(b.x,b.y,this.player.x,this.player.y);
                 if(d < this.player.size/2 + 25){ // Adequate bullet size (25)
-                    e.hp -= 15; // Damage
+                    this.player.hp -= 15; // Damage
                     dmgDealt = true; 
                 }
 
@@ -183,6 +183,23 @@ class Game{
             if(this.enemies[i].hp <= 0){
                 this.enemies.splice(i,1);
             }
+        }
+    }
+
+    // Has the enemies shoot
+    enemyShoot(enemies){
+
+        for(let i = 0; i < enemies.length; i++){
+            if(enemies[i].cooldown < 0){
+                let bullet = {
+                    x:enemies[i].x,
+                    y:enemies[i].y,
+                    friendly:false,
+                }
+                this.bullets.push(bullet);
+                enemies[i].cooldown = random(100,1000);
+            }
+            enemies[i].cooldown--;
         }
     }
 
@@ -209,6 +226,9 @@ class Game{
             this.playerShoot(this.player);
 
         }
+
+        // Perhaps have an enemy shoot
+        this.enemyShoot(this.enemies);
 
         // Update the location of the bullets
         this.updateBullets(this.bullets);
