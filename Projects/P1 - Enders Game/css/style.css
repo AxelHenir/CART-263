@@ -1,5 +1,6 @@
 html, body {
   
+  cursor: none;
   display: grid;
   justify-content: center;
   align-content: center;

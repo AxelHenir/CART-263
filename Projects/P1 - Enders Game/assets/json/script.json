@@ -6,7 +6,8 @@
             "bg":"0",
             "slot1":"0",
             "slot2":"1",
-            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"]
+            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"],
+            "game":"True"
         },
 
         {

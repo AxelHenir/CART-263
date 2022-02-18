@@ -46,9 +46,9 @@ function keyPressed(){
 
     case 81: // Q = next line
 
-    gpu.next();
+      gpu.next();
 
-    break;
+      break;
 
   }
 }

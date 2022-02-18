@@ -7,7 +7,7 @@ class State{
 
         this.script = script;
 
-        // Act counter
+        // Act counter - story mode or game?
         this.act = 0;
 
         // Scene counter
@@ -26,20 +26,16 @@ class State{
 
         // Increase scene counter
         this.sceneCounter++;
-        console.log(this.sceneCounter);
 
         // Update scene
         this.scene = this.script[this.sceneCounter];
-        console.log(this.scene);
+        console.log(this.scene); // ABRUPT END FIX THIS
 
         // Set line to 0 (new scene)
         this.lineCounter = 0;
 
         // Update line
         this.line = this.scene.line[this.lineCounter];
-
-        // Send scene info to graphics
-        gpu.displayScene(this.scene);
 
     }
 
@@ -64,14 +60,12 @@ class State{
 
     }
 
-    getSpeaker(){
+    // Sets the act, can change the gamemode from story to game
+    nextAct(){
+
+        // Increase the act counter
+        this.act++;
 
     }
-
-    getRecipient(){
-
-    }
-
-    
 
 }
