@@ -40,7 +40,24 @@
             "slot2":"0",
             "line":[],
             "game":true
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"1",
+            "line":["Hey, that's me!", "This is weird!","eat your beans!","Ok bye."],
+            "game":false
+        },
+
+        {
+            "bg":"0",
+            "slot1":"0",
+            "slot2":"0",
+            "line":["SPACE JAM!!!!!!!!"],
+            "game":false
         }
+        
 
     ]
 
