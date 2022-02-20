@@ -30,7 +30,6 @@ class Game{
 
             hp:100,
             level:0,
-            kills:0,
             size:50,
             x:0,
             y:0,
@@ -41,12 +40,16 @@ class Game{
     }
 
     // Displays the player model at (x,y)
-    drawPlayer(x,y){
+    drawPlayer(player){
 
         push();
         ellipseMode(CENTER);
+        textAlign(CENTER,CENTER);
         fill(0);
-        ellipse(x,y,this.player.size,this.player.size);
+        ellipse(player.x,player.y,player.size,player.size);
+        textSize(12);
+        fill(255);
+        text(player.hp,player.x,player.y);
         pop();
 
     }
@@ -203,6 +206,19 @@ class Game{
         }
     }
 
+    // Checks to see if the player has won or lost the game yet
+    checkVictory(){
+
+        if(this.enemies.length == 0 ){
+            console.log("victory!");
+            // CALL VICTORY
+        } else if (this.player.hp <= 0 ){
+            console.log("defeat!");
+            // CALL DEFEAT
+        }
+
+    }
+
     // Updates the game data and draws all elements. 
     updateGame(){
 
@@ -242,10 +258,11 @@ class Game{
         // Draw the elements
 
         this.drawBullets(this.bullets);
-
         this.drawEnemies(this.enemies);
+        this.drawPlayer(this.player);
 
-        this.drawPlayer(mouseX,mouseY);
+        // Check if the player has won or lost
+        this.checkVictory();
 
     }
 
