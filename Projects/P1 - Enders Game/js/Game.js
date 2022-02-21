@@ -3,7 +3,7 @@ class Game{
     constructor(){
 
         // Wave size
-        this.WAVE_SIZE = 2;
+        this.WAVE_SIZE = 30;
 
         // Storage for bullets
         this.bullets = [];

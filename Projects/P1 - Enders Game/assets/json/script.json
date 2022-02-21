@@ -5,8 +5,20 @@
         {
             "bg":"0",
             "slot1":"0",
-            "slot2":"1",
-            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"],
+            "slot2":"0",
+            "line":["Time to get up already…?",
+                "At least this is the last day before we get a couple days to relax.",
+                "I’m beat... I feel like a rudely-revived corpse.",
+                
+                "Through glazed eyes, I make out the familiar faces of my cohort.",
+                "They’re also all exhausted, go figure.",
+                "Some turn back over in their bunk to catch 5 more minutes of sleep,",
+                "Some begrudgingly sit up and stretch their muscles,",
+                "A couple comrades laugh to themselves.", 
+                
+                "But we are all preparing ourselves for today, the big day.",
+                "Exam day."
+                ],
             "game":false
         },
 
@@ -14,51 +26,11 @@
             "bg":"1",
             "slot1":"1",
             "slot2":"0",
-            "line":["What you just watched","... was a miracle, haha."],
-            "game":false
-        },
-
-        {
-            "bg":"1",
-            "slot1":"1",
-            "slot2":"1",
-            "line":["Hey, that's me!", "This is weird!","eat your beans!","Ok bye."],
-            "game":false
-        },
-
-        {
-            "bg":"0",
-            "slot1":"0",
-            "slot2":"0",
-            "line":["SPACE JAM!!!!!!!!"],
-            "game":false
-        },
-
-        {
-            "bg":"0",
-            "slot1":"0",
-            "slot2":"0",
-            "line":[],
-            "game":true
-        },
-
-        {
-            "bg":"1",
-            "slot1":"1",
-            "slot2":"1",
-            "line":["Hey, that's me!", "This is weird!","eat your beans!","Ok bye."],
-            "game":false
-        },
-
-        {
-            "bg":"0",
-            "slot1":"0",
-            "slot2":"0",
-            "line":["SPACE JAM!!!!!!!!"],
+            "line":["Mornin' Ender.","I looked up and saw "],
             "game":false
         }
-        
 
+       
     ]
 
 }
