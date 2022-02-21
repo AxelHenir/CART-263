@@ -26,11 +26,73 @@
             "bg":"1",
             "slot1":"1",
             "slot2":"0",
-            "line":["Mornin' Ender.","I looked up and saw "],
+            "line":["Mornin' Ender.",
+                    "I looked up and saw Petra sitting up in the bunk across from me.",
+                    "Good morning Petra.",
+                    "Ready for today?",
+                    "Ready as I'll ever be."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["Just as she finished that thought, we heard loud stomping from outside",
+                    "Sergeant Dap marched into our quarters as he did every morning.",
+                    "UP! UP! UP!",
+                    "LET'S GET THE DAY STARTED RECRUITS.",
+                    "A robotic storage unit rolled into the room and parked next to him",
+                    "Today, we have spcial team-colored suits.",
+                    "Put your suit on, go to the cafeteria, eat and meet back here.",
+                    "You have exactly...",
+                    "He looked at his watch and tapped on it with his finger.",
+                    "... 58 minutes and 24 seconds...",
+                    "...23",
+                    "...22",
+                    "He turned around and walked calmly ou of the room",
+                    "...21"
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["The room's energy rose sharply as everyone clambered about.",
+                    "Everyone lined up in front of the storage unit to collect their suit.",
+                    "These are some high tech suits for sure.",
+                    "They have our team's logo on the left shoulder- a dragon.",
+                    "This suit was not so different from pilot suits we already had.",
+                    "Though they did look a lot better.",
+                    "I put the suit on and went to get some breakfast."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["Well this is surprising.",
+                    "The cafeteria is serving scrambled eggs, sausage, pancakes, the works.",
+                    "They're totally spoiling us.",
+                    "I sat with the rest of my team at our usual table."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":[
+                ],
             "game":false
         }
 
-       
     ]
 
 }
