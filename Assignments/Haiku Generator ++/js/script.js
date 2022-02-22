@@ -19,46 +19,39 @@ let haikuLines = {
     ]
 };
 
-// Our three elements on the page that contain each line of the poem
-let poem = {line1: document.getElementById(`line-1`);}
-let line1 = document.getElementById(`line-1`);
-let line2 = document.getElementById(`line-2`);
-let line3 = document.getElementById(`line-3`);
-
 // Set up the starting lines
 setupLines();
+
 // Listen for clicks on each element and respond by changing them
 addListeners();
 
-/**
-Puts a randomly chosen haiku line in each line of the poem in HTML
-*/
+// Inserts text into the 3 lines of the haiku from haikuLines
 function setupLines() {
-    line1.innerText = random(haikuLines.fiveSyllables);
-    line2.innerText = random(haikuLines.sevenSyllables);
-    line3.innerText = random(haikuLines.fiveSyllables);
+
+    document.getElementById(`line-1`).innerText = random(haikuLines.fiveSyllables);
+    document.getElementById(`line-2`).innerText = random(haikuLines.sevenSyllables);
+    document.getElementById(`line-3`).innerText = random(haikuLines.fiveSyllables);
+
 }
 
-/**
-Adds event listeners for changing each line of the poem
-*/
+// Adds event listeners for changing each line of the poem
 function addListeners() {
-    line1.addEventListener(`click`, changeLine);
-    line2.addEventListener(`click`, changeLine);
-    line3.addEventListener(`click`, changeLine);
+
+    document.getElementById(`line-1`).addEventListener(`click`, changeLine);
+    document.getElementById(`line-2`).addEventListener(`click`, changeLine);
+    document.getElementById(`line-3`).addEventListener(`click`, changeLine);
+
 }
 
-/**
-Triggers a fade out when a line is clicked
-*/
+
+// Triggers a fade out when a line is clicked
 function changeLine(event) {
+
     fadeOut(event.target, 1);
+
 }
 
-/**
-Reduces the opacity of the provided element until it reaches zero
-then changes its line and triggers a fade in
-*/
+// Reduces the opacity of the provided element until it reaches zero then changes its line and triggers a fade in
 function fadeOut(element, opacity) {
     // Change the opacity of the line
     opacity -= 0.01;
@@ -81,10 +74,7 @@ function fadeOut(element, opacity) {
     }
 }
 
-/**
-Increases the opacity of the provided element until it reaches
-1 and then stops.
-*/
+// Increases the opacity of the provided element until it reaches 1 and then stops.
 function fadeIn(element, opacity) {
   // Increase the opacity
     opacity += 0.01;
@@ -102,12 +92,10 @@ function fadeIn(element, opacity) {
     }
 }
 
-/**
-Sets the text of the element to a randomly chosen haiku line, accounting for
-syllables
-*/
+
+// Sets the text of the element to a randomly chosen haiku line, accounting for syllables
 function setNewLine(element) {
-    if (element === line1 || element === line3) {
+    if (element === document.getElementById(`line-1`) || element === document.getElementById(`line-3`)) {
     // If the element is line1 or line3, use five syllables
     element.innerText = random(haikuLines.fiveSyllables);
     }
