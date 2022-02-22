@@ -43,7 +43,7 @@
                     "Sergeant Dap marched into our quarters as he did every morning.",
                     "UP! UP! UP!",
                     "LET'S GET THE DAY STARTED RECRUITS.",
-                    "A robotic storage unit rolled into the room and parked next to him",
+                    "A robotic storage unit rolled into the room and parked next to him.",
                     "Today, we have spcial team-colored suits.",
                     "Put your suit on, go to the cafeteria, eat and meet back here.",
                     "You have exactly...",
@@ -66,7 +66,7 @@
                     "These are some high tech suits for sure.",
                     "They have our team's logo on the left shoulder- a dragon.",
                     "This suit was not so different from pilot suits we already had.",
-                    "Though they did look a lot better.",
+                    "Though they do look a lot better.",
                     "I put the suit on and went to get some breakfast."
                 ],
             "game":false
@@ -88,7 +88,41 @@
             "bg":"1",
             "slot1":"1",
             "slot2":"0",
-            "line":[
+            "line":["So how is everyone feeling?",
+                    "I'm feeling pretty confident.",
+                    "Me too, I don't want to squander this. Not now.",
+                    "I wish I could be as confident as you guys.",
+                    "There's always that part of me that worries.",
+                    "If I had to put money on someone succeeding, you're the one, Ender.",
+                    "The table gave an encouraging laugh.",
+                    "I laughed too.",
+                    "They were right: all my life I've done nothing but worry.",
+                    "All my life I have been picked on.",
+                    "Here, I fit in. Of all places, Battle School.",
+                    "I smiled and finished my breakfast.",
+    
+                    "The cafeteria was the loudest I've heard it since I first got here.",
+                    "All the teams at the other tables are in good spirit.",
+                    "Today was the day that we would all compete for spots in command school."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["Years ago, an alien mothership appeared in our Solar system.",
+                    "It arrived on Earth and without warning...",
+                    "Attacked us.",
+                    "The onslaught was unrelenting.",
+                    "We called them the 'Formic' species and they wreaked havoc across the globe.",
+                    "A brave team of fighter jet pilots were able to destroy the mothership.",
+                    "They worked together to fly a nuclear warhead into the ship.",
+                    "The pilots lost their lives to defend humanity.",
+                    "With the world in widespread panic, a program to fight the Formic forces was founded.",
+                    "The program invited young teens in particular to join them.",
+                    "Their belief was that the young, bright minds of today would save those of tomorrow."
                 ],
             "game":false
         }
