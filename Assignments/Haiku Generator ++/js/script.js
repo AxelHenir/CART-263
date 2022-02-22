@@ -43,7 +43,6 @@ function addListeners() {
 
 }
 
-
 // Triggers a fade out when a line is clicked
 function changeLine(event) {
 

@@ -13,11 +13,14 @@ body {
     margin: auto;
     padding-top: 2rem;
     user-select: none;
-    background-color: #ffffad;
+    background-color: #5253bd;
     }
 
 #haiku {
-    font-size: 3rem;
+    background-color: rgb(164, 221, 199);
+    border: 1rem solid white;
+    padding: 4rem;
+    font-size:  2rem;
     text-align: left;
 
 }
@@ -28,7 +31,7 @@ body {
     transition: opacity 1s linear;
     }
 
-    /* hidden class - Fades text out over 1 sec */
+/* hidden class - Fades text out over 1 sec */
 .hidden {
     opacity: 0;
     transition: opacity 1s linear;
