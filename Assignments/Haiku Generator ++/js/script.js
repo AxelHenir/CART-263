@@ -47,67 +47,46 @@ function addListeners() {
 // Triggers a fade out when a line is clicked
 function changeLine(event) {
 
-    fadeOut(event.target, 1);
+    // Check if the classList contains the visible class
+    if(event.target.classList.contains("visible")){
+
+        // If it does, remove it and add the hidden class.
+        event.target.classList.remove("visible");
+        event.target.classList.add("hidden");
+
+        // When the transition finishes, change the line and fade back in
+        setTimeout(
+            function(){
+                setNewLine(event.target);
+            }, 
+            1000);
+
+    }
 
 }
 
-// Reduces the opacity of the provided element until it reaches zero then changes its line and triggers a fade in
-function fadeOut(element, opacity) {
-    // Change the opacity of the line
-    opacity -= 0.01;
-    element.style[`opacity`] = opacity;
-    // Check if the opacity is greater than 0...
-    if (opacity > 0) {
-    // If so, keep fading on the next frame
-    // Note the use of an anonymous function here so we can pass
-    // arguments to fadeOut()
-    requestAnimationFrame(function() {
-        fadeOut(element, opacity);
-        });
-    }
-    else {
-    // If not, we can switch lines and fade in...
-    // Set a new line of poem for the element
-    setNewLine(element);
-    // Trigger a fade in
-    fadeIn(element, 0);
-    }
-}
-
-// Increases the opacity of the provided element until it reaches 1 and then stops.
-function fadeIn(element, opacity) {
-  // Increase the opacity
-    opacity += 0.01;
-    element.style[`opacity`] = opacity;
-  // Check if opacity is still less than 1
-    if (opacity < 1) {
-    // Keep fading. Note the use of an anonymous function here so we
-    // can pass arguments to fadeIn()
-    requestAnimationFrame(function() {
-        fadeIn(element, opacity);
-        });
-    }
-    else {
-    // Do nothing - we're done!
-    }
-}
-
-
-// Sets the text of the element to a randomly chosen haiku line, accounting for syllables
+// Sets the text of the element to a randomly chosen haiku line from the respective array
 function setNewLine(element) {
+
     if (element === document.getElementById(`line-1`) || element === document.getElementById(`line-3`)) {
-    // If the element is line1 or line3, use five syllables
-    element.innerText = random(haikuLines.fiveSyllables);
+
+        // If the element is line1 or line3, use five syllables
+        element.innerText = random(haikuLines.fiveSyllables);
+
+    } else {
+
+        // If the element is line2 use seven
+        element.innerText = random(haikuLines.sevenSyllables);
+
     }
-    else {
-    // If the element is line2 use seven
-    element.innerText = random(haikuLines.sevenSyllables);
-    }
+
+    // Remove the hidden class and add the visible class
+    element.classList.remove("hidden");
+    element.classList.add("visible");
+
 }
 
-/**
-A helper function that returns a random element from the provided array
-*/
+// Returns a random element from a given array
 function random(array) {
     return array[Math.floor(Math.random() * array.length)];
 }

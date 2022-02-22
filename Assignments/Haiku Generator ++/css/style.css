@@ -9,9 +9,28 @@ body {
     font-family: Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    width: 50vw;
+    width: 75vw;
     margin: auto;
     padding-top: 2rem;
     user-select: none;
     background-color: #ffffad;
     }
+
+#haiku {
+    font-size: 3rem;
+    text-align: left;
+
+}
+
+/* visible class - Fades text in over 1 sec */
+.visible {
+    opacity: 1;
+    transition: opacity 1s linear;
+    }
+
+    /* hidden class - Fades text out over 1 sec */
+.hidden {
+    opacity: 0;
+    transition: opacity 1s linear;
+    }
+
