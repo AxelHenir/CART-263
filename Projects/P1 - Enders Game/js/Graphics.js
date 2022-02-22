@@ -60,7 +60,7 @@ class Graphics{
     // Uses the data in scene to locate assets and displays them
     displayScene(scene){
 
-        // Check firstly if we are gamers
+        // Check firstly if we are gaming
         if(scene.game){
 
             background(150);

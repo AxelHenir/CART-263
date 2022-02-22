@@ -3,7 +3,7 @@ class Game{
     constructor(){
 
         // Wave size
-        const WAVE_SIZE = 30;
+        this.WAVE_SIZE = 30;
 
         // Storage for bullets
         this.bullets = [];
@@ -12,7 +12,7 @@ class Game{
         this.enemies = [];
 
         // Populate it
-        for(let i = 0; i< WAVE_SIZE; i++ ){
+        for(let i = 0; i< this.WAVE_SIZE; i++ ){
 
             let enemy = new Enemy();
     
@@ -30,7 +30,6 @@ class Game{
 
             hp:100,
             level:0,
-            kills:0,
             size:50,
             x:0,
             y:0,
@@ -40,13 +39,19 @@ class Game{
         
     }
 
-    // Displays the player model at (x,y)
-    drawPlayer(x,y){
+    // Displays the player at its coordinates
+    drawPlayer(player){
 
         push();
         ellipseMode(CENTER);
+        textAlign(CENTER,CENTER);
         fill(0);
-        ellipse(x,y,this.player.size,this.player.size);
+        ellipse(player.x,player.y,player.size,player.size);
+
+        // And his HP
+        textSize(12);
+        fill(255);
+        text(player.hp,player.x,player.y);
         pop();
 
     }
@@ -124,11 +129,17 @@ class Game{
     // Updates all bullets
     updateBullets(bullets){
         for(let i = 0; i < bullets.length; i++){
+
             // Friendly bullets go up
             if(bullets[i].friendly){
+
+                // 7 Px / sec
                 bullets[i].y -= 7;
+
             } else {
-                bullets[i].y += 7;
+
+                // Enemy bullets 5px/sec
+                bullets[i].y += 5;
             }
         }
     }
@@ -145,6 +156,11 @@ class Game{
             // To track if it's dealt damage
             let dmgDealt = false;
             let b = this.bullets[i];
+
+            // Off-screen bullets shouldn't exist!
+            if(b.y > 1050 || b.y < -50){
+                this.bullets.splice(i,1); 
+            }
 
             // If it's a friendly bullet
             if(b.friendly){
@@ -203,6 +219,51 @@ class Game{
         }
     }
 
+    // Starts a new level
+    newLevel(){
+
+        // Check if the game is over..
+        if(this.player.level > 1){ // PLACEHOLDER
+
+            state.nextScene();
+
+        } else {
+            // Increment the player's level
+            this.player.level++;
+
+            // Empty bullets
+            this.bullets = [];
+
+            // Empty Enemies
+            this.enemies = [];
+
+            // re-Populate it
+            for(let i = 0; i< this.WAVE_SIZE; i++ ){
+
+                let enemy = new Enemy();
+    
+                this.enemies.push(enemy);
+
+            }
+        }
+
+        
+    }
+
+    // Checks to see if the player has won or lost the game yet
+    checkVictory(){
+
+        if(this.enemies.length == 0 ){
+            console.log("victory! - Next wave incoming...");
+            this.newLevel();
+            // CALL VICTORY
+        } else if (this.player.hp <= 0 ){
+            console.log("defeat!");
+            // CALL DEFEAT
+        }
+
+    }
+
     // Updates the game data and draws all elements. 
     updateGame(){
 
@@ -242,10 +303,11 @@ class Game{
         // Draw the elements
 
         this.drawBullets(this.bullets);
-
         this.drawEnemies(this.enemies);
+        this.drawPlayer(this.player);
 
-        this.drawPlayer(mouseX,mouseY);
+        // Check if the player has won or lost
+        this.checkVictory();
 
     }
 

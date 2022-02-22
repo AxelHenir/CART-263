@@ -5,30 +5,126 @@
         {
             "bg":"0",
             "slot1":"0",
-            "slot2":"1",
-            "line":["This is the dialogue of the character.","They can have multiple lines stored in here"],
-            "game":"True"
+            "slot2":"0",
+            "line":["Time to get up already…?",
+                "At least this is the last day before we get a couple days to relax.",
+                "I’m beat... I feel like a rudely-revived corpse.",
+                
+                "Through glazed eyes, I make out the familiar faces of my cohort.",
+                "They’re also all exhausted, go figure.",
+                "Some turn back over in their bunk to catch 5 more minutes of sleep,",
+                "Some begrudgingly sit up and stretch their muscles,",
+                "A couple comrades laugh to themselves.", 
+                
+                "But we are all preparing ourselves for today, the big day.",
+                "Exam day."
+                ],
+            "game":false
         },
 
         {
             "bg":"1",
             "slot1":"1",
             "slot2":"0",
-            "line":["What you just watched","... was a miracle, haha."]
+            "line":["Mornin' Ender.",
+                    "I looked up and saw Petra sitting up in the bunk across from me.",
+                    "Good morning Petra.",
+                    "Ready for today?",
+                    "Ready as I'll ever be."
+                ],
+            "game":false
         },
 
         {
             "bg":"1",
             "slot1":"1",
-            "slot2":"1",
-            "line":["Hey, that's me!", "This is weird!","eat your beans!","Ok bye."]
+            "slot2":"0",
+            "line":["Just as she finished that thought, we heard loud stomping from outside",
+                    "Sergeant Dap marched into our quarters as he did every morning.",
+                    "UP! UP! UP!",
+                    "LET'S GET THE DAY STARTED RECRUITS.",
+                    "A robotic storage unit rolled into the room and parked next to him.",
+                    "Today, we have spcial team-colored suits.",
+                    "Put your suit on, go to the cafeteria, eat and meet back here.",
+                    "You have exactly...",
+                    "He looked at his watch and tapped on it with his finger.",
+                    "... 58 minutes and 24 seconds...",
+                    "...23",
+                    "...22",
+                    "He turned around and walked calmly ou of the room",
+                    "...21"
+                ],
+            "game":false
         },
 
         {
-            "bg":"0",
-            "slot1":"0",
+            "bg":"1",
+            "slot1":"1",
             "slot2":"0",
-            "line":["SPACE JAM!!!!!!!!"]
+            "line":["The room's energy rose sharply as everyone clambered about.",
+                    "Everyone lined up in front of the storage unit to collect their suit.",
+                    "These are some high tech suits for sure.",
+                    "They have our team's logo on the left shoulder- a dragon.",
+                    "This suit was not so different from pilot suits we already had.",
+                    "Though they do look a lot better.",
+                    "I put the suit on and went to get some breakfast."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["Well this is surprising.",
+                    "The cafeteria is serving scrambled eggs, sausage, pancakes, the works.",
+                    "They're totally spoiling us.",
+                    "I sat with the rest of my team at our usual table."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["So how is everyone feeling?",
+                    "I'm feeling pretty confident.",
+                    "Me too, I don't want to squander this. Not now.",
+                    "I wish I could be as confident as you guys.",
+                    "There's always that part of me that worries.",
+                    "If I had to put money on someone succeeding, you're the one, Ender.",
+                    "The table gave an encouraging laugh.",
+                    "I laughed too.",
+                    "They were right: all my life I've done nothing but worry.",
+                    "All my life I have been picked on.",
+                    "Here, I fit in. Of all places, Battle School.",
+                    "I smiled and finished my breakfast.",
+    
+                    "The cafeteria was the loudest I've heard it since I first got here.",
+                    "All the teams at the other tables are in good spirit.",
+                    "Today was the day that we would all compete for spots in command school."
+                ],
+            "game":false
+        },
+
+        {
+            "bg":"1",
+            "slot1":"1",
+            "slot2":"0",
+            "line":["Years ago, an alien mothership appeared in our Solar system.",
+                    "It arrived on Earth and without warning...",
+                    "Attacked us.",
+                    "The onslaught was unrelenting.",
+                    "We called them the 'Formic' species and they wreaked havoc across the globe.",
+                    "A brave team of fighter jet pilots were able to destroy the mothership.",
+                    "They worked together to fly a nuclear warhead into the ship.",
+                    "The pilots lost their lives to defend humanity.",
+                    "With the world in widespread panic, a program to fight the Formic forces was founded.",
+                    "The program invited young teens in particular to join them.",
+                    "Their belief was that the young, bright minds of today would save those of tomorrow."
+                ],
+            "game":false
         }
 
     ]
