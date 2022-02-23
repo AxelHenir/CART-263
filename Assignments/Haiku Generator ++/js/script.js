@@ -40,6 +40,8 @@ function addListeners() {
     document.getElementById(`line-1`).addEventListener(`click`, changeLine);
     document.getElementById(`line-2`).addEventListener(`click`, changeLine);
     document.getElementById(`line-3`).addEventListener(`click`, changeLine);
+    
+    document.getElementById(`new-poem-button`).addEventListener(`click`, newPoem);
 
 }
 
@@ -89,3 +91,8 @@ function setNewLine(element) {
 function random(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
+
+function newPoem(){
+    
+}
+

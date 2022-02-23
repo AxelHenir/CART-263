@@ -1,39 +1,83 @@
-/*********************************************
-
-Some basic styling to make haiku display a
-little more prettily.
-
-**********************************************/
 
 body {
-    font-family: Helvetica, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    width: 75vw;
-    margin: auto;
-    padding-top: 2rem;
-    user-select: none;
-    background-color: #5253bd;
+
+    background-color: rgb(77, 201, 201);
+
     }
 
 #haiku {
-    background-color: rgb(164, 221, 199);
-    border: 1rem solid white;
-    padding: 4rem;
+
+    width: 750px;
+    height: 750px;
+
+    display:flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: azure;
+    
     font-size:  2rem;
-    text-align: left;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
 
 }
 
+.button1  {
+    background-color: rgb(255, 255, 255);
+
+    opacity: 0.7;
+    transition: 0.5s;
+
+    width: 50px;
+    height: 30px;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.button1:hover  {
+    opacity: 1;
+}
+
+#buttonText {
+
+    font-size:  1rem;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    
+}
+
+.onclick
+
 /* visible class - Fades text in over 1 sec */
 .visible {
+
     opacity: 1;
     transition: opacity 1s linear;
+
     }
 
 /* hidden class - Fades text out over 1 sec */
 .hidden {
+
     opacity: 0;
     transition: opacity 1s linear;
+
     }
 
+/* Centered class - centers itself on the screen */
+.centered {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}

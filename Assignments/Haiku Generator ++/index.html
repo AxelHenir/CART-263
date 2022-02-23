@@ -14,13 +14,18 @@
 
   <body>
 
-    <!-- A section containing the haiku itself -->
-    <section id="haiku">
+    <!-- A div containing the haiku itself -->
+    <div id="haiku" class="centered">
       <!-- p tags, one per line of the haiku, so we can dynamically change them -->
       <p id="line-1" class="visible"></p>
       <p id="line-2" class="visible"></p>
       <p id="line-3" class="visible"></p>
-    </section>
+    </div>
+
+    <!-- A div for a button to generate a new poem -->
+    <div class="button1" id="new-poem-button">
+      <p id="buttonText">New</p>
+    </div>
 
     <!-- My script(s) -->
     <script src="js/script.js"></script>
