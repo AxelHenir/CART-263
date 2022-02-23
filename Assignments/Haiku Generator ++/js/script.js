@@ -19,46 +19,52 @@ let haikuLines = {
     ]
 };
 
-// Set up the starting lines
-setupLines();
+let lines = document.querySelectorAll(`.line`);
+lines.forEach(setupLine);
+lines.forEach(addClickListener);
 
-// Listen for clicks on each element and respond by changing them
-addListeners();
+document.getElementById(`new-poem-button`).addEventListener(`click`, newPoem);
 
 // Inserts text into the 3 lines of the haiku from haikuLines
-function setupLines() {
+function setupLine(element) {
 
-    document.getElementById(`line-1`).innerText = random(haikuLines.fiveSyllables);
-    document.getElementById(`line-2`).innerText = random(haikuLines.sevenSyllables);
-    document.getElementById(`line-3`).innerText = random(haikuLines.fiveSyllables);
+    // Check if the line needs 5 or 7 syllables
+    if(element.id === `line-2`){
+
+        element.innerText = random(haikuLines.sevenSyllables);
+
+    } else {
+
+        element.innerText = random(haikuLines.fiveSyllables);
+
+    }
 
 }
 
-// Adds event listeners for changing each line of the poem
-function addListeners() {
+// Adds a click listener for a given element
+function addClickListener(element) {
 
-    document.getElementById(`line-1`).addEventListener(`click`, changeLine);
-    document.getElementById(`line-2`).addEventListener(`click`, changeLine);
-    document.getElementById(`line-3`).addEventListener(`click`, changeLine);
-    
-    document.getElementById(`new-poem-button`).addEventListener(`click`, newPoem);
+    element.addEventListener(`click`, function()
+    {
+        fadeLine(element);
+    });
 
 }
 
 // Triggers a fade out when a line is clicked
-function changeLine(event) {
+function fadeLine(element) {
 
     // Check if the classList contains the visible class
-    if(event.target.classList.contains("visible")){
+    if(element.classList.contains("visible")){
 
         // If it does, remove it and add the hidden class.
-        event.target.classList.remove("visible");
-        event.target.classList.add("hidden");
+        element.classList.remove("visible");
+        element.classList.add("hidden");
 
-        // When the transition finishes, change the line and fade back in
+        // When the transition finishes, change the line's text with setLine and fade back in
         setTimeout(
             function(){
-                setNewLine(event.target);
+                setNewLine(element);
             }, 
             1000);
 
@@ -69,15 +75,14 @@ function changeLine(event) {
 // Sets the text of the element to a randomly chosen haiku line from the respective array
 function setNewLine(element) {
 
-    if (element === document.getElementById(`line-1`) || element === document.getElementById(`line-3`)) {
+    // Check if the line needs 5 or 7 syllables
+    if(element.id === `line-2`){
 
-        // If the element is line1 or line3, use five syllables
-        element.innerText = random(haikuLines.fiveSyllables);
+        element.innerText = random(haikuLines.sevenSyllables);
 
     } else {
 
-        // If the element is line2 use seven
-        element.innerText = random(haikuLines.sevenSyllables);
+        element.innerText = random(haikuLines.fiveSyllables);
 
     }
 
@@ -93,6 +98,6 @@ function random(array) {
 }
 
 function newPoem(){
-    
+    lines.forEach(fadeLine);
 }
 
