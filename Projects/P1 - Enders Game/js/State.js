@@ -7,35 +7,41 @@ class State{
 
         this.script = script;
 
-        // Act counter - story mode or game?
-        this.act = 0;
-
         // Scene counter
         this.sceneCounter = 0;
+
+        // Load the current scene
         this.scene = this.script[this.sceneCounter];
 
-        // Line counter
+        // Liner counter
         this.lineCounter = 0; 
-        this.line = this.scene.line[this.lineCounter];
 
-        // Scenes in this program are treated as the serialized: Act A, Scene B, Line C.
+        // Get current info on the lines in the scene
+        this.currentlySpeaking = this.scene.lines[this.lineCounter].speaker;
+        this.currentLine = this.scene.lines[this.lineCounter].line;
+
     }
 
     // Sets the scene to the next scene
     nextScene(){
 
-        // Increase scene counter
-        this.sceneCounter++;
+        // CHECK FOR SFX, QUEUE THEM IF THERE ARE
 
-        // Update scene
+
+        // Increase scene counter
+        this.sceneCounter ++ ;
+
+        // Set the new scene
         this.scene = this.script[this.sceneCounter];
-        console.log(this.scene); // ABRUPT END FIX THIS
 
         // Set line to 0 (new scene)
-        this.lineCounter = 0;
+        this.lineCounter = 0 ;
 
-        // Update line
-        this.line = this.scene.line[this.lineCounter];
+        // Update text 
+        this.currentlySpeaking = this.scene.lines[this.lineCounter].speaker;
+        this.currentLine = this.scene.lines[this.lineCounter].line;
+
+        console.log(this.currentlySpeaking, this.currentLine);
 
     }
 
@@ -46,25 +52,18 @@ class State{
         this.lineCounter++;
 
         // If there are no more lines, trigger the next scene
-        if(this.lineCounter > this.scene.line.length-1){
+        if(this.lineCounter > this.scene.lines.length-1){
 
             // Next scene
-            this.nextScene();
+            this.nextScene(); 
 
         } else {
 
-            // Update the line
-            this.line = this.scene.line[this.lineCounter];
+            // Update text 
+            this.currentlySpeaking = this.scene.lines[this.lineCounter].speaker;
+            this.currentLine = this.scene.lines[this.lineCounter].line;
 
         }
-
-    }
-
-    // Sets the act, can change the gamemode from story to game
-    nextAct(){
-
-        // Increase the act counter
-        this.act++;
 
     }
 

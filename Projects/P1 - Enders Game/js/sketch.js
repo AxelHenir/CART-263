@@ -55,8 +55,6 @@ function keyPressed(){
 
       gpu.next();
 
-      audio.enqueueSound(audio.fx[0]);
-
       break;
 
   }

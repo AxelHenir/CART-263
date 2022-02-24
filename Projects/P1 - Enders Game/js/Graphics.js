@@ -73,9 +73,9 @@ class Graphics{
             // Typwriter update 
             this.typeWriter.updateTypewriter();
 
-            let bg = scene.bg;
-            let slot1 = scene.slot1;
-            let slot2 = scene.slot2;
+            let bg = scene.images.bg;
+            let slot1 = scene.images.slot1;
+            let slot2 = scene.images.slot2;
     
             // Background color
             background(200);
@@ -94,7 +94,7 @@ class Graphics{
             textSize(28);
             fill(255);
             textAlign(LEFT);
-            text(this.typeWriter.typedText(state.line),100,900);
+            text(this.typeWriter.typedText(state.currentLine),100,900);
             pop();
 
         }
