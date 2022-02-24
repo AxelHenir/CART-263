@@ -32,44 +32,62 @@ class Audio{
 
         }
 
-        this.enqueuedSounds = [];
+        // Holds the track of the background music
+        this.currentBGMusic = undefined;
 
     }
 
-    // Master update for Audio.js PLays all sounds for this frame, empty the enqueued sounds
-    play(){
-        
-        // Play each sound
-        for(let i = 0 ; i<this.enqueuedSounds.length ; i++){
-            this.enqueuedSounds[i].play();
-        }
+    // plays FX with ID
+    playFX(id){
 
-        // Empty enqueued sounds
-        this.enqueuedSounds = [];
-    }
+        // Check for no id
+        if (id === null){
 
-    // Enqueues a sound. Enqueued sounds are played once and discarded in play()
-    enqueueSound(sound){
-
-        this.enqueuedSounds.push(sound);
-
-    }
-
-    // Input from state in the form of the type of sound (fx or not) and its id
-    playSound(fx, id){
-
-        // Check which folder
-        if(fx){
-
-            // Enqueue the ID sound
-            this.enqueueSound(this.fx[id]);
+            // Return if no fx
+            return;
 
         } else {
 
-            // Similar for music
-            this.enqueueSound(this.music[id]);
+            // Otherwise, play it
+            this.fx[id].play();
 
         }
+        
+
+    }
+
+    playBackgroundMusic(id){
+
+        // Check for no id
+        if (id === null){
+
+            // Return if no fx
+            return;
+
+        } else {
+
+            // Otherwise, stop and start new track
+            if(this.currentBGMusic === undefined){
+                
+                // First time boot - needs not stop the track
+                this.currentBGMusic = this.music[id];
+                this.currentBGMusic.loop();
+
+            } else {
+
+                // All subsequent calls require that we stop
+                this.currentBGMusic.stop();
+                this.currentBGMusic = this.music[id];
+                this.currentBGMusic.loop();
+            }
+
+                
+            
+
+        }
+
+        
+
     }
 
 }

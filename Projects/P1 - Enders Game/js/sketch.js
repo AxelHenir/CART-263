@@ -42,8 +42,7 @@ function setup() {
 function draw() {
 
   gpu.displayScene(state.scene);
-  audio.play();
-
+  
 }
 
 // Handles keyboard input

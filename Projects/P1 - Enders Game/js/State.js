@@ -25,9 +25,6 @@ class State{
     // Sets the scene to the next scene
     nextScene(){
 
-        // CHECK FOR SFX, QUEUE THEM IF THERE ARE
-
-
         // Increase scene counter
         this.sceneCounter ++ ;
 
@@ -36,6 +33,12 @@ class State{
 
         // Set line to 0 (new scene)
         this.lineCounter = 0 ;
+
+        // Play the music for this scene
+        audio.playBackgroundMusic(this.scene.music);
+
+        // Enqueue the fx for this line
+        audio.playFX(this.scene.lines[this.lineCounter].fx);
 
         // Update text 
         this.currentlySpeaking = this.scene.lines[this.lineCounter].speaker;
@@ -47,6 +50,9 @@ class State{
 
     // Sets the line to the next line
     nextLine(){
+
+        // Enqueue the fx for this line
+        audio.playFX(this.scene.lines[this.lineCounter].fx);
 
         // Increase the line counter
         this.lineCounter++;

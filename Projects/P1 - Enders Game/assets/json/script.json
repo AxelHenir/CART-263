@@ -3,19 +3,40 @@
     "script": [
 
         {
+            "music": null,
             "images":{"bg":"0", "slot1":"0", "slot2":"0"},
             "lines": [
 
                 {
                     "speaker":"Ender",
-                    "fx": null ,
+                    "fx": 0 ,
                     "line":"Time to get up already…?"
                 },
 
                 {
-                    "speaker":"Ender",
+                    "speaker":"Schneider",
                     "fx": null ,
                     "line":"At least this is the last day before we get a couple days to relax."
+                }
+            
+            ]
+        },
+
+        {
+            "music": 0 ,
+            "images":{"bg":"0", "slot1":"0", "slot2":"0"},
+            "lines": [
+
+                {
+                    "speaker":"Kronx",
+                    "fx": 0 ,
+                    "line":"We did it boyzzz"
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": 0 ,
+                    "line":"the vacation land!"
                 }
             
             ]

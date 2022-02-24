@@ -91,10 +91,17 @@ class Graphics{
             fill(0);
             rectMode(CENTER);
             rect(width/2,950,width,100);
-            textSize(28);
+            textSize(25);
             fill(255);
-            textAlign(LEFT);
-            text(this.typeWriter.typedText(state.currentLine),100,900);
+            textAlign(LEFT,TOP);
+            text(this.typeWriter.typedText(state.currentLine),500,900,900);
+
+            fill(0);
+            quad(0,800, 200,800, 250,850, 0,850);
+
+            fill(255);
+            textAlign(CENTER, CENTER);
+            text(state.currentlySpeaking, 100, 825);
             pop();
 
         }
