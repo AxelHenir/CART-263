@@ -5,7 +5,7 @@
 let state = undefined;
 
 // Script for the game
-let script = undefined;
+let playbook = undefined;
 const SCRIPT_LOCATION = "assets/json/script.json";
 
 // A graphics object for all of our images
@@ -17,7 +17,13 @@ let audio = undefined;
 function preload(){
 
   // Load the script from JSON
-  script = loadJSON(SCRIPT_LOCATION);
+  playbook = loadJSON(SCRIPT_LOCATION);
+
+  // New Graphics object, responsible for visuals using images
+  gpu = new Graphics();
+
+  // New Audio driver, responsible for all audio being played
+  audio = new Audio();
 
 }
 
@@ -26,13 +32,7 @@ function setup() {
   createCanvas(1000,1000);
 
   // New state object, pass it the script too.
-  state = new State(script.script);
-
-  // New Graphics object, responsible for visuals using images
-  gpu = new Graphics();
-
-  // New Audio driver, responsible for all audio being played
-  audio = new Audio();
+  state = new State(playbook.script);
 
   // Various display settings
   textAlign(CENTER, CENTER);
@@ -42,7 +42,7 @@ function setup() {
 function draw() {
 
   gpu.displayScene(state.scene);
-  //audio.play();
+  audio.play();
 
 }
 
@@ -54,6 +54,8 @@ function keyPressed(){
     case 81: // Q = next line
 
       gpu.next();
+
+      audio.enqueueSound(audio.fx[0]);
 
       break;
 

@@ -3,7 +3,7 @@ class Audio{
     constructor(){
 
         const NUM_MUSIC_FILES = 0;
-        const MUSIC_PATH = "assets/sounds/music/";
+        const MUSIC_PATH = "assets/audio/music/";
 
         // Container for the music files
         this.music = [];
@@ -17,8 +17,8 @@ class Audio{
 
         }
 
-        const NUM_FX_FILES = 0;
-        const FX_PATH = "assets/sounds/fx/";
+        const NUM_FX_FILES = 1;
+        const FX_PATH = "assets/audio/fx/";
 
         // Container for FX files
         this.fx = [];
@@ -32,7 +32,7 @@ class Audio{
 
         }
 
-        this.enqueuedSounds = ["test1","test2","test3"];
+        this.enqueuedSounds = [];
 
     }
 
