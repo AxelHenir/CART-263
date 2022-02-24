@@ -36,7 +36,7 @@ class Graphics{
 
         }
 
-        // Other mmiscallaneous assets (if needed)
+        // Other miscallaneous assets (if needed)
         this.misc = [];
 
         // Populate with files...
@@ -51,6 +51,7 @@ class Graphics{
         // Typewriter object for text
         const TYPEWRITER_SPEED = 25;
         this.typeWriter = new Typewriter(TYPEWRITER_SPEED);
+        
 
         // Game object for the game part of the project
         this.game = new Game();
@@ -69,6 +70,9 @@ class Graphics{
 
         } else {
 
+            // Typwriter update 
+            this.typeWriter.updateTypewriter();
+
             let bg = scene.bg;
             let slot1 = scene.slot1;
             let slot2 = scene.slot2;
@@ -76,14 +80,11 @@ class Graphics{
             // Background color
             background(200);
     
+            // Display the images from the scene
             imageMode(CENTER);
-    
             image(this.bg[bg], width/2, height/2,width,height);
             image(this.ppl[slot1], 250, height/2,200,200);
             image(this.ppl[slot2], 750, height/2,200,200);
-    
-            // Updates the typewriter's clock
-            this.typeWriter.updateTypewriter();
     
             // Print the text
             push();
@@ -92,7 +93,8 @@ class Graphics{
             rect(width/2,950,width,100);
             textSize(28);
             fill(255);
-            text(this.typeWriter.typedText(state.line),width/2,950);
+            textAlign(LEFT);
+            text(this.typeWriter.typedText(state.line),100,900);
             pop();
 
         }
