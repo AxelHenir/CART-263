@@ -8,8 +8,11 @@ let state = undefined;
 let script = undefined;
 const SCRIPT_LOCATION = "assets/json/script.json";
 
-// A graphics object for all images
+// A graphics object for all of our images
 let gpu = undefined;
+
+// An audio driver for all of our sounds
+let audio = undefined;
 
 function preload(){
 
@@ -28,6 +31,9 @@ function setup() {
   // New Graphics object, responsible for visuals using images
   gpu = new Graphics();
 
+  // New Audio driver, responsible for all audio being played
+  audio = new Audio();
+
   // Various display settings
   textAlign(CENTER, CENTER);
 
@@ -36,6 +42,7 @@ function setup() {
 function draw() {
 
   gpu.displayScene(state.scene);
+  //audio.play();
 
 }
 
