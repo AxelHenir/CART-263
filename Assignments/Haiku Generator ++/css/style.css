@@ -21,7 +21,8 @@ body {
     align-items: center;
     text-align: center;
 
-    background-color: hsl(200, 100%, 50%);
+    background-color: black;
+    transition: background-color 2s;
     
 }
 

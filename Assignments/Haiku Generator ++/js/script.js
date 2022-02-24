@@ -19,27 +19,24 @@ let haikuLines = {
     ]
 };
 
-let lines = document.querySelectorAll(`.line`);
-lines.forEach(setupLine);
-lines.forEach(addClickListener);
-
+// Add an eventlistener for the button
 document.getElementById(`new-poem-button`).addEventListener(`click`, newPoem);
 
-// Inserts text into the 3 lines of the haiku from haikuLines
-function setupLine(element) {
+// Add an eventlistener for the haiku background div
+document.getElementById(`haiku`).addEventListener(`click`, changeColor);
 
-    // Check if the line needs 5 or 7 syllables
-    if(element.id === `line-2`){
+// Lines array to hold the 3 lines of our haiku
+let lines = document.querySelectorAll(`.line`);
 
-        element.innerText = random(haikuLines.sevenSyllables);
+// Adds click listeners for each line
+lines.forEach(addClickListener);
 
-    } else {
+// Write a new poem
+newPoem();
 
-        element.innerText = random(haikuLines.fiveSyllables);
 
-    }
+// ========================== FUNCTIONS ============================
 
-}
 
 // Adds a click listener for a given element
 function addClickListener(element) {
@@ -97,7 +94,18 @@ function random(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+// Generates a new poem
 function newPoem(){
     lines.forEach(fadeLine);
+    changeColor();
 }
 
+function changeColor(){
+
+    // Random integer between 0 and 360
+    let newHue = Math.floor(Math.random() * 359); 
+
+    // Set the background color to the new color
+    document.getElementById("haiku").style.backgroundColor = `hsl(${newHue}, 100%, 50%)`;
+
+}
