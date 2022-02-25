@@ -90,20 +90,23 @@ class Graphics{
     
             // Print the text
             push();
+
+            // Textbox for current speaker
             fill(0);
-            rectMode(CENTER);
-            rect(width/2,950,width,100);
+            quad(0,800, 250,800, 300,850, 0,850);
+
+            // Text for current speaker
+            textSize(25);
+            fill(255);
+            textAlign(CENTER, CENTER);
+            text(state.currentlySpeaking, 125, 825);
+
+            // Speech of the person talking/thinking
             textSize(25);
             fill(255);
             textAlign(LEFT,TOP);
-            text(this.typeWriter.typedText(state.currentLine),500,900,900);
+            text(this.typeWriter.typedText(state.currentLine),100,900,900);
 
-            fill(0);
-            quad(0,800, 200,800, 250,850, 0,850);
-
-            fill(255);
-            textAlign(CENTER, CENTER);
-            text(state.currentlySpeaking, 100, 825);
             pop();
 
         }
