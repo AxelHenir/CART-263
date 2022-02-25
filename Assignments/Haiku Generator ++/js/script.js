@@ -8,14 +8,21 @@ let haikuLines = {
     `The cat does not know`,
     `We are all forests`,
     `You have done your best`,
-    `They are all gone now`
+    `They are all gone now`,
+    "spaghetti on the stove",
+    "Invest in a vest",
+    "You, you're not the best",
+
     ],
     sevenSyllables: [
     `Say the things left unsaid`,
     `Never believe the wind's lies`,
     `The autumn stretches its legs`,
     `Nothing can satisfy you`,
-    `They will not come back again`
+    `They will not come back again`,
+    "Can't stand to me with that chest",
+    "Omae wa mo.. shindeiru",
+
     ]
 };
 
@@ -72,14 +79,31 @@ function fadeLine(element) {
 // Sets the text of the element to a randomly chosen haiku line from the respective array
 function setNewLine(element) {
 
-    // Check if the line needs 5 or 7 syllables
-    if(element.id === `line-2`){
+    let same = false;
+    let currentText = element.innerText;
 
-        element.innerText = random(haikuLines.sevenSyllables);
+    while(!same){
 
-    } else {
+        // Check if the line needs 5 or 7 syllables
+        if(element.id === `line-2`){
 
-        element.innerText = random(haikuLines.fiveSyllables);
+            element.innerText = random(haikuLines.sevenSyllables);
+
+        } else {
+
+            element.innerText = random(haikuLines.fiveSyllables);
+
+        }
+
+        if(currentText === element.innerText){
+
+            same = false;
+
+        } else {
+
+            same = true;
+
+        }
 
     }
 
