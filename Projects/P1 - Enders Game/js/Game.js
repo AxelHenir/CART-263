@@ -92,12 +92,12 @@ class Game{
             
             player.hp--;
             player.lastHit = millis();
-            //console.log("Ow!", player.hp);
+
         }
 
     }
 
-    // 
+    // Has the player shoot a bullet
     playerShoot(player){
 
         if((millis() - player.lastShot) > player.WEAPON_COOLDOWN){
@@ -109,7 +109,10 @@ class Game{
             }
             this.bullets.push(bullet);
             player.lastShot = millis();
-            //console.log("BANG!!");
+
+            // BANG BANG ======================================================================PLACEHODLING
+            audio.playFX(0);
+
         }
         
     }

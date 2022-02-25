@@ -105,7 +105,7 @@ class Graphics{
             textSize(25);
             fill(255);
             textAlign(LEFT,TOP);
-            text(this.typeWriter.typedText(state.currentLine),100,900,900);
+            text(this.typeWriter.typedText(state.currentLine),100,900,800);
 
             pop();
 

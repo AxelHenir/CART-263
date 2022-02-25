@@ -40,6 +40,8 @@ class Audio{
     // plays FX with ID
     playFX(id){
 
+        console.log("Aksed to play:",id);
+
         // Check for no id
         if (id === null){
 
