@@ -61,7 +61,15 @@ class Audio{
         // Check for no id
         if (id === null){
 
-            // Return if no fx
+            if(this.currentBGMusic === undefined){
+
+            } else {
+
+                this.currentBGMusic.stop();
+                this.currentBGMusic = undefined;
+
+            }
+
             return;
 
         } else {
@@ -69,24 +77,19 @@ class Audio{
             // Otherwise, stop and start new track
             if(this.currentBGMusic === undefined){
                 
-                // First time boot - needs not stop the track
+                // No music currently assigned
                 this.currentBGMusic = this.music[id];
                 this.currentBGMusic.loop();
 
             } else {
 
-                // All subsequent calls require that we stop
+                // If music is already playing, we need to stop it first
                 this.currentBGMusic.stop();
                 this.currentBGMusic = this.music[id];
                 this.currentBGMusic.loop();
             }
 
-                
-            
-
         }
-
-        
 
     }
 

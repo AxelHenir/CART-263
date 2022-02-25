@@ -44,8 +44,6 @@ class State{
         this.currentlySpeaking = this.scene.lines[this.lineCounter].speaker;
         this.currentLine = this.scene.lines[this.lineCounter].line;
 
-        console.log(this.currentlySpeaking, this.currentLine);
-
     }
 
     // Sets the line to the next line

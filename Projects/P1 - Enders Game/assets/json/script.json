@@ -3,8 +3,19 @@
     "script": [
 
         {
+            "game": false,
             "music": null,
-            "images":{"bg":"0", "slot1":"0", "slot2":"0"},
+            "images":{"bg": 0 , "slot1": 1 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Default" , "fx": null , "line": "TEXT"},
+                { "speaker": "Default" , "fx": null , "line": "TEXT 2"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 1 , "slot2": 0 },
             "lines": [
 
                 {
@@ -14,102 +25,119 @@
                 },
 
                 {
-                    "speaker":"Schneider",
+                    "speaker":"Ender",
                     "fx": null ,
                     "line":"At least this is the last day before we get a couple days to relax."
-                }
-            
-            ]
-        },
-
-        {
-            "music": 0 ,
-            "images":{"bg":"0", "slot1":"0", "slot2":"0"},
-            "lines": [
-
-                {
-                    "speaker":"Kronx",
-                    "fx": 0 ,
-                    "line":"We did it boyzzz"
                 },
 
                 {
                     "speaker":"Ender",
-                    "fx": 0 ,
-                    "line":"the vacation land!"
+                    "fx": null ,
+                    "line":"I’m beat... I feel like a rudely-revived corpse."
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"Through glazed eyes, I make out the familiar faces of my cohort."
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"They’re also all exhausted, go figure."
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"Some turn back over in their bunk to catch 5 more minutes of sleep,"
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"Some begrudgingly sit up and stretch their muscles,"
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"A couple comrades laugh to themselves."
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"But we are all preparing ourselves for today, the big day."
+                },
+
+                {
+                    "speaker":"Ender",
+                    "fx": null ,
+                    "line":"Exam day."
                 }
             
             ]
         },
 
         {
-            "bg":"0",
-            "slot1":"0",
-            "slot2":"0",
-            "line":["Time to get up already…?",
-                "At least this is the last day before we get a couple days to relax.",
-                "I’m beat... I feel like a rudely-revived corpse.",
-                
-                "Through glazed eyes, I make out the familiar faces of my cohort.",
-                "They’re also all exhausted, go figure.",
-                "Some turn back over in their bunk to catch 5 more minutes of sleep,",
-                "Some begrudgingly sit up and stretch their muscles,",
-                "A couple comrades laugh to themselves.", 
-                
-                "But we are all preparing ourselves for today, the big day.",
-                "Exam day."
-                ],
-            "game":false
+            "game": false,
+            "music": 0 ,
+            "images":{"bg": 0 , "slot1": 1 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Petra" , "fx": null , "line": "Mornin' Ender."},
+                { "speaker": "" , "fx": null , "line": "I looked up and saw Petra sitting up in the bunk across from me."},
+                { "speaker": "Ender" , "fx": null , "line": "Good morning, Petra."},
+                { "speaker": "Petra" , "fx": null , "line": "Ready for today?"},
+                { "speaker": "Ender" , "fx": null , "line": "Ready as I'll ever be."}
+            ]
         },
 
         {
-            "bg":"1",
-            "slot1":"1",
-            "slot2":"0",
-            "line":["Mornin' Ender.",
-                    "I looked up and saw Petra sitting up in the bunk across from me.",
-                    "Good morning Petra.",
-                    "Ready for today?",
-                    "Ready as I'll ever be."
-                ],
-            "game":false
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 1 , "slot2": 2 },
+            "lines": [
+                { "speaker": "Ender" , "fx": null , "line": "Just as she finished that thought, we heard the loud stomping of a certain someone's boots from outside."},
+                { "speaker": "Ender" , "fx": null , "line": "None other than Sergeant Dap marched into our sleeping quarters and stood vigilantly by the door. His voice bellowed in the small space."}
+            ]
         },
 
         {
-            "bg":"1",
-            "slot1":"1",
-            "slot2":"0",
-            "line":["Just as she finished that thought, we heard loud stomping from outside",
-                    "Sergeant Dap marched into our quarters as he did every morning.",
-                    "UP! UP! UP!",
-                    "LET'S GET THE DAY STARTED RECRUITS.",
-                    "A robotic storage unit rolled into the room and parked next to him.",
-                    "Today, we have spcial team-colored suits.",
-                    "Put your suit on, go to the cafeteria, eat and meet back here.",
-                    "You have exactly...",
-                    "He looked at his watch and tapped on it with his finger.",
-                    "... 58 minutes and 24 seconds...",
-                    "...23",
-                    "...22",
-                    "He turned around and walked calmly ou of the room",
-                    "...21"
-                ],
-            "game":false
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "UP! UP! UP!"},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "A robotic storage unit rolled into the room and parked next to him."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "LET'S GET THE DAY STARTED RECRUITS."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "Today, we have spcial team-colored suits."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "Put your suit on, go to the cafeteria, eat and meet back here."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "You have exactly..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "He looked at his watch and tapped on it with his finger."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "... 58 minutes and 24 seconds..."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "...23"},
+                { "speaker": "Sgt. Dap" , "fx": null , "line": "...22"},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "He turned around and walked calmly ou of the room"}
+
+
+            ]
         },
 
         {
-            "bg":"1",
-            "slot1":"1",
-            "slot2":"0",
-            "line":["The room's energy rose sharply as everyone clambered about.",
-                    "Everyone lined up in front of the storage unit to collect their suit.",
-                    "These are some high tech suits for sure.",
-                    "They have our team's logo on the left shoulder- a dragon.",
-                    "This suit was not so different from pilot suits we already had.",
-                    "Though they do look a lot better.",
-                    "I put the suit on and went to get some breakfast."
-                ],
-            "game":false
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 1 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "The room's energy rose sharply as everyone clambered about."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "Everyone lined up in front of the storage unit to collect their suit."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "These are some high tech suits for sure."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "They have our team's logo on the left shoulder- a dragon."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "This suit was not so different from pilot suits we already had."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "Though they do look a lot better."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line": "I put the suit on and went to get some breakfast."}
+            ]
         },
 
         {

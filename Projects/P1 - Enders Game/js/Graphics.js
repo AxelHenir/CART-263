@@ -6,8 +6,7 @@ class Graphics{
         const NUM_BG_IMAGES = 2;
         const BG_PREFIX = "assets/images/backgrounds/";
 
-        const NUM_PPL_IMAGES = 2;
-        const PPL_PREFIX = "assets/images/characters/";
+        
 
         const NUM_MISC_IMAGES = 2;
         const MISC_PREFIX = "assets/images/misc/";
@@ -23,6 +22,9 @@ class Graphics{
             this.bg.push(bgImage);
 
         }
+
+        const NUM_PPL_IMAGES = 6;
+        const PPL_PREFIX = "assets/images/characters/";
 
         // Container for files of the characters
         this.ppl = [];
@@ -49,7 +51,7 @@ class Graphics{
         }
 
         // Typewriter object for text
-        const TYPEWRITER_SPEED = 25;
+        const TYPEWRITER_SPEED = 15;
         this.typeWriter = new Typewriter(TYPEWRITER_SPEED);
         
 
@@ -83,8 +85,8 @@ class Graphics{
             // Display the images from the scene
             imageMode(CENTER);
             image(this.bg[bg], width/2, height/2,width,height);
-            image(this.ppl[slot1], 250, height/2,200,200);
-            image(this.ppl[slot2], 750, height/2,200,200);
+            image(this.ppl[slot1], 250, height/2,300,300);
+            image(this.ppl[slot2], 750, height/2,300,300);
     
             // Print the text
             push();
