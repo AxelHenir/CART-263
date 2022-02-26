@@ -6,11 +6,6 @@ class Graphics{
         const NUM_BG_IMAGES = 2;
         const BG_PREFIX = "assets/images/backgrounds/";
 
-        
-
-        const NUM_MISC_IMAGES = 2;
-        const MISC_PREFIX = "assets/images/misc/";
-
         // Container for the backgrounds
         this.bg = [];
 
@@ -41,6 +36,9 @@ class Graphics{
         // Other miscallaneous assets (if needed)
         this.misc = [];
 
+        const NUM_MISC_IMAGES = 5;
+        const MISC_PREFIX = "assets/images/misc/";
+
         // Populate with files...
         for (let i = 0; i < NUM_MISC_IMAGES; i++) {
 
@@ -56,7 +54,7 @@ class Graphics{
         
 
         // Game object for the game part of the project
-        this.game = new Game();
+        this.game = new Game(this.misc);
 
     }
 
@@ -66,7 +64,7 @@ class Graphics{
         // Check firstly if we are gaming
         if(scene.game){
 
-            background(150);
+            background(33, 25, 46);
 
             this.game.updateGame();
 

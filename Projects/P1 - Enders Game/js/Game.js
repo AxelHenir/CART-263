@@ -1,6 +1,9 @@
 class Game{
 
-    constructor(){
+    constructor(sprites){
+
+        // Sprites for game elements
+        this.sprites = sprites;
 
         // Wave size
         this.WAVE_SIZE = 30;
@@ -14,7 +17,7 @@ class Game{
         // Populate it
         for(let i = 0; i< this.WAVE_SIZE; i++ ){
 
-            let enemy = new Enemy();
+            let enemy = new Enemy(this.sprites);
     
             this.enemies.push(enemy);
 
@@ -30,7 +33,7 @@ class Game{
 
             hp:100,
             level:0,
-            size:50,
+            size:100,
             x:0,
             y:0,
             lastHit:0,
@@ -43,15 +46,14 @@ class Game{
     drawPlayer(player){
 
         push();
-        ellipseMode(CENTER);
-        textAlign(CENTER,CENTER);
-        fill(0);
-        ellipse(player.x,player.y,player.size,player.size);
+        imageMode(CENTER, CENTER);
+        image(this.sprites[2],player.x,player.y,player.size,player.size);
 
         // And his HP
+        textAlign(CENTER,CENTER);
         textSize(12);
         fill(255);
-        text(player.hp,player.x,player.y);
+        text(player.hp,player.x,player.y+ (player.size*0.75));
         pop();
 
     }
@@ -120,11 +122,15 @@ class Game{
     // Draws all bullet in the scene
     drawBullets(bullets){
         for(let i = 0; i < bullets.length; i++){
+            let b = bullets[i];
             push();
-            fill(100,255,50);
-            translate(bullets[i].x,bullets[i].y);
-            ellipse(10,0,10,50);
-            ellipse(-10,0,10,50);
+            imageMode(CENTER, CENTER);
+            if(b.friendly){
+                image(this.sprites[0],b.x+15,b.y,50,50);
+                image(this.sprites[0],b.x-15,b.y,50,50);
+            } else {
+                image(this.sprites[1],b.x,b.y,50,50);
+            }
             pop();
         }
     }
@@ -226,7 +232,7 @@ class Game{
     newLevel(){
 
         // Check if the game is over..
-        if(this.player.level > 1){ // PLACEHOLDER
+        if(this.player.level > 1){ // ==========================================================================PLACEHOLDER
 
             state.nextScene();
 
