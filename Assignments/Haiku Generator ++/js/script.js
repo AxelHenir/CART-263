@@ -9,9 +9,16 @@ let haikuLines = {
     `We are all forests`,
     `You have done your best`,
     `They are all gone now`,
-    "spaghetti on the stove",
+    "Spaghetti on the stove",
     "Invest in a vest",
     "You, you're not the best",
+    "Refrigerator",
+    "Fundraising for mice",
+    "Gamble your savings",
+    "Look both ways to cross",
+    "Arbitrary death",
+    "Coffee ground to dust",
+    "For the love of cheese",
 
     ],
     sevenSyllables: [
@@ -21,7 +28,11 @@ let haikuLines = {
     `Nothing can satisfy you`,
     `They will not come back again`,
     "Can't stand to me with that chest",
-    "Omae wa mo.. shindeiru",
+    "Omae wa mo shindeiru",
+    "Did you set it to wumbo?",
+    "The river flows up the hill",
+    "The clown frowns upon the meek",
+
 
     ]
 };
