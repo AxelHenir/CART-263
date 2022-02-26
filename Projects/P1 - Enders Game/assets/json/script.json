@@ -13,7 +13,7 @@
         },
 
         {
-            "game": true,
+            "game": false,
             "music": null,
             "images":{"bg": 0 , "slot1": 1 , "slot2": 0 },
             "lines": [
