@@ -79,31 +79,80 @@ function fadeLine(element) {
 // Sets the text of the element to a randomly chosen haiku line from the respective array
 function setNewLine(element) {
 
-    let same = false;
+    // Valid verse will track if the new line matched the previous or another line currently in the poem
+    let invalidVerse = true;
+
+    // Tracks the current verse
     let currentText = element.innerText;
 
-    while(!same){
+    
+    while(invalidVerse){
 
-        // Check if the line needs 5 or 7 syllables
-        if(element.id === `line-2`){
+        // Check which line we are switching
+        switch(element.id){
 
-            element.innerText = random(haikuLines.sevenSyllables);
+            case "line-1":
 
-        } else {
+                // Generate a new line
+                element.innerText = random(haikuLines.fiveSyllables);
 
-            element.innerText = random(haikuLines.fiveSyllables);
+                // Check to see if this new line matches the last and other 5 syllable line
+                if(currentText === element.innerText || element.innerText === document.getElementById("line-3").innerText){
+
+                    // If either were true, set the verse to invalid
+                    invalidVerse = true;
+
+                } else {
+
+                    // Otherwise, the verse is valid
+                    invalidVerse = false;
+
+                }
+
+                break;
+
+            case "line-2":
+
+                // Generate a new line 
+                element.innerText = random(haikuLines.sevenSyllables);
+
+                // Check to see if this new line matches the last and other 5 syllable line
+                if(currentText === element.innerText){
+
+                    // If it was the same, set the verse to invalid
+                    invalidVerse = true;
+
+                } else {
+
+                    // Otherwise, the verse is all good
+                    invalidVerse = false;
+                }
+
+                break;
+
+            case "line-3":
+
+                // Generate a new line
+                element.innerText = random(haikuLines.fiveSyllables);
+
+                // Check to see if this new line matches the last and other 5 syllable line
+                if(currentText === element.innerText || element.innerText === document.getElementById("line-1").innerText){
+
+                    // If either were true, set the verse to invalid
+                    invalidVerse = true;
+
+                } else {
+
+                    // Otherwise, the verse is valid
+                    invalidVerse = false;
+
+                }
+
+                break;
 
         }
 
-        if(currentText === element.innerText){
-
-            same = false;
-
-        } else {
-
-            same = true;
-
-        }
+        //invalidVerse = false;
 
     }
 
