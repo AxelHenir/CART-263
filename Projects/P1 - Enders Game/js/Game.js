@@ -6,7 +6,7 @@ class Game{
         this.sprites = sprites;
 
         // Wave size
-        this.WAVE_SIZE = 30;
+        this.WAVE_SIZE = 2;
 
         // Storage for bullets
         this.bullets = [];
@@ -29,7 +29,7 @@ class Game{
             GRACE_PERIOD: 200,
 
             // Time between shots (ms)
-            WEAPON_COOLDOWN: 100,
+            WEAPON_COOLDOWN: 225,
 
             hp:100,
             level:0,
@@ -72,7 +72,7 @@ class Game{
         }
     }
 
-    // Checks if any of the enemies contain the player) // Returns T/F
+    // Checks if any of the enemies contain the player // Returns T/F
     checkCollision(enemies, player){
         for(let i = 0; i < enemies.length; i++ ){
 
@@ -95,6 +95,8 @@ class Game{
             player.hp--;
             player.lastHit = millis();
 
+            audio.playFX(7);
+
         }
 
     }
@@ -112,8 +114,7 @@ class Game{
             this.bullets.push(bullet);
             player.lastShot = millis();
 
-            // BANG BANG ======================================================================PLACEHODLING
-            audio.playFX(0);
+            audio.playFX(6);
 
         }
         
@@ -185,12 +186,15 @@ class Game{
 
                 }
 
-            } else {
+            } else { // If the bullet is an enemy bullet
 
+                // Check distance
                 let d = dist(b.x,b.y,this.player.x,this.player.y);
                 if(d < this.player.size/2 + 25){ // Adequate bullet size (25)
                     this.player.hp -= 15; // Damage
                     dmgDealt = true; 
+
+                    audio.playFX(7);
                 }
 
             }
@@ -207,6 +211,8 @@ class Game{
         for(let i = 0; i < this.enemies.length ; i++ ) {
             if(this.enemies[i].hp <= 0){
                 this.enemies.splice(i,1);
+
+                audio.playFX(random([2,3,4]));
             }
         }
     }
@@ -223,6 +229,8 @@ class Game{
                 }
                 this.bullets.push(bullet);
                 enemies[i].cooldown = random(100,1000);
+
+                audio.playFX(5);
             }
             enemies[i].cooldown--;
         }
@@ -249,7 +257,7 @@ class Game{
             // re-Populate it
             for(let i = 0; i< this.WAVE_SIZE; i++ ){
 
-                let enemy = new Enemy();
+                let enemy = new Enemy(this.sprites);
     
                 this.enemies.push(enemy);
 

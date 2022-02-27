@@ -17,7 +17,7 @@ class Audio{
 
         }
 
-        const NUM_FX_FILES = 1;
+        const NUM_FX_FILES = 8;
         const FX_PATH = "assets/audio/fx/";
 
         // Container for FX files
