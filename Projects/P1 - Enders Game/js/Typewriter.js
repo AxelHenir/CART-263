@@ -1,3 +1,7 @@
+// Typewriter class
+
+// Responsible for "typing" the text out
+
 class Typewriter{
 
     constructor(speed){

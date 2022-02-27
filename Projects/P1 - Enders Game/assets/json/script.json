@@ -190,7 +190,7 @@
             "music": null,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
             "lines": [
-                { "speaker": "Captain Graff" , "fx": null , "line":  "Recruits. I hope you're well prepared."},
+                { "speaker": "Captain Graff" , "fx": null, "line":  "Recruits. I hope you're well prepared."},
                 { "speaker": "Captain Graff" , "fx": null , "line":  "I've been watching you all diligently these past years. You've all made remarkable progress."},
                 { "speaker": "Captain Graff" , "fx": null , "line":  "This simulation will be just like the ones you've done before but we will not be calling the shots."},
                 { "speaker": "Captain Graff" , "fx": null , "line":  "It will be up to you to decide how to best deal with the Formic enemies in this test."},

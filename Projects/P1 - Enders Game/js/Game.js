@@ -1,3 +1,8 @@
+// Game class
+
+// Handles the logic and gameplay of the game section of the program
+// 
+
 class Game{
 
     constructor(sprites){
@@ -23,6 +28,7 @@ class Game{
 
         }
 
+        // Player object
         this.player = {
 
             // Grace period, immunity to dmg after taking dmg (ms)
@@ -31,11 +37,20 @@ class Game{
             // Time between shots (ms)
             WEAPON_COOLDOWN: 225,
 
+            // Health
             hp:100,
+
+            // How many waves the player has cleared
             level:0,
+
+            // Size of the player's sprite
             size:100,
+
+            // X and Y position of the enemy
             x:0,
             y:0,
+
+            // Trackers for the delays in taking damage and shooting
             lastHit:0,
             lastShot:0,
         }
@@ -87,14 +102,19 @@ class Game{
         return false;
     }
 
-    // Deals 1 damage to the player and applies a small grace period
+    // Deals damage to the player and applies a small grace period
     damage(player){
 
+        // Check f the last grace period has finished
         if((millis() - player.lastHit) > player.GRACE_PERIOD){
             
+            // Take damage
             player.hp--;
+
+            // Apply new grace period
             player.lastHit = millis();
 
+            // Play the associated audio snippet
             audio.playFX(7);
 
         }
@@ -104,16 +124,23 @@ class Game{
     // Has the player shoot a bullet
     playerShoot(player){
 
+        // Check if its time to shoot!
         if((millis() - player.lastShot) > player.WEAPON_COOLDOWN){
 
+            // New bullet object
             let bullet = {
                 x:player.x,
                 y:player.y,
                 friendly:true,
             }
+
+            // Push it into the bullet array
             this.bullets.push(bullet);
+
+            // Set a timeout for next bullet
             player.lastShot = millis();
 
+            // Play the associated audio snippet
             audio.playFX(6);
 
         }
@@ -122,22 +149,34 @@ class Game{
 
     // Draws all bullet in the scene
     drawBullets(bullets){
+
+        // For each bullet,
         for(let i = 0; i < bullets.length; i++){
             let b = bullets[i];
             push();
             imageMode(CENTER, CENTER);
+
+            // Check if it is friendly
             if(b.friendly){
+
+                // Display the bullet using the corresponding sprite
                 image(this.sprites[0],b.x+15,b.y,50,50);
                 image(this.sprites[0],b.x-15,b.y,50,50);
+
             } else {
+
+                // Do the same if it's an enemy bullet
                 image(this.sprites[1],b.x,b.y,50,50);
             }
+
             pop();
         }
     }
 
     // Updates all bullets
     updateBullets(bullets){
+
+        // For each bullet,
         for(let i = 0; i < bullets.length; i++){
 
             // Friendly bullets go up
@@ -146,7 +185,7 @@ class Game{
                 // 7 Px / sec
                 bullets[i].y -= 7;
 
-            } else {
+            } else { // enemy bullets go down
 
                 // Enemy bullets 5px/sec
                 bullets[i].y += 5;
@@ -157,7 +196,7 @@ class Game{
     // Has the bullets do damage
     bulletDamage(){
 
-        // Tracks 
+        // Tracks if the bullet 
         let shot = false;
 
         // For each bullet,
@@ -199,6 +238,7 @@ class Game{
 
             }
 
+            // If the bullet dealt damage, splice it out.
             if(dmgDealt){
                 this.bullets.splice(i,1);
             }
@@ -208,10 +248,17 @@ class Game{
 
     // Cleans up the dead enemies
     cleanupDead(){
+
+        // Check each enemy's hp
         for(let i = 0; i < this.enemies.length ; i++ ) {
+
+            // If the enemy has 0 hp or less,
             if(this.enemies[i].hp <= 0){
+
+                // Kill it.
                 this.enemies.splice(i,1);
 
+                // Let its deathcry be heard
                 audio.playFX(random([2,3,4]));
             }
         }
@@ -220,18 +267,30 @@ class Game{
     // Has the enemies shoot
     enemyShoot(enemies){
 
+        // for each enemy,
         for(let i = 0; i < enemies.length; i++){
+
+            // Check if their shooting cooldown has elapsed
             if(enemies[i].cooldown < 0){
+
+                // If it has, make a new enemy bullet object
                 let bullet = {
                     x:enemies[i].x,
                     y:enemies[i].y,
                     friendly:false,
                 }
+
+                // Add it ot the bullet array
                 this.bullets.push(bullet);
+
+                // Set a new shoot cooldown for the enemy
                 enemies[i].cooldown = random(100,1000);
 
+                // Play the associated sound snippet
                 audio.playFX(5);
             }
+
+            // Decrement the cooldown timer of the enemy
             enemies[i].cooldown--;
         }
     }
@@ -317,7 +376,7 @@ class Game{
         // Cleanup the dead
         this.cleanupDead();
 
-        // Draw the elements
+        // Draw the various elements
 
         this.drawBullets(this.bullets);
         this.drawEnemies(this.enemies);

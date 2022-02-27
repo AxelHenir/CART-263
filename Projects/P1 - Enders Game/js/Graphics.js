@@ -1,8 +1,14 @@
+// Graphics class
+
+// Responsible for displaying the visuals of the program
+// Scrapes data for the current scene from the state class
+// Uses stored images to display the scene according to its data
+
 class Graphics{
 
     constructor(){
 
-        // Paths for loading
+        // Background image data
         const NUM_BG_IMAGES = 2;
         const BG_PREFIX = "assets/images/backgrounds/";
 
@@ -18,6 +24,7 @@ class Graphics{
 
         }
 
+        // Character image data
         const NUM_PPL_IMAGES = 6;
         const PPL_PREFIX = "assets/images/characters/";
 
@@ -33,11 +40,12 @@ class Graphics{
 
         }
 
-        // Other miscallaneous assets (if needed)
-        this.misc = [];
-
+        // Misc files data
         const NUM_MISC_IMAGES = 5;
         const MISC_PREFIX = "assets/images/misc/";
+
+        // Other miscallaneous assets (if needed)
+        this.misc = [];
 
         // Populate with files...
         for (let i = 0; i < NUM_MISC_IMAGES; i++) {
@@ -48,7 +56,7 @@ class Graphics{
 
         }
 
-        // Typewriter object for text
+        // Typewriter object for text, speed 15ms between characters
         const TYPEWRITER_SPEED = 15;
         this.typeWriter = new Typewriter(TYPEWRITER_SPEED);
         
@@ -64,8 +72,10 @@ class Graphics{
         // Check firstly if we are gaming
         if(scene.game){
 
+            // Space!
             background(33, 25, 46);
 
+            // Ask the game class to update the data and display the current frame
             this.game.updateGame();
 
         } else {
@@ -73,6 +83,7 @@ class Graphics{
             // Typwriter update 
             this.typeWriter.updateTypewriter();
 
+            // Scrape the state class for the data in this scene
             let bg = scene.images.bg;
             let slot1 = scene.images.slot1;
             let slot2 = scene.images.slot2;
@@ -111,6 +122,7 @@ class Graphics{
 
     }
 
+    // DEBUG - Next line
     next(){
 
         // Ask for a new state from state class
