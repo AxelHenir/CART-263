@@ -40,6 +40,8 @@ function setup() {
   // Various display settings
   textAlign(CENTER, CENTER);
 
+  loadSavedData();
+
 }
 
 // Driver function of the program - calls graphics to display the scene
