@@ -14,7 +14,7 @@
 
         {
             "game": false,
-            "music": null,
+            "music": 2,
             "images":{"bg": 0 , "slot1": 3 , "slot2": 5 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Years ago, an alien vessel appeared in our Solar system."},
@@ -65,7 +65,7 @@
 
         {
             "game": false,
-            "music": null,
+            "music": 0,
             "images":{"bg": 0 , "slot1": 3 , "slot2": 5 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Final exam day."},
@@ -322,7 +322,7 @@
 
         {
             "game": false,
-            "music": null,
+            "music": 4,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
             "lines": [
                 { "speaker": "Ender" , "fx": null , "line":  "Well done everyone!"},

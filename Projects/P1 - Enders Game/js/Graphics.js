@@ -132,6 +132,4 @@ class Graphics{
         this.typeWriter.index = 0;
     }
 
-    
-
 }
