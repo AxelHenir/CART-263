@@ -184,7 +184,31 @@
 
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The cafeteria was the loudest I've heard it since I first got here. All the teams at the other tables are in good spirit."}
             ]
-        }
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Recruits. I hope you're well prepared."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "I've been watching you all diligently these past years. You've all made remarkable progress."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "This simulation will be just like the ones you've done before but we will not be calling the shots."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "It will be up to you to decide how to best deal with the Formic enemies in this test."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Sergeant, you can explain the ruling. Once we're all on board, we will begin."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "ALRIGHT EVERYONE, LISTEN CLOSELY."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "I'M ONLY GOING TO EXPLAIN THIS ONCE."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "ENDER WILL BE YOUR TACTICIAN."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "EVERYONE ELSE WILL BE AT THEIR USUAL BATTLESTATIONS."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "IN ADDITION TO YOUR OWN DREADNOUGHTS, YOU WILL ALSO HAVE AND ASSISTING FLEET."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "YOUR GOAL IS TO ELIMINATE THE ENEMIES BY ANY MEANS."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "ENDER."},
+
+
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "USE THE MOUSE TO MOVE YOUR BATTLECRUISER AND HOLD THE RIGHT MOUSE BUTTON TO FIRE YOUR YAMATO CANNONS."},
+                
+            ]
+        },
 
         
 
