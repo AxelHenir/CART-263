@@ -180,9 +180,8 @@
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "They were right: all my life I've done nothing but worry."},
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "All my life I have been picked on."},
                 { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Here, I fit in. Of all places, Battle School."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "I smiled and finished my breakfast."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "I smiled and finished my breakfast."}
 
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The cafeteria was the loudest I've heard it since I first got here. All the teams at the other tables are in good spirit."}
             ]
         },
 
@@ -204,13 +203,196 @@
                 { "speaker": "Sgt. Dap" , "fx": null , "line":  "YOUR GOAL IS TO ELIMINATE THE ENEMIES BY ANY MEANS."},
                 { "speaker": "Sgt. Dap" , "fx": null , "line":  "ENDER."},
 
-
                 { "speaker": "Sgt. Dap" , "fx": null , "line":  "USE THE MOUSE TO MOVE YOUR BATTLECRUISER AND HOLD THE RIGHT MOUSE BUTTON TO FIRE YOUR YAMATO CANNONS."},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "IMPRESS US AND YOU WILL ALL GRADUATE TO COMMAND SCHOOL. ARE WE CLEAR?"},
+                { "speaker": "Everyone" , "fx": null , "line":  "SIR, YES SIR!"}
                 
             ]
         },
 
-        
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Ender" , "fx": null , "line":  "Alright Dragons, let's show them who's boss!"}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Alright, let's get a sitrep on the situation."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "What are those? Hive clusters?"},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "And this planet..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "My scanners indicate that this is their homeworld."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "There's activity but they don't seem to notice us."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We might need to get closer to see how they attack us."}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Ender" , "fx": null , "line":  "Left wing, deploy scouting drones."},
+                { "speaker": "Ender" , "fx": null , "line":  "Right wing, ready the photon cannons and await my orders."},
+                { "speaker": "Ender" , "fx": null , "line":  "Central, chart a course to orbit the planet at 44 degrees off the prime meridian."},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "They're not approaching us."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "What's happening?"},
+
+                { "speaker": "Ender" , "fx": null , "line":  "..."},
+
+                { "speaker": "Petra" , "fx": null , "line":  "Ender? What are your orders?"},
+
+                { "speaker": "Ender" , "fx": null , "line":  "I want to lure them away before attacking. We can't attack that many head-on."},
+                { "speaker": "Ender" , "fx": null , "line":  "Scouts, fly as close as you can to the enemy."},
+                { "speaker": "Ender" , "fx": null , "line":  "Keep a distance of 5 kilometres at all costs. If they follow, bring them to us."},
+                { "speaker": "Ender" , "fx": null , "line":  "Assistance fleet, take on a delta-formation and get ready to catch them as they fly towards us."},
+
+                { "speaker": "Assistance Cpt." , "fx": null , "line":  "Roger."},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "They're not attacking us like they usually do..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Is this a trap?"},
+
+                { "speaker": "Petra" , "fx": null , "line":  "Hey! You're way too close!"},
+                { "speaker": "Ender" , "fx": null , "line":  "Huh?"},
+                { "speaker": "Petra" , "fx": null , "line":  "The assistance fleet is approaching the homeworld."},
+                { "speaker": "Ender" , "fx": null , "line":  "What?!"},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Sure enough, the fleet assumed the formation..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "but they're encroaching on their territory."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Assistance fleet?"},
+                { "speaker": "Ender" , "fx": null , "line":  "Assistance fleet!?"},
+                { "speaker": "Ender" , "fx": null , "line":  "Come in, Assistance fleet?!!"},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "..."},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Not good."},
+
+                { "speaker": "Petra" , "fx": null , "line":  "They're attacking the homeworld!"},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "What is going on?!"},
+
+                { "speaker": "Ender" , "fx": null , "line":  "ASSISTANCE FLEET. TURN BACK NOW."},
+
+                { "speaker": "Assistance Cpt." , "fx": null , "line":  "Roger. Sorry, we were being interfered with."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Interfered with? Was it the Formic?"},
+
+                { "speaker": "Assistance Cpt." , "fx": null , "line":  "Unknown. Our thrusters engaged suddenly and our comms were cut off."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Okay. Fall back. Await my orders."},
+
+                { "speaker": "Assistance Cpt." , "fx": null , "line":  "Roger."},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "What was that?"},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Did the Formic use some sort of trap on us?"},
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We need to exercise caution."},
+
+                { "speaker": "Petra" , "fx": null , "line":  "Ender. They're swarming!"},
+
+                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The radar was lit up with a massive swarm of Formic aliens."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Okay."},
+                { "speaker": "Ender" , "fx": null , "line":  "EVERYONE, BATTLE POSITIONS."},
+                { "speaker": "Ender" , "fx": null , "line":  "Maintain a concave on them."},
+                { "speaker": "Ender" , "fx": null , "line":  "Dreadnoughts, provide cover fire."},
+                { "speaker": "Ender" , "fx": null , "line":  "Battlecruisers, now's the time!"},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Let's end this!"}
+                
+            ]
+        },
+
+        {
+            "game": true,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": []
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "lines": [
+                { "speaker": "Ender" , "fx": null , "line":  "Well done everyone!"},
+                { "speaker": "Petra" , "fx": null , "line":  "Those were some fancy moves, Ender!"},
+                { "speaker": "Sgt. Dap" , "fx": null , "line":  "Congratulations, cadets!"},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "The world will forver know your name, Ender."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "The war is as good as over."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Thank you, Captain."},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "No, it's you who I should be thanking, Ender. Your heoric acts have saved us."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "This wasn't a simulation."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Wait."},
+                { "speaker": "Ender" , "fx": null , "line":  "What?"},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "I placed my faith in you, Ender. You followed through and now the Formic species has been decimated."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "You will go down in history as the greatest tactician ever known. You've saved the Earth."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "I'm confused."},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "The war is over. You won."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "That wasn't a simulation? I really just ordered the genocide of nearly an entire alien species?"},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Genocide is not the right word. You're a hero, Ender. What you did will be remembered for the rest of time."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "No."},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Ender.."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "No..."},
+                { "speaker": "Ender" , "fx": null , "line":  "This is wrong."},
+                { "speaker": "Ender" , "fx": null , "line":  "This wasn't heroic at all, Captain."},
+                { "speaker": "Ender" , "fx": null , "line":  "They never aggressed on us. We assaulted their homeworld and wiped them out without having a second thought for peace."},
+                { "speaker": "Ender" , "fx": null , "line":  "They were waiting. I saw it."},
+                { "speaker": "Ender" , "fx": null , "line":  "This was all planned?"},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Ender..."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "People are going to call me a hero for this?"},
+                { "speaker": "Ender" , "fx": null , "line":  "For being tricked into genociding an entire race?"},
+                { "speaker": "Ender" , "fx": null , "line":  "There's nothing heroic about that. I'm no better than an bloodthirsty warlord."},
+                { "speaker": "Ender" , "fx": null , "line":  "There were millions of them."},
+                { "speaker": "Ender" , "fx": null , "line":  "There were likely more than 50 million."},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Ender."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "50 MILLION FORMIC LIVES."},
+                { "speaker": "Ender" , "fx": null , "line":  "ALL GONE."},
+                { "speaker": "Ender" , "fx": null , "line":  "OBLITERATED AND FORGOTTEN."},
+
+                { "speaker": "Petra" , "fx": null , "line":  "Ender, you didn't know-"},
+
+                { "speaker": "Ender" , "fx": null , "line":  "It's easy for you to say that when you're just following orders."},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Ender. This is enough."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "Have you lost your mind?"},
+
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Ender."},
+
+                { "speaker": "Ender" , "fx": null , "line":  "How are you going to sleep at night with this on your conscience?"},
+                { "speaker": "Ender" , "fx": null , "line":  "PLEASE, tell me. I want to know."},
+                
+                { "speaker": "Captain Graff" , "fx": null , "line":  "ENOUGH."},
+                { "speaker": "Captain Graff" , "fx": null , "line":  "Everyone else, return to your quarters."}
+
+            ]
+        }
 
     ]
 
