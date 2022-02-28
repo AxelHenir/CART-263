@@ -22,3 +22,20 @@ Q = Next scene
 W = (DEBUG) Load the saved scene
 S = (DEBUG) Save the current scene to memory
 X = (DEBUG) Clears the local storage
+
+External assets used:
+
+Starcraft 2 OST - Heaven's Devils:
+https://www.youtube.com/watch?v=qDKQj7xdFsA&t=109s
+
+Starcraft 2 Viper Sound effects:
+https://www.youtube.com/watch?v=VwX1CBakG80
+
+Nuclear Throne Sound effects:
+https://www.youtube.com/watch?v=zjevNxfEssI&t=737s
+
+Chicken Invaders 3 OST - Main theme, Comet chase theme, Boss theme
+https://www.youtube.com/watch?v=OV7Vz0Z7Zs0&list=PLyPOnd_k8oeAj-H3KiMcC-CTIbaAmeJyY&index=1
+https://www.youtube.com/watch?v=0HAVaSO27CA&list=PLyPOnd_k8oeAj-H3KiMcC-CTIbaAmeJyY&index=5
+https://www.youtube.com/watch?v=4oictbbXpJ0&list=PLyPOnd_k8oeAj-H3KiMcC-CTIbaAmeJyY&index=6
+
