@@ -107,10 +107,13 @@ function keyPressed(){
 
   switch(keyCode){
 
-    case 81: // Q = Next Line
+    case 81: // Q = Next Line, only if not in game mode
 
-      // Next scene
-      gpu.next();
+      if(!state.scene.game){
+        // Next scene
+        gpu.next();
+      }
+      
 
       break;
 
