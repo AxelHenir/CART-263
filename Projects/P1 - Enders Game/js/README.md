@@ -15,3 +15,10 @@ was a lie. This is the moment I wanted to capture, the moment where all of his p
 To accomplish this, I designed my program to be half-story, half-game. It was also crucial that I have it remember your progress so that the feeling of "irreversible damage" felt real. The user will only get to play through the game one time. When it finishes, there will be no do-overs, no going back and no recourse. I want the player to feel cheated and manipulated. 
 
 I took an Elon Musk inspired approach and built a program which could enact any scene I gave it. My vision for it was that I could feed the program a screenplay and have it display the right characters, the text, the background, music, all of that. To achieve this, I made my program very modular. In this regard, the program's functionality is decentralized and instead spread out over many class files. For example, the graphics class would be in charge of displaying everything visual. The audio class handles all the audio. Everything else is an offshoot of those two classes. The state class tracks what the state of the program is. (Are we in game mode? Which scene is active, which line of dialogue to display, etc.) The script itself is composed of an array of objects which contain the properties of the scene. 
+
+CONTROLS:
+
+Q = Next scene
+W = (DEBUG) Load the saved scene
+S = (DEBUG) Save the current scene to memory
+X = (DEBUG) Clears the local storage
