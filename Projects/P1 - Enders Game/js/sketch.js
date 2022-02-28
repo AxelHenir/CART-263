@@ -40,6 +40,7 @@ function setup() {
   // Various display settings
   textAlign(CENTER, CENTER);
 
+  // Check for and load any saved data
   loadSavedData();
 
 }

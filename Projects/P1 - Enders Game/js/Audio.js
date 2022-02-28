@@ -9,7 +9,7 @@ class Audio{
     constructor(){
 
         // Music files data
-        const NUM_MUSIC_FILES = 5;
+        const NUM_MUSIC_FILES = 8;
         const MUSIC_PATH = "assets/audio/music/";
 
         // Container for the music files

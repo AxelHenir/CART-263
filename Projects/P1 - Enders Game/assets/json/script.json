@@ -14,84 +14,98 @@
 
         {
             "game": false,
-            "music": 2,
-            "images":{"bg": 0 , "slot1": 3 , "slot2": 5 },
+            "music": 6,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
             "lines": [
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Years ago, an alien vessel appeared in our Solar system."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It was massive- easily the size of a city."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Scientists suggested making contact with the vessel in the hopes of brokering peace."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The ship arrived on Earth and hovered in the sky. It appeared to be waiting for our first move."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "However..."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It didn't wait long before it released hundreds of thousands of brood."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "They swarmed around the mothership and in an act of self defense, the Earth began attacking them."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Aggravated, the swarms fought back."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Their onslaught was unrelenting. Should we have waited any longer, they would have overpowered us."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Armies from around the globe unleashed their might and wrath on the invaders to no avail."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Years ago, an alien vessel appeared in our Solar system."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It was massive- easily the size of a city."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Scientists suggested making contact with the vessel in the hopes of brokering peace."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The ship arrived on Earth and hovered in the sky. It appeared to be waiting for our first move."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "However..."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It didn't wait long before it released hundreds of thousands of brood."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They swarmed around the mothership and in an act of self defense, the Earth began attacking them."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Aggravated, the swarms fought back."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Their onslaught was unrelenting. Should we have waited any longer, they would have overpowered us."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Armies from around the globe unleashed their might and wrath on the invaders to no avail."},
 
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The sheer size of the swarm was overwhelming."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We had to resort to a last-ditch effort to annihilate the aliens."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "A brave team of fighter jet pilots stepped up to the plate with a plan. It was bold and daring but it was our only hope."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "They worked together to fly a nuclear warhead through the swarm..."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "...and into the heart of the mothership."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The pilots gave their lives to defend all of humanity."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The sheer size of the swarm was overwhelming."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We had to resort to a last-ditch effort to annihilate the aliens."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "A brave team of fighter jet pilots stepped up to the plate with a plan. It was bold and daring but it was our only hope."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They worked together to fly a nuclear warhead through the swarm..."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "...and into the heart of the mothership."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The pilots gave their lives to defend all of humanity."},
 
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "This selfless act woke the world up to the reality of our situation."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We were not alone."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Not only that but we were also heavily outnumbered and out-gunned."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We had to make a change to how we work as a species if we ever wanted to stand a chance if they came back."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This selfless act woke the world up to the reality of our situation."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We were not alone."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Not only that but we were also heavily outnumbered and out-gunned."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We had to make a change to how we work as a species if we ever wanted to stand a chance if they came back."},
 
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "This lead to the founding of International Battle School, a place for young, bright minds to train to fight the Formic aliens."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "In Battle School, we studied the enemy,"},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We trained hand-to-hand combat,"},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We gunned down hundreds of formic vessels in complex simulations."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "We went through thick and thin together, as brothers and sisters."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "For the past 5 years, we have been training."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Every morning, I woke up knowing that the world was counting on our success."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It was difficult,"},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It was demanding,"},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It forged me into a warrior."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "It forged all of us into warriors."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This lead to the founding of International Battle School, a place for young, bright minds to train to fight the Formic aliens."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "In Battle School, we studied the enemy,"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We trained hand-to-hand combat,"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We gunned down hundreds of formic vessels in complex simulations."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We went through thick and thin together, as brothers and sisters."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "For the past 5 years, we have been training."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Every morning, I woke up knowing that the world was counting on our success."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It was difficult,"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It was demanding,"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It forged me into a warrior."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It forged all of us into warriors."},
 
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Today was the big day."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "This was the day of our final examination."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The culmination of all the blood, sweat and tears."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The day we would quench our battleforged bodies and minds."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "This anticipation simmered deep within as I slept my final days away as a recruit."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "The next time I open my eyes and look in the mirror, I won't see the cowardly boy I once was."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "I will see the hero I always wanted to be."}
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Today was the big day."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This was the day of our final examination."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The culmination of all the blood, sweat and tears."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The day we would quench our battleforged bodies and minds."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This anticipation simmered deep within as I slept my final days away as a recruit."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The next time I open my eyes and look in the mirror, I won't see the cowardly boy I once was."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "I will see the hero I always wanted to be."}
                 
             ]
         },
 
         {
             "game": false,
-            "music": 0,
-            "images":{"bg": 0 , "slot1": 3 , "slot2": 5 },
+            "music": 4,
+            "images":{"bg": 0 , "slot1": 3 , "slot2": 0 },
             "lines": [
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Final exam day."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "I sat up in my bunk and saw the familiar faces of my cohort. They too, were beginning to wake up."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Any moment now, Sergeant Dap would march into our quarters and deliver the itinerary."},
-                { "speaker": "Petra" , "fx": null , "line":  "Mornin' Ender."},
-                { "speaker": "Ender" , "fx": null , "line":  "Hey Petra. Ready for today?"},
-                { "speaker": "Petra" , "fx": null , "line":  "Yup. How about you?"},
-                { "speaker": "Ender" , "fx": null , "line":  "Ready to get of here, that's for sure, hahaha"},
-                { "speaker": "Petra" , "fx": null , "line":  "Yeah, I think we're all aching to see some action. I know I am."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Petra's our team captain."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "She's aced every solo simulation in the database and she knows just about everything there is to know about our enemy."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "In my mind, she's the best person for the job."},
-                { "speaker": "Petra" , "fx": null , "line":  "Let's show the commander what we can do, Ender. Let's show humanity that they can count on us."},
-                { "speaker": "Ender" , "fx": null , "line":  "Yeah, this is our big moment. No way in hell I'm giving anything but my all."}
-                
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Final exam day."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "I sat up in my bunk and saw the familiar faces of my cohort. They too, were beginning to wake up."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Any moment now, Sergeant Dap would march into our quarters and deliver the itinerary."}
             ]
         },
 
         {
             "game": false,
-            "music": null,
-            "images":{"bg": 0 , "slot1": 1 , "slot2": 2 },
+            "music": 4,
+            "images":{"bg": 0 , "slot1": 3 , "slot2": 23 },
             "lines": [
-                { "speaker": "Ender (Thinking)" , "fx": null , "line":  "Just as I finished that thought, we both heard it. We all heard it."},
-                { "speaker": "Ender" , "fx": null , "line": "None other than Sergeant Dap marched into our sleeping quarters and stood vigilantly by the door."}
+                { "speaker": "Petra" , "fx": 1 , "line":  "Mornin' Ender."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Hey Petra. Ready for today?"},
+                { "speaker": "Petra" , "fx": 1 , "line":  "Yup. How about you?"},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Ready to get of here, that's for sure, hahaha"},
+                { "speaker": "Petra" , "fx": 1 , "line":  "Yeah, I think we're all aching to see some action. I know I am."}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": 4,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 23 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Petra's our team captain."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "She's aced every solo simulation in the database and she knows just about everything there is to know about our enemy."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "In my mind, she's the best person for the job."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": 4,
+            "images":{"bg": 0 , "slot1": 3 , "slot2": 23 },
+            "lines": [
+                { "speaker": "Petra" , "fx": 1 , "line":  "Let's show the commander what we can do, Ender. Let's show humanity that they can count on us."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Yeah, this is our big moment. No way in hell I'm giving anything but my all."}
             ]
         },
 
@@ -100,18 +114,28 @@
             "music": null,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
             "lines": [
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "SERGEANT ON DECK!"},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line": "A robotic storage unit rolled into the room and parked itself next to him. Its door opened, revealing a dozen orange jumpsuits."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line": "We all scrambled and stood ourselves up in front of our respective bunks."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "AT EASE, RECRUITS."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line": "Everyone relaxed their posture and held their hands behind their back. Sgt. Dap continued..."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Just as I finished that thought, we both heard it. We all heard it."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "None other than Sergeant Dap marched into our sleeping quarters and stood vigilantly by the door."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 32 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "SERGEANT ON DECK!"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "A robotic storage unit rolled into the room and parked itself next to him. Its door opened, revealing a dozen orange jumpsuits."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "We all scrambled and stood ourselves up in front of our respective bunks."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "AT EASE, RECRUITS."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "Everyone relaxed their posture and held their hands behind their back. Sgt. Dap continued..."},
                 
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "AS MOST OF YOU MIGHT KNOW, IT'S EXAM DAY TODAY."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "WE WILL BE EVALUATING YOUR PERFORMANCE IN A SIMULATION THAT WILL TEST EVERYTHING YOU LEARNED TO THIS VERY MOMENT."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "THE WORLD IS COUNTING ON YOU LOT."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "GET YOUR RESPECTIVE JUMPSUIT FROM THIS UNIT, GET YOUR BREAKFAST AND MEET ME IN THE SIMULATION LAB IN ONE HOUR."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "DO NOT BE LATE."},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "UNDERSTOOD, RECRUITS?"}
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "AS MOST OF YOU MIGHT KNOW, IT'S EXAM DAY TODAY."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "WE WILL BE EVALUATING YOUR PERFORMANCE IN A SIMULATION THAT WILL TEST EVERYTHING YOU'VE LEARNED."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "THE WORLD IS COUNTING ON YOU LOT."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "GET YOUR JUMPSUIT FROM THIS UNIT, GET YOUR BREAKFAST AND MEET ME IN THE SIMULATION LAB IN ONE HOUR."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "DO NOT BE LATE."},
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "UNDERSTOOD, RECRUITS?"}
 
             ]
         },
@@ -121,12 +145,33 @@
             "music": null,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
             "lines": [
-                { "speaker": "Everyone" , "fx": null , "line": "SIR, YES SIR!"},
-                { "speaker": "Sgt. Dap" , "fx": null , "line": "As you were."},
-                { "speaker": "Ender (Thinking)" , "fx": null , "line": "He left the quarters at a brisk pace and everyone lined up to get their jumpuits."}
-                
+                { "speaker": "Everyone" , "fx": 1 , "line": "SIR, YES SIR!"}
             ]
         },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 32 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "As you were."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "He left the quarters at a brisk pace and everyone lined up to get their jumpuits."}
+            ]
+        },
+
+
+
+
+
+
 
         {
             "game": false,

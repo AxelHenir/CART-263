@@ -25,7 +25,7 @@ class Graphics{
         }
 
         // Character image data
-        const NUM_PPL_IMAGES = 6;
+        const NUM_PPL_IMAGES = 35;
         const PPL_PREFIX = "assets/images/characters/";
 
         // Container for files of the characters
