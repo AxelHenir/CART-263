@@ -78,9 +78,8 @@ class Enemy{
                 // If the enemy is offscreen, draw a warning indicator on the top of the screen
                 if(this.y < -100){
                     push();
-                    ellipseMode(CENTER);
-                    fill(255,255,100); 
-                    ellipse(this.x, 50, 25, 25);
+                    imageMode(CENTER,CENTER);
+                    image(this.sprites[5],this.x, 50, 50, 50);
                     pop();
                 } else { // Otherwise, draw the enemy itself
                     push();

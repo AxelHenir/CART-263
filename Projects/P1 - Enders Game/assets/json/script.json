@@ -15,31 +15,56 @@
         {
             "game": false,
             "music": 6,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "images":{"bg": 1 , "slot1": 0 , "slot2": 0 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Years ago, an alien vessel appeared in our Solar system."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It was massive- easily the size of a city."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Scientists suggested making contact with the vessel in the hopes of brokering peace."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The ship arrived on Earth and hovered in the sky. It appeared to be waiting for our first move."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "However..."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It didn't wait long before it released hundreds of thousands of brood."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They swarmed around the mothership and in an act of self defense, the Earth began attacking them."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Aggravated, the swarms fought back."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "However..."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 3 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It didn't wait long before it released hundreds of thousands of its brood."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They swarmed visiously around the mothership."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Frightened, Earth decided to attack. They wanted to eliminte the threat before any damage was caused."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The swarms fought back."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Their onslaught was unrelenting. Should we have waited any longer, they would have overpowered us."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Armies from around the globe unleashed their might and wrath on the invaders to no avail."},
-
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The sheer size of the swarm was overwhelming."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We had to resort to a last-ditch effort to annihilate the aliens."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "A brave team of fighter jet pilots stepped up to the plate with a plan. It was bold and daring but it was our only hope."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They worked together to fly a nuclear warhead through the swarm..."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They worked together to fly a nuclear warhead through the swarm..."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 4 , "slot1": 0 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "...and into the heart of the mothership."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The pilots gave their lives to defend all of humanity."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This selfless act woke the world up to the reality of our situation."}
+            ]
+        },
 
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This selfless act woke the world up to the reality of our situation."},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 5 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                
+
+
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We were not alone."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Not only that but we were also heavily outnumbered and out-gunned."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We had to make a change to how we work as a species if we ever wanted to stand a chance if they came back."},
-
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This lead to the founding of International Battle School, a place for young, bright minds to train to fight the Formic aliens."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "In Battle School, we studied the enemy,"},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We trained hand-to-hand combat,"},
@@ -52,12 +77,13 @@
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It forged me into a warrior."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "It forged all of us into warriors."},
 
+
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Today was the big day."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This was the day of our final examination."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The culmination of all the blood, sweat and tears."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The day we would quench our battleforged bodies and minds."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This anticipation simmered deep within as I slept my final days away as a recruit."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The next time I open my eyes and look in the mirror, I won't see the cowardly boy I once was."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The next time I open my eyes and look in the mirror, I wouldn't see the cowardly boy I once was."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "I will see the hero I always wanted to be."}
                 
             ]
@@ -65,7 +91,7 @@
 
         {
             "game": false,
-            "music": 4,
+            "music": 0,
             "images":{"bg": 0 , "slot1": 3 , "slot2": 0 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Final exam day."},
@@ -76,13 +102,13 @@
 
         {
             "game": false,
-            "music": 4,
+            "music": null,
             "images":{"bg": 0 , "slot1": 3 , "slot2": 23 },
             "lines": [
                 { "speaker": "Petra" , "fx": 1 , "line":  "Mornin' Ender."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Hey Petra. Ready for today?"},
                 { "speaker": "Petra" , "fx": 1 , "line":  "Yup. How about you?"},
-                { "speaker": "Ender" , "fx": 1 , "line":  "Ready to get of here, that's for sure, hahaha"},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Ready to get of here, that's for sure, Haha"},
                 { "speaker": "Petra" , "fx": 1 , "line":  "Yeah, I think we're all aching to see some action. I know I am."}
 
             ]
@@ -90,7 +116,7 @@
 
         {
             "game": false,
-            "music": 4,
+            "music": null,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 23 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Petra's our team captain."},
@@ -101,7 +127,7 @@
 
         {
             "game": false,
-            "music": 4,
+            "music": null,
             "images":{"bg": 0 , "slot1": 3 , "slot2": 23 },
             "lines": [
                 { "speaker": "Petra" , "fx": 1 , "line":  "Let's show the commander what we can do, Ender. Let's show humanity that they can count on us."},
@@ -121,15 +147,50 @@
 
         {
             "game": false,
+            "music": 5,
+            "images":{"bg": 0 , "slot1": 32 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "SERGEANT ON DECK!"}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "A robotic storage unit rolled into the room and parked itself next to him. Its door opened, revealing a dozen orange jumpsuits."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "We all scrambled and stood ourselves up in front of our respective bunks."}
+
+            ]
+        },
+
+        {
+            "game": false,
             "music": null,
             "images":{"bg": 0 , "slot1": 32 , "slot2": 0 },
             "lines": [
-                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "SERGEANT ON DECK!"},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "A robotic storage unit rolled into the room and parked itself next to him. Its door opened, revealing a dozen orange jumpsuits."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "We all scrambled and stood ourselves up in front of our respective bunks."},
-                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "AT EASE, RECRUITS."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "Everyone relaxed their posture and held their hands behind their back. Sgt. Dap continued..."},
-                
+                { "speaker": "Sgt. Dap" , "fx": 1 , "line": "AT EASE, RECRUITS."}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "Everyone relaxed their posture and held their hands behind their back. Sgt. Dap continued..."}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 32 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line": "AS MOST OF YOU MIGHT KNOW, IT'S EXAM DAY TODAY."},
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line": "WE WILL BE EVALUATING YOUR PERFORMANCE IN A SIMULATION THAT WILL TEST EVERYTHING YOU'VE LEARNED."},
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line": "THE WORLD IS COUNTING ON YOU LOT."},
@@ -170,7 +231,7 @@
         {
             "game": false,
             "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 14 },
+            "images":{"bg": 0 , "slot1": 0 , "slot2": 16 },
             "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line": "Wow, mine fits perfectly."}
                 
@@ -180,16 +241,34 @@
         {
             "game": false,
             "music": null,
-            "images":{"bg": 0 , "slot1": 28 , "slot2": 14 },
+            "images":{"bg": 0 , "slot1": 28 , "slot2": 16 },
             "lines": [
                 { "speaker": "Petra" , "fx": 1 , "line": "Mine too!"},
-                { "speaker": "Petra" , "fx": 1 , "line": "These are great, it feels like we're a real squadron!"},
+                { "speaker": "Petra" , "fx": 1 , "line": "These are great, it feels like we're a real squadron!"}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 26 , "slot2": 14 },
+            "lines": [
 
                 { "speaker": "Ender" , "fx": 1 , "line": "Well, thats the plan isn't it?"},
                 { "speaker": "Petra" , "fx": 1 , "line": "Yeah. I hope our exam is extra hard."},
                 { "speaker": "Ender" , "fx": 1 , "line": "What? Why?"},
                 { "speaker": "Petra" , "fx": 1 , "line": "Well Ender, I, for one, like a challenge."},
-                { "speaker": "Ender" , "fx": 1 , "line": "Of course you do. Do you want me to do the exam blindfolded?"},
+                { "speaker": "Ender" , "fx": 1 , "line": "Of course you do. Do you want me to do the exam blindfolded?"}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 28 , "slot2": 16 },
+            "lines": [
 
                 { "speaker": "Petra" , "fx": 1 , "line": "Haha, I'm only kidding."},
                 { "speaker": "Petra" , "fx": 1 , "line": "You can do what you want though, don't let me rain on your parade."},
@@ -199,7 +278,16 @@
                 { "speaker": "Ender" , "fx": 1 , "line": "Oh."},
                 { "speaker": "Ender" , "fx": 1 , "line": "Wait, it does, Haha"},
                 { "speaker": "Petra" , "fx": 1 , "line": "That's just because you don't call their shots. Imagine if they had a Formic Ender."},
-                { "speaker": "Ender" , "fx": 1 , "line": "I'm gonna pretend you didn't just say 'Formic Ender', Haha"},
+                { "speaker": "Ender" , "fx": 1 , "line": "I'm gonna pretend you didn't just say 'Formic Ender', Haha"}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 0 , "slot1": 26 , "slot2": 14 },
+            "lines": [
 
                 { "speaker": "Ender" , "fx": 1 , "line": "This will be just like every other simulation."},
                 { "speaker": "Ender" , "fx": 1 , "line": "We'll take it slow and steady, watch their movements and react."},
@@ -221,7 +309,7 @@
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "We marched into the lab and stood at attention."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "This was it."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "When we first arrived here, all I could think about was this moment."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "..And it's finally here."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "...And it's finally here."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line": "I took a deep breath and Captain Graff welcomed us."}
                 
             ]
@@ -229,14 +317,24 @@
 
         {
             "game": false,
-            "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "music": 7,
+            "images":{"bg": 6 , "slot1": 32 , "slot2": 34 },
             "lines": [
                 { "speaker": "Captain Graff" , "fx": 1, "line":  "Recruits. I hope you're well prepared."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "I've been watching you all diligently these past years. You've all made remarkable progress."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "This simulation will be just like the ones you've done before but we will not be calling the shots."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "It will be up to you to decide how to best deal with the Formic enemies in this test."},
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Sergeant, you can explain the ruling. Once we're all on board, we will begin."},
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Sergeant, you can explain the ruling. Once we're all on board, we will begin."}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 32 , "slot2": 0 },
+            "lines": [
+
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line":  "ALRIGHT EVERYONE, LISTEN CLOSELY."},
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line":  "I'M ONLY GOING TO EXPLAIN THIS ONCE."},
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line":  "AS PER USUAL, ENDER WILL BE YOUR TACTICIAN."},
@@ -258,7 +356,7 @@
         {
             "game": false,
             "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "images":{"bg": 6 , "slot1": 24 , "slot2": 0 },
             "lines": [
                 { "speaker": "Petra" , "fx": 1 , "line":  "Alright Dragons, it's showtime!"},
                 { "speaker": "Petra" , "fx": 1 , "line":  "Felix, Claire, You're on West scouting."},
@@ -274,7 +372,7 @@
         {
             "game": false,
             "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "images":{"bg": 7 , "slot1": 0 , "slot2": 0 },
             "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "I took a seat in a large chair and put my visor on."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "I saw my name flash and then the simulation began."},
@@ -292,56 +390,157 @@
         {
             "game": false,
             "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "images":{"bg": 7 , "slot1": 13 , "slot2": 0 },
             "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "Left wing, deploy scouting drones."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Right wing, ready the photon cannons and await my orders."},
-                { "speaker": "Ender" , "fx": 1 , "line":  "Central, chart a course to orbit the planet at 44 degrees off the prime meridian."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Central, chart a course to orbit the planet at 44 degrees off the prime meridian."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 0 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Team Comms" , "fx": 1 , "line":  "ROGER. Moving into position."},
 
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "We waited for a few minutes but the Formic remained calm and unresponsive to our advances."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "..."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "..."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They're not approaching us."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "What's happening?"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "What's happening?"}
+            ]
+        },
 
-                { "speaker": "Ender" , "fx": 1 , "line":  "..."},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 13 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender" , "fx": 1 , "line":  "..."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 13 , "slot2": 27 },
+            "lines": [
                 { "speaker": "Petra" , "fx": 1 , "line":  "Ender? What are your orders?"},
 
                 { "speaker": "Ender" , "fx": 1 , "line":  "I want to lure them away from their home before attacking. We can't take that many head-on without losses."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Scouts, can you see what they're doing?"},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Keep a distance of 5 kilometres at all costs. If they follow, fly them to us."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Chimera fleet, take on a gamma-formation and get ready to catch them if they flank us."},
-                { "speaker": "Ender" , "fx": 1 , "line":  "We need to make sure they don't catch us off guard."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "We need to make sure they don't catch us off guard."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 0 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Chimera Advisor" , "fx": 1 , "line":  "Roger."},
 
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "They're not attacking us like they usually do..."},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Is this a trap?"},
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "There's no readings on our flanks."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This seems too easy."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "This seems too easy."}
+            ]
+        },
 
-                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera! You're way too close!"},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 24 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera! You're way too close!"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7 , "slot1": 24 , "slot2": 14 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "Huh? What's going on?"},
-                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera is approaching the homeworld at high speed!"},
-                { "speaker": "Ender" , "fx": 1 , "line":  "What?!"},
+                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera is approaching the homeworld at high speed!"}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 7, "slot1": 24 , "slot2": 18 },
+            "lines": [
+                { "speaker": "Ender" , "fx": 1 , "line":  "What?!"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 0 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Sure enough, the fleet assumed the formation..."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "but they're encroaching on their territory."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "...but they're encroaching on their territory."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 13 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "Chimera, come in Chimera."},
-                { "speaker": "Ender" , "fx": 1 , "line":  "Chimera!?"},
-                { "speaker": "Ender" , "fx": 1 , "line":  "Come in, Chimera?!!"},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Chimera!?"}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 17 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender" , "fx": 1 , "line":  "Come in, Chimera?!!"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 0 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "..."},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Not good."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Not good."}
+            ]
+        },
 
-                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera is 30 Km out, Ender, Orders?"},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 26 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Petra" , "fx": 1 , "line":  "Chimera is 30 kilometers out. Ender, Orders?"}
+            ]
+        },
 
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "What is going on?!"},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "What is going on?!"}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 13 , "slot2": 0 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "CHIMERA, TURN BACK NOW. DO YOU COPY?"},
 
                 { "speaker": "Chimera Advisor" , "fx": 1 , "line":  "SHSHHSHSHSHHSSHSHSHSHHSHSHSHS ENGINE NOT RESPHGHGHFIDFFIIJISHSHSHHSGHDGJIJBI"},
@@ -351,16 +550,60 @@
                 { "speaker": "Chimera Advisor" , "fx": 1 , "line":  "SHSHHSHSHH INTERFERENSHSHHSESHSHHS NO GOODSHSHSHSH SHSHSHHSHSHSHSHSHHSHSH"},
 
                 { "speaker": "Ender" , "fx": 1 , "line":  "What is going on?!"},
-                { "speaker": "Ender" , "fx": 1 , "line":  "Chimera, if you can hear me, fall back NOW. We can't follow you in, it's suicide!"},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Chimera, if you can hear me, fall back NOW. We can't follow you in, it's suicide!"}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 8 , "slot1": 0 , "slot2": 0 },
+            "lines": [
+                
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Did the Formic use some sort of trap on us?"},
-                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "How is this happening right now, during the most important fight of our lives?"},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "How is this happening right now, during the most important fight of our lives?"}
+                
+            ]
+        },
 
-                { "speaker": "Petra" , "fx": 1 , "line":  "Ender. They're swarming Chimera!"},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 9 , "slot1": 24 , "slot2": 0 },
+            "lines": [
+
+                { "speaker": "Petra" , "fx": 1 , "line":  "Ender. They're swarming Chimera!"}
+                
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 9 , "slot1": 0 , "slot2": 0 },
+            "lines": [
 
                 { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "The radar was lit up with a massive swarm of Formic aliens."},
+                { "speaker": "Ender (Thinking)" , "fx": 1 , "line":  "Time is running out. We have to do something. Fast."}
 
-                { "speaker": "Ender" , "fx": 1 , "line":  "Okay."},
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 9 , "slot1": 13 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Ender" , "fx": 1 , "line":  "Okay."}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 9 , "slot1": 17 , "slot2": 0 },
+            "lines": [
+
                 { "speaker": "Ender" , "fx": 1 , "line":  "EVERYONE, BATTLE POSITIONS."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Maintain a concave on them."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "Dreadnoughts, provide cover fire for the Chimera fleet."},
@@ -374,7 +617,7 @@
 
         {
             "game": true,
-            "music": null,
+            "music": 2,
             "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
             "lines": []
         },
@@ -382,70 +625,151 @@
         {
             "game": false,
             "music": 4,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 4 },
+            "images":{"bg": 6 , "slot1": 15 , "slot2": 0 },
             "lines": [
-                { "speaker": "Ender" , "fx": 1 , "line":  "Well done everyone!"},
-                { "speaker": "Petra" , "fx": 1 , "line":  "Those were some fancy moves, Ender!"},
+                { "speaker": "Ender" , "fx": 1 , "line":  "Well done everyone!"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 15 , "slot2": 29 },
+            "lines": [
+                { "speaker": "Petra" , "fx": 1 , "line":  "Those were some fancy moves, Ender!"}
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 32 , "slot2": 34 },
+            "lines": [
                 { "speaker": "Sgt. Dap" , "fx": 1 , "line":  "Congratulations, cadets!"},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "The world will forver know your name, Ender."},
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "The war is as good as over."},
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "The war is as good as over."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 15 , "slot2": 34 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "Thank you, Captain."},
-
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "No, it's you who I should be thanking, Ender. Your heoric acts have saved us."},
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "This wasn't a simulation."},
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "This wasn't a simulation."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": 3,
+            "images":{"bg": 6 , "slot1": 13 , "slot2": 34 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "Wait."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "What?"},
-
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "I placed my faith in you, Ender. You followed through and now the Formic species has been decimated."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "You will go down in history as the greatest tactician ever known. You've saved the Earth."},
-
                 { "speaker": "Ender" , "fx": 1 , "line":  "I'm confused."},
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "The war is over. We won."}
+            ]
+        },
 
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "The war is over. You won."},
-
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 17 , "slot2": 34 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "That wasn't a simulation? I really just ordered the genocide of nearly an entire alien species?"},
-
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "Genocide is not the right word. You're a hero, Ender. What you did will be remembered for the rest of time."},
-
                 { "speaker": "Ender" , "fx": 1 , "line":  "No."},
-
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender.."},
-
                 { "speaker": "Ender" , "fx": 1 , "line":  "No..."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "This is wrong."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "This wasn't heroic at all, Captain."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "They never aggressed on us. We assaulted their homeworld and wiped them out without having a second thought for peace."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "They were waiting. I saw it."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "This was all planned?"},
-
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender..."},
-
                 { "speaker": "Ender" , "fx": 1 , "line":  "People are going to call me a hero for this?"},
                 { "speaker": "Ender" , "fx": 1 , "line":  "For being tricked into genociding an entire race?"},
                 { "speaker": "Ender" , "fx": 1 , "line":  "There's nothing heroic about that. I'm no better than an bloodthirsty warlord."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "There were millions of them."},
-                { "speaker": "Ender" , "fx": 1 , "line":  "There were likely more than 50 million."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "There were likely more than 50 million."}
+            ]
+        },
 
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender."},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 0 , "slot2": 33 },
+            "lines": [
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender."}
+            ]
+        },
 
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 17 , "slot2": 33 },
+            "lines": [
                 { "speaker": "Ender" , "fx": 1 , "line":  "50 MILLION FORMIC LIVES."},
                 { "speaker": "Ender" , "fx": 1 , "line":  "ALL GONE."},
-                { "speaker": "Ender" , "fx": 1 , "line":  "OBLITERATED AND FORGOTTEN."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "OBLITERATED AND FORGOTTEN."}
+            ]
+        },
 
-                { "speaker": "Petra" , "fx": 1 , "line":  "Ender, you didn't know-"},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 24 , "slot2": 0 },
+            "lines": [
+                { "speaker": "Petra" , "fx": 1 , "line":  "Ender, you didn't know-"}
+            ]
+        },
 
-                { "speaker": "Ender" , "fx": 1 , "line":  "It's easy for you to say that when you're just following orders."},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 24 , "slot2": 18 },
+            "lines": [
+                { "speaker": "Ender" , "fx": 1 , "line":  "It's easy for you to say that when you're just following orders."}
+            ]
+        },
 
-                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender. This is enough."},
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 0 , "slot2": 33 },
+            "lines": [
+                
+                { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender. This is enough."}
 
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 17 , "slot2": 33 },
+            "lines": [
+                
                 { "speaker": "Ender" , "fx": 1 , "line":  "Have you lost your mind?"},
 
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "Ender."},
 
                 { "speaker": "Ender" , "fx": 1 , "line":  "How are you going to sleep at night with this on your conscience?"},
-                { "speaker": "Ender" , "fx": 1 , "line":  "PLEASE, tell me. I want to know."},
+                { "speaker": "Ender" , "fx": 1 , "line":  "PLEASE, tell me. I want to know."}
+
+            ]
+        },
+
+        {
+            "game": false,
+            "music": null,
+            "images":{"bg": 6 , "slot1": 0 , "slot2": 33 },
+            "lines": [
                 
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "ENOUGH."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "Everyone else, return to your quarters."}
@@ -455,8 +779,8 @@
 
         {
             "game": false,
-            "music": null,
-            "images":{"bg": 0 , "slot1": 0 , "slot2": 0 },
+            "music": 1,
+            "images":{"bg": 6 , "slot1": 0 , "slot2": 0 },
             "lines": [
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "I'm sorry Ender, what's done is done. There's no going back."},
                 { "speaker": "Captain Graff" , "fx": 1 , "line":  "If you understood what was on the line, you would have done the same."}

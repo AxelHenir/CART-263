@@ -9,7 +9,7 @@ class Graphics{
     constructor(){
 
         // Background image data
-        const NUM_BG_IMAGES = 2;
+        const NUM_BG_IMAGES = 10;
         const BG_PREFIX = "assets/images/backgrounds/";
 
         // Container for the backgrounds
@@ -41,7 +41,7 @@ class Graphics{
         }
 
         // Misc files data
-        const NUM_MISC_IMAGES = 5;
+        const NUM_MISC_IMAGES = 6;
         const MISC_PREFIX = "assets/images/misc/";
 
         // Other miscallaneous assets (if needed)
@@ -103,6 +103,13 @@ class Graphics{
             // Textbox for current speaker
             fill(0);
             quad(0,800, 250,800, 300,850, 0,850);
+
+            // Textbox text
+            push();
+            fill(0);
+            rectMode(CENTER, CENTER);
+            rect(width/2,950,width,200);
+            pop();
 
             // Text for current speaker
             textSize(25);

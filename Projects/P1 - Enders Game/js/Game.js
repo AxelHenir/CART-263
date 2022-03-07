@@ -11,7 +11,7 @@ class Game{
         this.sprites = sprites;
 
         // Wave size
-        this.WAVE_SIZE = 2;
+        this.WAVE_SIZE = 20;
 
         // Storage for bullets
         this.bullets = [];
@@ -299,7 +299,7 @@ class Game{
     newLevel(){
 
         // Check if the game is over..
-        if(this.player.level > 1){ // ==========================================================================PLACEHOLDER
+        if(this.player.level >= 3){ // 3 Waves of attacks
 
             state.nextScene();
 
@@ -314,7 +314,7 @@ class Game{
             this.enemies = [];
 
             // re-Populate it
-            for(let i = 0; i< this.WAVE_SIZE; i++ ){
+            for(let i = 0; i< (this.WAVE_SIZE + this.player.level*2); i++ ){
 
                 let enemy = new Enemy(this.sprites);
     
@@ -323,7 +323,6 @@ class Game{
             }
         }
 
-        
     }
 
     // Checks to see if the player has won or lost the game yet

@@ -1,6 +1,9 @@
 // CART 263 Project 1 - Ender's Game
 // Alex Henri - Concordia University Winter 2022
 
+// Will track if the game is over
+let finished = false;
+
 // State machine to track program state
 let state = undefined;
 
@@ -50,6 +53,17 @@ function draw() {
 
   // Graphics object will draw our scene
   gpu.displayScene(state.scene);
+
+  // Save once the carnage is done
+  if(state.sceneCounter === 62){
+    if(!finished){
+      saveState();
+      finished = true;
+    } else {
+      console.log("Press X to clear data and play again.");
+    }
+    
+  }
   
 }
 
@@ -93,14 +107,17 @@ function keyPressed(){
 
   switch(keyCode){
 
-    case 81: // Q = Next Line
+    case 81: // Q = Next Line, only if not in game mode
 
-      // Next scene
-      gpu.next();
+      if(!state.scene.game){
+        // Next scene
+        gpu.next();
+      }
+      
 
       break;
 
-    case 83: // S = Save data
+    case 83: // S = Save data (DEBUG COMMAND)
 
       // Saves the current state to browser memory
       saveState();
