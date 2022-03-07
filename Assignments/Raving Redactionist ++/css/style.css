@@ -1,6 +1,22 @@
-/*********************************************
+#secret-document {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
 
-Here is a description of any special CSS used.
-By default that's nothing.
+    display: flex;
+    flex-direction: column;
 
-**********************************************/
+}
+
+.revealed {
+    background-color: transparent;
+    color: crimson;
+    text-decoration: underline;
+}
+
+.redacted{
+    background-color: black;
+    user-select: none;
+}
+
+
+
