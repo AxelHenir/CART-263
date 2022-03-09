@@ -31,11 +31,11 @@ let $ravers, $partying, $investigatees;
 setup();
 
 // begin playing music once the document has loaded
-$("document").ready(function(){
+$("#dancefloor").click(function(){
 
     let t = document.getElementById("introTrack");
 
-    t.volume = 0.05;
+    t.volume = 0.50;
 
     t.loop = false;
     
@@ -46,13 +46,16 @@ $("document").ready(function(){
 
         let l = document.getElementById("loopingTrack");
 
-        l.volume = 0.05;
+        l.volume = 0.50;
 
         l.loop = true;
 
         l.play();
 
-        setInterval(changeRaverAppearance,DANCE_SPEED);
+        setTimeout(function(){
+            setInterval(changeRaverAppearance,DANCE_SPEED);
+        },800);
+        
 
     }, 14700); 
 
