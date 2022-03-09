@@ -28,36 +28,43 @@ const CRIMINAL_LINES = ["a small switchblade ","sexual harasser ","some narcotic
 // A place to store the jQuery selection of all partyers and investigatees
 let $ravers, $partying, $investigatees;
 
+let firstTime = true;
+
 setup();
 
 // begin playing music once the document has loaded
 $("#dancefloor").click(function(){
 
-    let t = document.getElementById("introTrack");
+    if(firstTime){
 
-    t.volume = 0.50;
-
-    t.loop = false;
-    
-    t.play();
-
-    // after intro track (14700 ms), start looping main song
-    setTimeout(function(){
-
-        let l = document.getElementById("loopingTrack");
-
-        l.volume = 0.50;
-
-        l.loop = true;
-
-        l.play();
-
-        setTimeout(function(){
-            setInterval(changeRaverAppearance,DANCE_SPEED);
-        },800);
+        firstTime =false;
         
+        let t = document.getElementById("introTrack");
 
-    }, 14700); 
+        t.volume = 0.50;
+    
+        t.loop = false;
+        
+        t.play();
+    
+        // after intro track (14700 ms), start looping main song
+        setTimeout(function(){
+    
+            let l = document.getElementById("loopingTrack");
+    
+            l.volume = 0.50;
+    
+            l.loop = true;
+    
+            l.play();
+    
+            setTimeout(function(){
+                setInterval(changeRaverAppearance,DANCE_SPEED);
+            },800);
+            
+    
+        }, 14700);
+    }
 
 });
 
@@ -65,7 +72,7 @@ $("#dancefloor").click(function(){
 function setup() {
 
     // Add a crowd of partyers to the dancefloor
-    addPartyers(300);
+    addRavers(500);
 
     $ravers = $(".partyer");
 
@@ -81,7 +88,7 @@ function setup() {
 };
 
 // Adds the amount of partyers to the dancefloor
-function addPartyers(amount){
+function addRavers(amount){
 
     // Make all new partyers
     for (let i = 0 ; i < amount ; i ++){
