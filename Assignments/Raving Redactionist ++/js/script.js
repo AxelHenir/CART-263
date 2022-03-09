@@ -20,10 +20,10 @@ const TROUBLE_MAKER_INTERVAL = 500;
 const DANCE_SPEED = 500;
 
 // The sounds of the jungle
-const PARTYING_LINES = ["Party Animal ", "Raver ", "WOOOHOOOO ", "Superfan ", "Vibing "];
-const TROUBLE_MAKER_LINES = ["Cm'ere baby.. ","What're you lookin at? ", "suspicious crowd ", "HELP ME!! ", "What if we.. "];
+const PARTYING_LINES = ["Party Animal ", "Raver ", "WOOOHOOOO ", "Superfan ", "Vibing ", "Carefree", "HELLL YEAH", "Hahahahaha!"];
+const TROUBLE_MAKER_LINES = ["Cm'ere baby.. ","What're you lookin at? ", "suspicious crowd ", "HELP ME!! ", "What if we.. ", "Hey man, watch it! ", "lookin' to buy? "];
 const INNOCENT_LINES = ["Hey man, what gives?! ","You're ruining the vibe dude. ","Cmon bro ","I'm innocent dude, back off. ","I've done nothing wrong! "];
-const CRIMINAL_LINES = ["a small switchblade ","sexual harasser ","some narcotics ","SHIT, IT'S THE FUZZ! "]; 
+const CRIMINAL_LINES = ["switchblade ","sexual harasser "," narcotics ","SHIT, IT'S THE FUZZ! ","knife ", "gun ","drugs ","extrotion ","too close, bud. ","illegal substance "]; 
 
 // A place to store the jQuery selection of all partyers and investigatees
 let $ravers, $partying, $investigatees;
@@ -41,7 +41,7 @@ $("#dancefloor").click(function(){
         
         let t = document.getElementById("introTrack");
 
-        t.volume = 0.50;
+        t.volume = 0.30;
     
         t.loop = false;
         
