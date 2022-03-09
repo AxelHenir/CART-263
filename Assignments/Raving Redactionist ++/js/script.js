@@ -28,11 +28,13 @@ const CRIMINAL_LINES = ["switchblade ","sexual harasser "," narcotics ","SHIT, I
 // A place to store the jQuery selection of all partyers and investigatees
 let $ravers, $partying, $investigatees;
 
+// Tracks if it's th efirst time visit
 let firstTime = true;
 
+// Call setup
 setup();
 
-// begin playing music once the document has loaded
+// begin playing music once the document has been clicked
 $("#dancefloor").click(function(){
 
     if(firstTime){
@@ -58,6 +60,7 @@ $("#dancefloor").click(function(){
     
             l.play();
     
+            // Start the disco floor
             setTimeout(function(){
                 setInterval(changeRaverAppearance,DANCE_SPEED);
             },800);
@@ -93,10 +96,17 @@ function addRavers(amount){
     // Make all new partyers
     for (let i = 0 ; i < amount ; i ++){
 
+        // Make a new raver
         let $newPartyer = $("<span></span>");
+
+        // Add the partyer and partying class
         $newPartyer.addClass("partyer").addClass("partying");
+
+        // choose new text for the raver
         let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
         $newPartyer.text(newText);
+
+        // Add him to the rave
         $($newPartyer).appendTo("#dancefloor");
 
     }
@@ -105,7 +115,6 @@ function addRavers(amount){
     $partying = $(".partying");
 
 }
-
 
 // Investigates a partyer. Removes partying class, adds being-investiagted class
 function investigate() {
@@ -172,13 +181,17 @@ function investigate() {
 // Tests to see if a random partying wants to change what it's saying
 function updateChat(){
     
+    // Random number
     let rng = Math.random();
 
+    // check if it passes the check
     if(rng < CHAT_CHANCE){
 
+        // choose a random partyer
         let r = Math.floor(Math.random() * $partying.length);
         let $p = $($partying[r]);
 
+        // change his text based on what he is (partying, trouble maker, etc.)
         if($p.hasClass("partying")){
 
             let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
@@ -226,17 +239,21 @@ function testLawfulness() {
 
 }
 
+// Flashes all the ravers different colors and changes the color of the dance floor
 function changeRaverAppearance(){
 
+    // color palettes
     let colors = ["#5ee7ff","#2793db","#00d6ab","#e91fff","#1cff4d"];
-
     let dangerous = ["#ff144b","#b50000","#ffad14","#ff6314"];
+    let backgrounds = ["#000000","#17d1ff","#ff17c9","#17ff36"];
 
+    // For each party member,
     $partying.each(function(){
 
+        // Change his color
         if($(this).hasClass("trouble-maker")){
-            let c = dangerous[Math.floor(Math.random()*dangerous.length)];
-            $(this).css("color",c);
+            let d = dangerous[Math.floor(Math.random()*dangerous.length)];
+            $(this).css("color",d);
         } else {
             let c = colors[Math.floor(Math.random()*colors.length)];
             $(this).css("color",c);
@@ -244,8 +261,8 @@ function changeRaverAppearance(){
         
     });
 
-    let backgrounds = ["#000000","#17d1ff","#ff17c9","#17ff36"]
-    let c = backgrounds[Math.floor(Math.random()*backgrounds.length)]
-    $("#dancefloor").css("background-color",c);
+    // change dancefloor color
+    let b = backgrounds[Math.floor(Math.random()*backgrounds.length)]
+    $("#dancefloor").css("background-color",b);
 }
 
