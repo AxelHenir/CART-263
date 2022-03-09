@@ -2,15 +2,31 @@
 // Alex Henri - 40108348
 "use strict";
 
+// Chnces that specific partyers become criminals upon investigation
+const PARTYER_BECOMES_CRIMINAL_CHANCE = 0.05;
+const TROUBLE_MAKER_BECOMES_CRIMINAL_CHANCE = 0.85;
+const PARTYER_BECOMES_TROUBLE_MAKER_CHANCE = 0.15;
 
-// The chance a span will be revealed per update
-const REVEAL_PROBABILITY = 0.1;
+// Chance that every update, the partyer wants to change its text
+const CHAT_CHANCE = 1;
+
+// How often a chat check is rolled to change the dialogue of a random crowd member
+const CHAT_INTERVAL = 100;
 
 // How often to update the spans (potentially revealing them)
-const UPDATE_FREQUENCY = 500;
+const TROUBLE_MAKER_INTERVAL = 500;
 
-// A place to store the jQuery selection of all secrets
-let $secrets;
+// How often the dancers change appearance
+const DANCE_SPEED = 500;
+
+// The sounds of the jungle
+const PARTYING_LINES = ["Party Animal ", "Raver ", "WOOOHOOOO ", "Superfan ", "Vibing "];
+const TROUBLE_MAKER_LINES = ["Cm'ere baby.. ","What're you lookin at? ", "suspicious crowd ", "HELP ME!! ", "What if we.. "];
+const INNOCENT_LINES = ["Hey man, what gives?! ","You're ruining the vibe dude. ","Cmon bro ","I'm innocent dude, back off. ","I've done nothing wrong! "];
+const CRIMINAL_LINES = ["a small switchblade ","sexual harasser ","some narcotics ","SHIT, IT'S THE FUZZ! "]; 
+
+// A place to store the jQuery selection of all partyers and investigatees
+let $ravers, $partying, $investigatees;
 
 setup();
 
@@ -19,24 +35,24 @@ $("document").ready(function(){
 
     let t = document.getElementById("introTrack");
 
-    t.volume = 0.50;
+    t.volume = 0.05;
 
     t.loop = false;
     
     t.play();
 
-    // after intro track (14700 ms), start looping main song and start start the actual game
+    // after intro track (14700 ms), start looping main song
     setTimeout(function(){
 
         let l = document.getElementById("loopingTrack");
 
-        l.volume = 0.50;
+        l.volume = 0.05;
 
         l.loop = true;
 
         l.play();
 
-        gameStart();
+        setInterval(changeRaverAppearance,DANCE_SPEED);
 
     }, 14700); 
 
@@ -45,54 +61,181 @@ $("document").ready(function(){
 //Sets the click handler and starts the time loop
 function setup() {
 
-    // Save the selection of all secrets
-    $secrets = $(`.secret`);
+    // Add a crowd of partyers to the dancefloor
+    addPartyers(300);
+
+    $ravers = $(".partyer");
 
     // Set a click handler and callback function (redact) on the secrets
-    $secrets.on(`click`, redact);
+    $ravers.on("click", investigate);
 
-    // Set an interval of 500 milliseconds to attempt the revelation of secrets
-    setInterval(revelation, UPDATE_FREQUENCY);
+    // Set an interval to check if a raver becomes unlawful
+    setInterval(testLawfulness, TROUBLE_MAKER_INTERVAL);
+
+    // Set an interval to check if the chats change
+    setInterval(updateChat, CHAT_INTERVAL);
 
 };
 
-// Starts the game
-function gameStart(){
+// Adds the amount of partyers to the dancefloor
+function addPartyers(amount){
 
+    // Make all new partyers
+    for (let i = 0 ; i < amount ; i ++){
 
-    // Change the scene to 
+        let $newPartyer = $("<span></span>");
+        $newPartyer.addClass("partyer").addClass("partying");
+        let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
+        $newPartyer.text(newText);
+        $($newPartyer).appendTo("#dancefloor");
+
+    }
+
+    // Reselect all partying
+    $partying = $(".partying");
 
 }
 
-// Redaction = removing revealed class and adding redacted class
-function redact() {
-    $(this).removeClass(`revealed`);
-    $(this).addClass(`redacted`);
+
+// Investigates a partyer. Removes partying class, adds being-investiagted class
+function investigate() {
+
+    // If it's a partyer, turn it to criminal (low chance) or innocent
+    if($(this).hasClass("partying")){
+
+        $(this).removeClass("partying");
+        let r = Math.random();
+        if(r < PARTYER_BECOMES_CRIMINAL_CHANCE){
+            $(this).addClass("criminal");
+            let newText = CRIMINAL_LINES[Math.floor(Math.random()*CRIMINAL_LINES.length)];
+            $(this).text(newText);
+        } else {
+            $(this).addClass("innocent");
+            let newText = INNOCENT_LINES[Math.floor(Math.random()*INNOCENT_LINES.length)];
+            $(this).text(newText);
+        }
+        $(this).addClass("being-investigated");
+
+    // If it's a troublemaker, turn it to criminal or innocent (low chance)
+    } else if($(this).hasClass("trouble-maker")){
+
+        $(this).removeClass("trouble-maker");
+        let r = Math.random();
+        if(r < TROUBLE_MAKER_BECOMES_CRIMINAL_CHANCE){
+            $(this).addClass("criminal");
+            let newText = CRIMINAL_LINES[Math.floor(Math.random()*CRIMINAL_LINES.length)];
+            $(this).text(newText);
+        } else {
+            $(this).addClass("innocent");
+            let newText = INNOCENT_LINES[Math.floor(Math.random()*INNOCENT_LINES.length)];
+            $(this).text(newText);
+        }
+        $(this).addClass("being-investigated");
+
+    // If it's an innocent, turn it to partyer
+    } else if($(this).hasClass("innocent")){
+
+        $(this).removeClass("innocent");
+        $(this).addClass("partying");
+        let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
+        $(this).text(newText);
+        $(this).removeClass("being-investigated");
+        
+
+    // If it's a criminal, turn it back into partyer and add a point to the counter
+    } else if($(this).hasClass("criminal")){
+
+        $(this).removeClass("criminal");
+        $(this).addClass("partying");
+        let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
+        $(this).text(newText);
+        $(this).removeClass("being-investigated");
+
+    }
+
+    // Reselect investigatees and partying
+    $partying = $(".partying");
+    $investigatees = $(".being-investigated");
+
 }
 
-/**
-Update is called every 500 milliseconds and it updates all the secrets on the page
-using jQuery`s each() function which calls the specified function on _each_ of the
-elements in the selection
-*/
-function revelation() {
-    $secrets.each(attemptReveal);
-}
+// Tests to see if a random partying wants to change what it's saying
+function updateChat(){
+    
+    let rng = Math.random();
 
-/**
-With random chance it unblanks the current secret by removing the
-redacted class and adding the revealed class. Because this function is called
-by each(), "this" refers to the current element that each has selected.
-*/
-function attemptReveal() {
+    if(rng < CHAT_CHANCE){
 
-    let r = Math.random();
+        let r = Math.floor(Math.random() * $partying.length);
+        let $p = $($partying[r]);
 
-    if (r < REVEAL_PROBABILITY) {
+        if($p.hasClass("partying")){
 
-        $(this).removeClass(`redacted`);
-        $(this).addClass(`revealed`);
+            let newText = PARTYING_LINES[Math.floor(Math.random()*PARTYING_LINES.length)];
+            $p.text(newText);
+
+        } else if($p.hasClass("trouble-maker")){
+
+            let newText = TROUBLE_MAKER_LINES[Math.floor(Math.random()*TROUBLE_MAKER_LINES.length)];
+            $p.text(newText);
+
+        } else if($p.hasClass("innocent")){
+
+            let newText = INNOCENT_LINES[Math.floor(Math.random()*INNOCENT_LINES.length)];
+            $p.text(newText);
+
+        } else {
+
+            let newText = CRIMINAL_LINES[Math.floor(Math.random()*CRIMINAL_LINES.length)];
+            $p.text(newText);
+
+        }
 
     }
 
 }
+
+// Tests the willpower of the partyer to not become a trouble maker (random chance to become trouble maker)
+function testLawfulness() {
+
+    let r = Math.random();
+
+    if (r < PARTYER_BECOMES_TROUBLE_MAKER_CHANCE) {
+
+        let m = Math.floor(Math.random() * $partying.length);
+
+        let $p = $($partying[m]);
+
+        $p.removeClass("partying");
+        $p.addClass("trouble-maker");
+
+        let newText = TROUBLE_MAKER_LINES[Math.floor(Math.random()*TROUBLE_MAKER_LINES.length)];
+        $p.text(newText);
+
+    }
+
+}
+
+function changeRaverAppearance(){
+
+    let colors = ["#5ee7ff","#2793db","#00d6ab","#e91fff","#1cff4d"];
+
+    let dangerous = ["#ff144b","#b50000","#ffad14","#ff6314"];
+
+    $partying.each(function(){
+
+        if($(this).hasClass("trouble-maker")){
+            let c = dangerous[Math.floor(Math.random()*dangerous.length)];
+            $(this).css("color",c);
+        } else {
+            let c = colors[Math.floor(Math.random()*colors.length)];
+            $(this).css("color",c);
+        }
+        
+    });
+
+    let backgrounds = ["#000000","#17d1ff","#ff17c9","#17ff36"]
+    let c = backgrounds[Math.floor(Math.random()*backgrounds.length)]
+    $("#dancefloor").css("background-color",c);
+}
+

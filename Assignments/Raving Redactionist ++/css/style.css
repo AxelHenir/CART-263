@@ -4,17 +4,57 @@ body {
 
 #dancefloor {
 
+    user-select: none;
+
+    text-align: justify;
+    
+    background-color: black;
+    color:rgb(255, 75, 246);
+
     width: 75%;
 
     margin:auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
 
-    background-color: black;
-    color:rgb(212, 55, 199);
-
+    /* Dance floor contains partyers*/
 
 }
+
+/* Partyers will either be partying or being investigated */
+
+.partying {
+
+    color:blueviolet;
+
+}
+
+.being-investigated {
+
+    background-color: rgb(255, 255, 255);
+
+}
+
+/* The four horsemen of the rave: trouble maker, partyer, criminal and innocent*/
+
+.trouble-maker {
+
+    color: aqua;
+
+}
+
+.criminal {
+
+    color: rgb(255, 0, 0);
+
+}
+
+.innocent {
+
+    color: rgb(255, 0, 0);
+
+}
+
 
 #mainheader {
 
@@ -28,17 +68,5 @@ body {
     display: block;
     margin: auto;
 }
-
-.revealed {
-    background-color: transparent;
-    color: crimson;
-    text-decoration: underline;
-}
-
-.redacted{
-    background-color: black;
-    user-select: none;
-}
-
 
 
