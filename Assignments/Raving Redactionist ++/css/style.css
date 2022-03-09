@@ -1,10 +1,32 @@
-#secret-document {
+body {
+    background-color: black;
+}
+
+#dancefloor {
+
+    width: 75%;
+
+    margin:auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
 
-    display: flex;
-    flex-direction: column;
+    background-color: black;
+    color:rgb(212, 55, 199);
 
+
+}
+
+#mainheader {
+
+    font-size: 2em;
+    
+    font-family: 'Courier New', Courier, monospace;
+
+    background-color: black;
+    color: aqua;
+
+    display: block;
+    margin: auto;
 }
 
 .revealed {
