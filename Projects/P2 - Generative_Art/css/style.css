@@ -1,0 +1,19 @@
+body {
+    display:flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#controls {
+    width: 75%;
+    display: flex;
+
+    background-color: rgb(43, 184, 153);
+}
