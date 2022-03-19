@@ -31,22 +31,32 @@ function draw(){
 
     let yOffset = 0;
 
+    // For each row,
     for (let i = 0 ; i < rows; i++){
 
         let xOffset = 0;
 
+        // For each column,
         for(let j = 0; j < cols; j++){
 
-            let angle = noise(xOffset, yOffset, zOffset) * TWO_PI * 5;
+            // Generate a perlin noise value based on 3 parameters: x,y and z.
+            // This value will determine an angle between 0 and 2pi.
+            let angle = noise(xOffset, yOffset, zOffset) * TWO_PI;
+
+            // Make a vector with magnitude (X) at that angle
             let v = p5.Vector.fromAngle(angle);
-            v.setMag(0.01);
+            v.setMag(1);
+
+            // This vector is stored in an array to be looked up later
             let index = i + j * cols;
             flowfield[index] = v;
 
+            // Increment x
             xOffset += NOISE_INCREMENT;
 
         }
 
+        
         for(let k = 0; k < particles.length; k++){
             particles[k].follow(flowfield);
             particles[k].update();
