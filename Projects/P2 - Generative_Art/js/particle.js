@@ -12,21 +12,23 @@ function Particle(){
         this.vel.add(this.acc);
         this.pos.add(this.vel);
         this.acc.mult(0);
+
     }
 
-    this.applyForce = function(f){
-        this.acc.add(f);
+    this.applyForce = function(forceVector){
+        this.acc.add(forceVector);
     }
 
     this.show = function(){
         push();
-        stroke(0,5);
-        strokeWeight(random(1,5));
+        stroke(0,100);
+        strokeWeight(random(3,5));
         point(this.pos.x, this.pos.y);
         pop();
     }
 
     this.edges = function(){
+        
         if(this.pos.x > width) this.pos.x = 0;
         if(this.pos.x < 0) this.pos.x = width;
         if(this.pos.y > height) this.pos.y = 0;
@@ -34,13 +36,13 @@ function Particle(){
 
     }
 
-    this.follow = function(vectors){
+    this.follow = function(flowfield){
         let x = floor(this.pos.x / scale);
         let y = floor(this.pos.y / scale);
 
         let index = x + y * cols;
 
-        this.applyForce(vectors[index]);
+        this.applyForce(flowfield[index]);
     }
 
 }

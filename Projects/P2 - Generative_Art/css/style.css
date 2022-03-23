@@ -1,7 +1,7 @@
 body {
     display:flex;
 
-    flex-direction: column;
+    flex-direction: row;
 
     justify-content: center;
     align-items: center;
@@ -11,9 +11,16 @@ body {
     overflow: hidden;
 }
 
-#controls {
+#controlPannel {
     width: 75%;
     display: flex;
 
-    background-color: rgb(43, 184, 153);
+    flex-direction: column;
+
+    background-color: rgb(107, 107, 107);
+}
+
+.slider {
+    margin: 5px;
+    background-color: rgb(226, 226, 226);
 }
