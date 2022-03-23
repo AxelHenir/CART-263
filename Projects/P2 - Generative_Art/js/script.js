@@ -1,13 +1,13 @@
 "use strict";
 
 let cols, rows;
-let scale = 25;
+let scale = 50;
 let $vectorMag, $noiseAmp, $noiseInc, $scale, $zOffsetSpeed;
 
 let zOffset = 0;
 
 let particles = [];
-const PARTICLES_AMOUNT = 50;
+const PARTICLES_AMOUNT = 75;
 
 let flowfield = [];
 
@@ -20,7 +20,7 @@ function setup(){
     $("#controlPannel").append("<div class = 'slider' id = 'noiseIncDiv'> <input type='range' id = 'noiseInc' min = '0.005' max = '1.5' value = '0.075' step = '0.001'> <label for='noiseInc'> Noise Evolution Speed </label> </div>");
     //$("#controlPannel").append("<div class = 'slider' id = 'scaleDiv'> <input type = 'range' id = 'scale' min = '2' max = '1000' value = '100' > <label for='scale'> Grid Scale </label> </div>");
     $("#controlPannel").append("<div class = 'slider' id = 'zOffsetSpeedDiv'> <input type='range' id = 'zOffsetSpeed' min = '0.0005' max = '0.01' value = '0.0025' step = '0.0001'> <label for='zOffsetSpeed'> Z Dimension Noise Amplification </label> </div>");
-    
+
     $vectorMag = $("#vectorMag");
     $noiseAmp = $("#noiseAmp");
     $noiseInc = $("#noiseInc");
