@@ -1,90 +1,110 @@
+// Play: The main game scene
+// Allows the user to control the user car
+// Cop will chase the user
+// User must collect fuel and drift to increase their score
+// If the user runs out of fuel or is hit by the cop, the user's run ends and the next scene will be triggered
+
 class Play extends Phaser.Scene {
 
     //Just sets the scene's key name
     constructor() {
 
-        super({ key: `play` });
+        super({ 
+          key: "play"
+        });
 
     }
 
-    create() {
+    preload(){
 
-      // Create the avatar and make it collide with the "walls"
-      this.avatar = this.physics.add.sprite(400, 400, `avatar`);
-      this.avatar.setCollideWorldBounds(true);
-
-      // Create a sadness emoji in a random position
-      this.sadness = this.physics.add.sprite(0, 0, `thumbs-down`);
-
-      // Note how we can use RandomRectangle() here if we put the object we want
-      // to reposition randomly in an array!
-      Phaser.Actions.RandomRectangle([this.sadness], this.physics.world.bounds);
-
-      // Create a group of hapiness emojis with some basic
-      // physics configuration
-      this.happiness = this.physics.add.group({
-        // Image key to use
-        key: `thumbs-up`,
-        // How many
-        quantity: 120,
-        // Collide with the "walls"
-        collideWorldBounds: true,
-        // How much to they bounce when they hit something?
-        bounceX: 0.5,
-        bounceY: 0.5,
-        // How quickly do they slow down while moving?
-        dragX: 50,
-        dragY: 50
-      });
-
-      // Position all the members of the group randomly within a rectangle the same
-      // dimensions and position as the world's bounds (e.g. the canvas)
-        Phaser.Actions.RandomRectangle(this.happiness.getChildren(), this.physics.world.bounds);
-
-      // Listen for when the avatar overlaps the thumbs up and handle it,
-      // remembering to set "this" so that we can use "this" in the method it calls
-        this.physics.add.overlap(this.avatar, this.sadness, this.getSad, null, this);
-      // Add colliders between the avatar and the happiness, and the happiness and itself
-      // so that we get lots of fun bouncy physics for free!
-        this.physics.add.collider(this.avatar, this.happiness);
-        this.physics.add.collider(this.happiness, this.happiness);
-
-        this.cursors = this.input.keyboard.createCursorKeys();
     }
 
-    getSad(avatar, sadness) {
-      // Note how we can use RandomRectangle() again here if we put the object we want
-      // to reposition randomly in an array!
-        Phaser.Actions.RandomRectangle([sadness], this.physics.world.bounds);
+    create(){
+
+      // Create the sprites for the user, cop and fuel
+      this.user = this.physics.add.sprite(500,500,"user");
+      this.cop = this.physics.add.sprite(200,100,"cop");
+      this.fuel = this.physics.add.sprite(300,100,"fuel");
+
+      // Create animations for the cop car
+      this.createAnims();
+
+      // Set collision physics
+      this.setCollisionPhysics();
+
     }
 
-    /**
-    Listens for user input
-    */
-    update() {
-        this.handleInput();
+    update(){
+      this.handleInput();
+    }
+
+    // Responsible for creating the cop animations
+    createAnims(){
+
+      // The config object for the cop car siren animation
+      let copAnimConfig = {
+        key: "sirens",
+        frames: this.anims.generateFrameNumbers("cop",{
+          start:0,
+          end:2,
+        }),
+        frameRate: 8,
+        repeat: -1,
+      }
+
+      // Create and play the animation, pass it the config above
+      this.anims.create(copAnimConfig);
+      this.cop.play("sirens");
+
+      // Create a control scheme to control the user's car
+      this.cursors = this.input.keyboard.addKeys({
+        up:Phaser.Input.Keyboard.KeyCodes.W, // Re-map arrows to WASD
+        down:Phaser.Input.Keyboard.KeyCodes.S,
+        left:Phaser.Input.Keyboard.KeyCodes.A,
+        right:Phaser.Input.Keyboard.KeyCodes.D,
+        });
+
     }
 
     handleInput() {
-      // If either left or right is pressed, rotate appropriately
-        if (this.cursors.left.isDown) {
-            this.avatar.setAngularVelocity(-150);
-        }
-        else if (this.cursors.right.isDown) {
-        this.avatar.setAngularVelocity(150);
-        }
-      // Otherwise stop rotating
-        else {
-        this.avatar.setAngularVelocity(0);
-        }
 
-      // If the up key is pressed, accelerate in the current rotation direction
-        if (this.cursors.up.isDown) {
-        this.physics.velocityFromRotation(this.avatar.rotation, 200, this.avatar.body.acceleration);
-        }
-      // Otherwise, zero the acceleration
-        else {
-        this.avatar.setAcceleration(0);
-        }
+      if (this.cursors.left.isDown) {
+        this.user.setVelocityX(-100);
+      }
+      else if (this.cursors.right.isDown) {
+        this.user.setVelocityX(100);
+      }
+      else {
+        // If neither left or right are pressed, stop moving on x
+        this.user.setVelocityX(0);
+      }
+  
+      if (this.cursors.up.isDown) {
+        this.user.setVelocityY(-100);
+      }
+      else if (this.cursors.down.isDown) {
+        this.user.setVelocityY(100);
+      }
+      else {
+        // If neither up or down are pressed, stop moving on y
+        this.user.setVelocityY(0);
+      }
+
     }
+
+    // Responsible for adding the collision physics to all the game elements
+    setCollisionPhysics(){
+
+      // User and cop cannot leave the canvas
+      this.user.setCollideWorldBounds(true);
+      this.cop.setCollideWorldBounds(true);
+      
+      // If user and cop overlap, game over
+      this.physics.add.overlap(this.user, this.cop, this.gameOver, null, this);
+    }
+
+    gameOver(){
+      this.scene.start("gameover");
+    }
+
 }

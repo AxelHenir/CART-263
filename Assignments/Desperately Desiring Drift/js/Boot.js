@@ -15,12 +15,18 @@ class Boot extends Phaser.Scene {
 
       // Load images
         this.load.image("user", "assets/images/user.png");
-        this.load.image("police", "assets/images/police.png");
+        this.load.spritesheet("cop", "assets/images/police.png", {
+          // Cops have flashing lights, 3 frames
+          frameWidth:24,
+          frameHeight:50,
+          endFrame: 2,
+        });
+
         this.load.image("fuel", "assets/images/fuel.png");
 
       // Switch to the play scene on complete
         this.load.on("complete", () => {
-        this.scene.start("instructions");
+          this.scene.start("instructions");
         });
     }
 
