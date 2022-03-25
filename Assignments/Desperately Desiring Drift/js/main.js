@@ -6,7 +6,7 @@
 // A game about satiating the desire to drift your car
 // The user must drift their car to increase their score.
 // To keep drifting, collect fuel canisters and stay topped up!
-// Avoid crashing into trees and the cops!
+// Avoid the cops!
 
 "use strict";
 
@@ -16,7 +16,11 @@ let config = {
     width: 1000,
     height: 1000,
     physics: {
-    default: `arcade`
+        default: "arcade",
+        arcade: {
+            debug: true,
+            gravity: 0,
+        }
     },
     scene: [Boot, Instructions, Play, GameOver]
 };

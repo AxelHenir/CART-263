@@ -21,6 +21,8 @@ class Play extends Phaser.Scene {
 
   create(){
 
+    this.cops = [];
+
     // Create audio objects for the cop siren, background music and user's car engine
     this.sirenSFX = this.sound.add("siren", {mute: false, volume: 0.5, rate: 1, loop: true});
     this.musicSFX = this.sound.add("music", {mute: false, volume: 0.5, rate: 1, loop: true});
@@ -31,7 +33,7 @@ class Play extends Phaser.Scene {
 
     // Create the sprites for the user, cop and fuel
     this.user = this.physics.add.sprite(500,500,"user");
-    this.cop = this.physics.add.sprite(200,100,"cop");
+    //this.cop = this.physics.add.sprite(200,100,"cop");
     this.fuel = this.physics.add.sprite(300,100,"fuel");
 
     // Style object which contains the attributes of text
@@ -58,7 +60,45 @@ class Play extends Phaser.Scene {
     this.user.body.setMaxSpeed(125);
 
     // Re-position the fuel randomly
-    Phaser.Actions.RandomRectangle([this.fuel], this.physics.world.bounds);
+    this.respawnfuel();
+
+    // Spawn our first cop
+    this.spawnCop();
+
+  }
+
+  // Create a cop spawning function to sequentially add cop objects to the cop array
+  spawnCop = () => {
+
+    // Create a protocop object to add physics colliders and such to
+    let protoCop = this.physics.add.sprite(500,-50, "cop");
+
+    // Cops spawn offscreen so we must allow them to pass through the world border
+    protoCop.setCollideWorldBounds(false);
+
+    // If user and cop overlap, game over
+    this.physics.add.overlap(this.user, protoCop, this.gameOver, null, this);
+
+    // Add a collider between all other cops
+    this.cops.forEach(cop => this.physics.add.collider(protoCop, cop));
+
+    // The config object for the cop car siren animation
+    let copAnimConfig = {
+      key: "flashingLights",
+      frames: this.anims.generateFrameNumbers("cop",{
+        start:0,
+        end:2,
+      }),
+      frameRate: 8,
+      repeat: -1,
+  }
+
+    // Create and play the animation, pass it the config above
+    this.anims.create(copAnimConfig);
+    protoCop.play("flashingLights");
+
+    // Add the protocop to the array of cops
+    this.cops.push(protoCop);
 
   }
 
@@ -68,11 +108,16 @@ class Play extends Phaser.Scene {
     // Handle the user's input
     this.handleDrift();
 
-    // Make the cop face the user
-    this.cop.setRotation(Phaser.Math.Angle.Between(this.cop.x,this.cop.y,this.user.x,this.user.y));
+    // Make the cops face n' chase the user
+    this.cops.forEach(cop => {
 
-    // Make the cop chase the user
-    this.physics.moveToObject(this.cop, this.user, 110);
+      // Make each cop face the user
+      cop.setRotation(Phaser.Math.Angle.Between(cop.x,cop.y,this.user.x,this.user.y));
+
+      // make each cop move toward the user
+      this.physics.moveToObject(cop, this.user, 110);
+
+    });
 
   }
 
@@ -99,6 +144,12 @@ class Play extends Phaser.Scene {
 
     // Check if user is accelerating or braking
     if (this.cursors.up.isDown && this.fuelRemaining > 0) {
+
+      // Increase the player's score (survival time)
+      this.score ++;
+
+      // Update the player's score in the text object
+      this.scoreText.setText("DRIFT SCORE: " + this.score);
 
       // If the user is pressing W/up, accelerate
       this.physics.velocityFromRotation(this.user.rotation, 84, this.user.body.acceleration);
@@ -129,20 +180,7 @@ class Play extends Phaser.Scene {
   // Responsible for creating the cop animations
   createAnims(){
 
-    // The config object for the cop car siren animation
-    let copAnimConfig = {
-      key: "sirens",
-      frames: this.anims.generateFrameNumbers("cop",{
-        start:0,
-        end:2,
-      }),
-      frameRate: 8,
-      repeat: -1,
-    }
-
-    // Create and play the animation, pass it the config above
-    this.anims.create(copAnimConfig);
-    this.cop.play("sirens");
+    
 
     // Create a control scheme to control the user's car
     this.cursors = this.input.keyboard.addKeys({
@@ -159,10 +197,6 @@ class Play extends Phaser.Scene {
 
     // User and cop cannot leave the canvas
     this.user.setCollideWorldBounds(true);
-    this.cop.setCollideWorldBounds(true);
-      
-    // If user and cop overlap, game over
-    this.physics.add.overlap(this.user, this.cop, this.gameOver, null, this);
 
     // If the user and fuel overlap, add fuel
     this.physics.add.overlap(this.user, this.fuel, this.collectFuel, null, this);
@@ -170,7 +204,11 @@ class Play extends Phaser.Scene {
   }
 
   // Collects the fuel, adding fuel to the user's tank and respawns fuel somewhere else
+  // Also spawns another cop to chase the user
   collectFuel(){
+
+    // Respawn the fuel
+    this.respawnfuel();
 
     // Add fuel to fuel tank
     this.fuelRemaining = 100;
@@ -178,21 +216,34 @@ class Play extends Phaser.Scene {
     // User cannot have more than 100 fuel, cap if exceeds
     if(this.fuelRemaining > 100) this.fuelRemaining = 100;
 
-    // Re-position the fuel randomly
-    Phaser.Actions.RandomRectangle([this.fuel], this.physics.world.bounds);
-
     // Update the fuelRemainingText to reflect the change
     this.fuelRemainingText.setText("FUEL: " + this.fuelRemaining + "%");
+
+    // Spawn new cop
+    this.spawnCop();
+
+  }
+
+  // Respawns the fuel randomly within a circle centered on the screen
+  respawnfuel(){
+
+    // Describe the circle
+    const fuelSpawnCircle = new Phaser.Geom.Circle(500,500,500); // located at 500,500 with r: 500
+
+    // Re-position the fuel randomly
+    Phaser.Actions.RandomCircle([this.fuel], fuelSpawnCircle);
 
   }
 
   // Sets the next scene to game over
   gameOver(){
 
+    // Stops the music and SFX
     this.musicSFX.stop();
     this.sirenSFX.stop();
 
-    this.scene.start("gameover");
+    // Starts gameover scene and passes the user's score.
+    this.scene.start("gameover", {score: this.score});
 
   }
 

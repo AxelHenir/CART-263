@@ -21,13 +21,14 @@ class Instructions extends Phaser.Scene {
             fontFamily: "sans-serif",
             fontSize: "40px",
             fill: "#ffffff",
+            align: "center",
         };
 
         // The text for the screen
-        let gameInstructions = "Desperately Desiring Drift!";
+        let gameInstructions = "Desperately Desiring Drift \n\nUse WASD to control your car\nCollect fuel to keep drifting!\nAvoid the cops!\nShow the world what it means to drift!\n\n Press ENTER to Drift";
 
         // Create the text object to display and pass the position (x,y), text and style
-        this.gameText = this.add.text(100,100,gameInstructions,style);
+        this.gameText = this.add.text(170,300,gameInstructions,style);
 
         // Create keys to advance to the next page/scene
         let keyEnter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
