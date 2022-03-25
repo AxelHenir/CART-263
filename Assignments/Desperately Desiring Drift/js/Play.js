@@ -21,12 +21,27 @@ class Play extends Phaser.Scene {
 
   create(){
 
-    // Create the sprites for the user, cop and fuel
-    this.user = this.physics.add.sprite(500,500,"user");
     
 
+    // Create the sprites for the user, cop and fuel
+    this.user = this.physics.add.sprite(500,500,"user");
     this.cop = this.physics.add.sprite(200,100,"cop");
     this.fuel = this.physics.add.sprite(300,100,"fuel");
+
+    // Create a variable which tracks how much fuel the user has
+    this.fuelRemaining = 100;
+    this.fuelRemainingText = this.add.text(825,25,"FUEL: " + this.fuelRemaining + "%", this.style);
+
+    // Create a variable which tracks the user's score
+    this.score = 0;
+    this.scoreText = this.add.text(25,25,"DRIFT SCORE: " + this.score, this.style);
+
+    // Style object which contains the attributes of text
+    this.style = {
+      fontFamily: "sans-serif",
+      fontSize: "20px",
+      fill: "#ffffff",
+    };
 
     // Create animations for the cop car
     this.createAnims();
@@ -38,31 +53,49 @@ class Play extends Phaser.Scene {
     this.user.setDrag(65);
 
     // Set the max speed of the user so they dont go too fast 
-    this.user.body.setMaxSpeed(120);
+    this.user.body.setMaxSpeed(125);
+
+    // Re-position the fuel randomly
+    Phaser.Actions.RandomRectangle([this.fuel], this.physics.world.bounds);
 
   }
 
+  // Takes care of user input, cop movement and displays score and fuel.
   update(){
 
+    // Handle the user's input
     this.handleDrift();
+
+    // Make the cop face the user
+    this.cop.setRotation(Phaser.Math.Angle.Between(this.cop.x,this.cop.y,this.user.x,this.user.y));
+
+    // Make the cop chase the user
+    this.physics.moveToObject(this.cop, this.user, 110);
+
+    // Display the remaining fuel and the user's score
+    //this.displayStats();
 
   }
 
   // Handles user input
   handleDrift(){
 
-    console.log(this.user.body.speed);
+    //console.log(this.user.body.speed);
 
+    // Checks for which direction the user is steering
     if (this.cursors.left.isDown) {
 
+      // Left
       this.user.setAngularVelocity(-100);
 
     } else if (this.cursors.right.isDown) {
 
+      // Right
       this.user.setAngularVelocity(100);
 
     } else {
 
+      // If neither, set angular acc. to zero
       this.user.setAngularVelocity(0);
 
     }
@@ -71,7 +104,7 @@ class Play extends Phaser.Scene {
     if (this.cursors.up.isDown) {
 
       // If the user is pressing W/up, accelerate
-      this.physics.velocityFromRotation(this.user.rotation, 75, this.user.body.acceleration);
+      this.physics.velocityFromRotation(this.user.rotation, 84, this.user.body.acceleration);
 
     } else if (this.cursors.down.isDown) {
 
@@ -124,6 +157,23 @@ class Play extends Phaser.Scene {
       
     // If user and cop overlap, game over
     this.physics.add.overlap(this.user, this.cop, this.gameOver, null, this);
+
+    // If the user and fuel overlap, add fuel
+    this.physics.add.overlap(this.user, this.fuel, this.collectFuel, null, this);
+
+  }
+
+  // Collects the fuel, adding fuel to the user's tank and respawns fuel somewhere else
+  collectFuel(){
+
+    // Add fuel to fuel tank
+    this.fuelRemaining += 2;
+
+    // Re-position the fuel randomly
+    Phaser.Actions.RandomRectangle([this.fuel], this.physics.world.bounds);
+
+    // Update the fuelRemainingText to reflect the change
+    this.fuelRemainingText.setText("FUEL: " + this.fuelRemaining + "%");
 
   }
 

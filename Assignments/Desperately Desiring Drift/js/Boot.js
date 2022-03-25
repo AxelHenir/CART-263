@@ -17,8 +17,8 @@ class Boot extends Phaser.Scene {
         this.load.image("user", "assets/images/user.png");
         this.load.spritesheet("cop", "assets/images/police.png", {
           // Cops have flashing lights, 3 frames
-          frameWidth:24,
-          frameHeight:50,
+          frameWidth:50,
+          frameHeight:24,
           endFrame: 2,
         });
 
