@@ -1,6 +1,6 @@
-/*********************************************
+body {
+    display: flex;
 
-Here is a description of any special CSS used.
-By default that's nothing.
-
-**********************************************/
+    align-items: center;
+    justify-content: center;
+}
