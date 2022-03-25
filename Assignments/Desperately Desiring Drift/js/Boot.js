@@ -3,32 +3,36 @@
 
 class Boot extends Phaser.Scene {
 
-    // Set the key to boot
-    constructor() {
-        super({
-        key: `boot`
-        });
-    }
+  // Set the key to boot
+  constructor() {
+      super({
+      key: `boot`
+      });
+  }
 
-    // Loads assets then switches to the play scene once completed
-    preload() {
+  // Loads assets then switches to the play scene once completed
+  preload() {
 
-      // Load images
-        this.load.image("user", "assets/images/user.png");
-        this.load.spritesheet("cop", "assets/images/police.png", {
-          // Cops have flashing lights, 3 frames
-          frameWidth:50,
-          frameHeight:24,
-          endFrame: 2,
-        });
+    // Load images
+    this.load.image("user", "assets/images/user.png");
+    this.load.spritesheet("cop", "assets/images/police.png", {
+      // Cops have flashing lights, 3 frames
+      frameWidth:50,
+      frameHeight:24,
+      endFrame: 2,
+    });
 
-        this.load.image("fuel", "assets/images/fuel.png");
+    this.load.image("fuel", "assets/images/fuel.png");
 
-      // Switch to the play scene on complete
-        this.load.on("complete", () => {
-          this.scene.start("instructions");
-        });
-    }
+    // Load audio files
+    this.load.audio("siren", "assets/sounds/siren.mp3");
+    this.load.audio("music", "assets/sounds/music.mp3");
+
+    // Switch to the play scene on complete
+      this.load.on("complete", () => {
+        this.scene.start("instructions");
+      });
+  }
 
     create() {
 

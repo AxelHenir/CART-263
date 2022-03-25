@@ -21,6 +21,14 @@ class Play extends Phaser.Scene {
 
   create(){
 
+    // Create audio objects for the cop siren, background music and user's car engine
+    this.sirenSFX = this.sound.add("siren", {mute: false, volume: 0.5, rate: 1, loop: true});
+    this.musicSFX = this.sound.add("music", {mute: false, volume: 0.5, rate: 1, loop: true});
+
+    // Start playing the BG music and the cop siren
+    this.musicSFX.play();
+    this.sirenSFX.play();
+
     // Create the sprites for the user, cop and fuel
     this.user = this.physics.add.sprite(500,500,"user");
     this.cop = this.physics.add.sprite(200,100,"cop");
@@ -37,9 +45,7 @@ class Play extends Phaser.Scene {
     this.score = 0;
     this.scoreText = this.add.text(25,25,"DRIFT SCORE: " + this.score, this.style);
 
-    
-
-    // Create animations for the cop car
+    // Create animations for the cop car object
     this.createAnims();
 
     // Set collision physics
@@ -182,6 +188,9 @@ class Play extends Phaser.Scene {
 
   // Sets the next scene to game over
   gameOver(){
+
+    this.musicSFX.stop();
+    this.sirenSFX.stop();
 
     this.scene.start("gameover");
 
