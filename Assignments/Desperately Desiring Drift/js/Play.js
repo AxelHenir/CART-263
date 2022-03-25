@@ -6,105 +6,131 @@
 
 class Play extends Phaser.Scene {
 
-    //Just sets the scene's key name
-    constructor() {
+  //Just sets the scene's key name
+  constructor() {
 
-        super({ 
-          key: "play"
-        });
+    super({ 
+      key: "play"
+    });
 
-    }
+  }
 
-    preload(){
+  preload(){
 
-    }
+  }
 
-    create(){
+  create(){
 
-      // Create the sprites for the user, cop and fuel
-      this.user = this.physics.add.sprite(500,500,"user");
-      this.cop = this.physics.add.sprite(200,100,"cop");
-      this.fuel = this.physics.add.sprite(300,100,"fuel");
+    // Create the sprites for the user, cop and fuel
+    this.user = this.physics.add.sprite(500,500,"user");
+    
 
-      // Create animations for the cop car
-      this.createAnims();
+    this.cop = this.physics.add.sprite(200,100,"cop");
+    this.fuel = this.physics.add.sprite(300,100,"fuel");
 
-      // Set collision physics
-      this.setCollisionPhysics();
+    // Create animations for the cop car
+    this.createAnims();
 
-    }
+    // Set collision physics
+    this.setCollisionPhysics();
 
-    update(){
-      this.handleInput();
-    }
+    // Set drag for the user so they decelerate naturally
+    this.user.setDrag(65);
 
-    // Responsible for creating the cop animations
-    createAnims(){
+    // Set the max speed of the user so they dont go too fast 
+    this.user.body.setMaxSpeed(120);
 
-      // The config object for the cop car siren animation
-      let copAnimConfig = {
-        key: "sirens",
-        frames: this.anims.generateFrameNumbers("cop",{
-          start:0,
-          end:2,
-        }),
-        frameRate: 8,
-        repeat: -1,
-      }
+  }
 
-      // Create and play the animation, pass it the config above
-      this.anims.create(copAnimConfig);
-      this.cop.play("sirens");
+  update(){
 
-      // Create a control scheme to control the user's car
-      this.cursors = this.input.keyboard.addKeys({
-        up:Phaser.Input.Keyboard.KeyCodes.W, // Re-map arrows to WASD
-        down:Phaser.Input.Keyboard.KeyCodes.S,
-        left:Phaser.Input.Keyboard.KeyCodes.A,
-        right:Phaser.Input.Keyboard.KeyCodes.D,
-        });
+    this.handleDrift();
 
-    }
+  }
 
-    handleInput() {
+  // Handles user input
+  handleDrift(){
 
-      if (this.cursors.left.isDown) {
-        this.user.setVelocityX(-100);
-      }
-      else if (this.cursors.right.isDown) {
-        this.user.setVelocityX(100);
-      }
-      else {
-        // If neither left or right are pressed, stop moving on x
-        this.user.setVelocityX(0);
-      }
-  
-      if (this.cursors.up.isDown) {
-        this.user.setVelocityY(-100);
-      }
-      else if (this.cursors.down.isDown) {
-        this.user.setVelocityY(100);
-      }
-      else {
-        // If neither up or down are pressed, stop moving on y
-        this.user.setVelocityY(0);
-      }
+    console.log(this.user.body.speed);
+
+    if (this.cursors.left.isDown) {
+
+      this.user.setAngularVelocity(-100);
+
+    } else if (this.cursors.right.isDown) {
+
+      this.user.setAngularVelocity(100);
+
+    } else {
+
+      this.user.setAngularVelocity(0);
 
     }
 
-    // Responsible for adding the collision physics to all the game elements
-    setCollisionPhysics(){
+    // Check if user is accelerating or braking
+    if (this.cursors.up.isDown) {
 
-      // User and cop cannot leave the canvas
-      this.user.setCollideWorldBounds(true);
-      this.cop.setCollideWorldBounds(true);
+      // If the user is pressing W/up, accelerate
+      this.physics.velocityFromRotation(this.user.rotation, 75, this.user.body.acceleration);
+
+    } else if (this.cursors.down.isDown) {
+
+      // If the user is pressing S/down, brake (accelerate in the opposite direction)
+      this.physics.velocityFromRotation(this.user.rotation, -44, this.user.body.acceleration);
+
+    } else {
+
+      // If the user is not accelerating or decelerating, set the acceleration to zero
+      this.user.setAcceleration(0);
+
+    }
+
+  }
+
+  // Responsible for creating the cop animations
+  createAnims(){
+
+    // The config object for the cop car siren animation
+    let copAnimConfig = {
+      key: "sirens",
+      frames: this.anims.generateFrameNumbers("cop",{
+        start:0,
+        end:2,
+      }),
+      frameRate: 8,
+      repeat: -1,
+    }
+
+    // Create and play the animation, pass it the config above
+    this.anims.create(copAnimConfig);
+    this.cop.play("sirens");
+
+    // Create a control scheme to control the user's car
+    this.cursors = this.input.keyboard.addKeys({
+      up:Phaser.Input.Keyboard.KeyCodes.W, // Re-map arrows to WASD
+      down:Phaser.Input.Keyboard.KeyCodes.S,
+      left:Phaser.Input.Keyboard.KeyCodes.A,
+      right:Phaser.Input.Keyboard.KeyCodes.D,
+      });
+    
+  }
+
+  // Responsible for adding the collision physics to all the game elements
+  setCollisionPhysics(){
+
+    // User and cop cannot leave the canvas
+    this.user.setCollideWorldBounds(true);
+    this.cop.setCollideWorldBounds(true);
       
-      // If user and cop overlap, game over
-      this.physics.add.overlap(this.user, this.cop, this.gameOver, null, this);
-    }
+    // If user and cop overlap, game over
+    this.physics.add.overlap(this.user, this.cop, this.gameOver, null, this);
 
-    gameOver(){
-      this.scene.start("gameover");
-    }
+  }
+
+  gameOver(){
+
+    this.scene.start("gameover");
+
+  }
 
 }
