@@ -21,12 +21,13 @@ class Play extends Phaser.Scene {
 
   create(){
 
-    
-
     // Create the sprites for the user, cop and fuel
     this.user = this.physics.add.sprite(500,500,"user");
     this.cop = this.physics.add.sprite(200,100,"cop");
     this.fuel = this.physics.add.sprite(300,100,"fuel");
+
+    // Style object which contains the attributes of text
+    this.style = { fontFamily: "sans-serif", fontSize: "20px", fill: "#ffffff"};
 
     // Create a variable which tracks how much fuel the user has
     this.fuelRemaining = 100;
@@ -36,12 +37,7 @@ class Play extends Phaser.Scene {
     this.score = 0;
     this.scoreText = this.add.text(25,25,"DRIFT SCORE: " + this.score, this.style);
 
-    // Style object which contains the attributes of text
-    this.style = {
-      fontFamily: "sans-serif",
-      fontSize: "20px",
-      fill: "#ffffff",
-    };
+    
 
     // Create animations for the cop car
     this.createAnims();
@@ -72,15 +68,10 @@ class Play extends Phaser.Scene {
     // Make the cop chase the user
     this.physics.moveToObject(this.cop, this.user, 110);
 
-    // Display the remaining fuel and the user's score
-    //this.displayStats();
-
   }
 
   // Handles user input
   handleDrift(){
-
-    //console.log(this.user.body.speed);
 
     // Checks for which direction the user is steering
     if (this.cursors.left.isDown) {
@@ -101,12 +92,21 @@ class Play extends Phaser.Scene {
     }
 
     // Check if user is accelerating or braking
-    if (this.cursors.up.isDown) {
+    if (this.cursors.up.isDown && this.fuelRemaining > 0) {
 
       // If the user is pressing W/up, accelerate
       this.physics.velocityFromRotation(this.user.rotation, 84, this.user.body.acceleration);
 
-    } else if (this.cursors.down.isDown) {
+      // Acceleration consumes fuel
+      this.fuelRemaining -= 0.01;
+
+      // Round the fuel remaining to 2 decomal places for readability
+      this.fuelRemaining = this.fuelRemaining.toFixed(2);
+
+      // Update the fuelRemainingText to reflect the change
+      this.fuelRemainingText.setText("FUEL: " + this.fuelRemaining + "%");
+
+    } else if (this.cursors.down.isDown && this.fuelRemaining > 0) {
 
       // If the user is pressing S/down, brake (accelerate in the opposite direction)
       this.physics.velocityFromRotation(this.user.rotation, -44, this.user.body.acceleration);
@@ -167,7 +167,10 @@ class Play extends Phaser.Scene {
   collectFuel(){
 
     // Add fuel to fuel tank
-    this.fuelRemaining += 2;
+    this.fuelRemaining = 100;
+
+    // User cannot have more than 100 fuel, cap if exceeds
+    if(this.fuelRemaining > 100) this.fuelRemaining = 100;
 
     // Re-position the fuel randomly
     Phaser.Actions.RandomRectangle([this.fuel], this.physics.world.bounds);
@@ -177,6 +180,7 @@ class Play extends Phaser.Scene {
 
   }
 
+  // Sets the next scene to game over
   gameOver(){
 
     this.scene.start("gameover");
