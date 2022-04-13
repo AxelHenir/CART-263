@@ -14,50 +14,53 @@ function setup(){
 
     createCanvas(1000,1000);
 
-    let diagram = new Diagram(rows,cols);
-    diagram.generate();
-
 }
 
 function draw(){
 
 }
 
-function Diagram(r,c){
+function Cell(x,y,rows,cols,width,height){
 
-    this.base = [];
+    this.x = x;
+    this.y = y;
 
-    this.generate = function(){
-        for(let i = 0; i < c; i++){
-            for(let j = 0; j < r; j++){
+    this.r = rows;
+    this.c = cols;
 
-                let r = random();
-                if(r > CHANCE_HAS_CHILD){
-
-                    this.base.push(new Cell(width/c, height/r));
-
-                }
-                
-            }
-        }
-    };
-
-}
-
-function Cell(){
-
-    this.w = 0;
-    this.h = 0;
     this.fill = random(0,255);
-    this.content = [];
 
-    this.drawCell = function(){
+    this.w = width;
+    this.h = height;
+
+    this.newCell = function(){
 
         push();
         rectMode(CENTER,CENTER);
         fill(this.fill);
+        noStroke();
+        rect(0,0,this.w,this.h);
+
+        for(let i = 0 ; i < rows ; i ++){
+            for(let j = 0 ; j < cols ; j ++){
+
+                let l = i*(width/rows) + 0.5(width/rows);
+                let k = j*(height/cols) + 0.5(height/cols);
+
+                // l,k = center x,y of ith,jth cell
+
+                
+
+                
+                let newCell = new Cell();
+                newCell.newCell();
+
+            }
+        }
+
+
         pop();
 
     }
 
-}
+};
