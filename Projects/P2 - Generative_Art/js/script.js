@@ -1,6 +1,6 @@
 
-let cols = 2;
-let rows = 2;
+let cols = 4;
+let rows = 4;
 
 let diagram;
 
@@ -9,13 +9,52 @@ const CHANCE_VARIANT = 0.2;
 const MIN_WIDTH = 10;
 
 const PALETTE = [
-    "#EDE0D4",
-    "#E6CCB2",
-    "#DDB892",
-    "#B08968",
-    "#7F5539",
-
+    "#FBF8CC",
+"#FDE4CF",
+"#FFCFD2",
+"#F1C0E8",
+"#CFBAF0",
+"#A3C4F3",
+"#90DBF4",
+"#8EECF5",
+"#98F5E1",
+"#B9FBC0",
 ];
+
+/* 
+PALLETE Synthwave
+
+"#FFBE0B",
+"#FB5607",
+"#FF006E",
+"#8338EC",
+"#3A86FF",
+
+PALLETE Coffee
+
+"#EDE0D4",
+"#E6CCB2",
+"#DDB892",
+"#B08968",
+"#7F5539",
+
+PALLETE Pastel
+
+"#FBF8CC",
+"#FDE4CF",
+"#FFCFD2",
+"#F1C0E8",
+"#CFBAF0",
+"#A3C4F3",
+"#90DBF4",
+"#8EECF5",
+"#98F5E1",
+"#B9FBC0",
+
+
+ */
+
+
 
 function preload(){
 
