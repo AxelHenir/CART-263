@@ -1,6 +1,17 @@
 body {
     display: flex;
 
-    flex-direction: column;
+    flex-direction: row;
 }
 
+.slider{
+    background-color: aquamarine;
+}
+
+#controlContainer{
+
+    display: flex;
+
+    flex-direction: column;
+
+}

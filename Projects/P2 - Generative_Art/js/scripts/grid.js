@@ -1,12 +1,6 @@
 
-let cols = 4;
-let rows = 4;
-
 let diagram;
-
-const CHANCE_HAS_CHILD = 0.8;
-const CHANCE_VARIANT = 0.2;
-const MIN_WIDTH = 10;
+let c;
 
 const PALETTE = [
     "#FBF8CC",
@@ -50,33 +44,21 @@ PALLETE Pastel
 "#8EECF5",
 "#98F5E1",
 "#B9FBC0",
-
-
  */
-
-
-
-function preload(){
-
-}
 
 function setup(){
 
-    createCanvas(1000,1000);
+    c = createCanvas(1000,1000);
 
-    diagram = new Cell(cols,rows,width,height);
+    diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
     diagram.newCell();
-
-}
-
-function draw(){
 
 }
 
 function keyPressed(){
     switch(keyCode){
         case 81:
-            diagram = new Cell(rows,cols,width,height);
+            diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
             diagram.newCell();
             break;
 
@@ -96,7 +78,7 @@ function Cell(rows,cols,width,height){
 
     this.newCell = function(){
 
-        if(this.w > MIN_WIDTH){
+        if(this.w > document.getElementById("minWidth").value){
 
             push();
             rectMode(CORNER);
@@ -106,7 +88,7 @@ function Cell(rows,cols,width,height){
             pop();
 
             let r = random();
-            if(r < CHANCE_VARIANT){
+            if(r < document.getElementById("chanceVariant").value){
                 push();
                 ellipseMode(CORNER);
                 fill(random(PALETTE));
@@ -127,7 +109,7 @@ function Cell(rows,cols,width,height){
     
                     let r = random();
     
-                    if(r < CHANCE_HAS_CHILD){
+                    if(r < document.getElementById("chanceHasChild").value){
     
                         let newCell = new Cell(this.r,this.c,this.h/this.r,this.w/this.c);
                         newCell.newCell();
