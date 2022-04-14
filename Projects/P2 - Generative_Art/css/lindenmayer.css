@@ -1,0 +1,19 @@
+body {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+.slider{
+    background-color: rgb(57, 204, 28);
+}
+
+#controlContainer{
+
+    display: flex;
+
+    flex-direction: column;
+
+}

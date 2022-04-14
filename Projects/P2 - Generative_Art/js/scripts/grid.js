@@ -49,6 +49,7 @@ PALLETE Pastel
 function setup(){
 
     c = createCanvas(1000,1000);
+    c.parent("canvasContainer");
 
     diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
     diagram.newCell();
