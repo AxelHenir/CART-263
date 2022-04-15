@@ -49,19 +49,26 @@ function draw(){
             let forceVector = p5.Vector.fromAngle(angle);
             forceVector.setMag(FORCE_MAGNITUDE); // Mag = strength of field
 
+            push();
+            stroke(0);
+            translate(i*scale,j*scale);
+            rotate(forceVector.heading());
+            line(0,0,25,0);
+            pop();
+
             // This vector is stored in an array to be looked up later
             let index = i + j * cols;
             flowfield[index] = forceVector;
 
             // Increment x
-            xOffset += X_Y_PERLIN_INCREMENT;
+            xOffset += 0.01;
 
         }
 
         
         // Increment y and z
-        yOffset += X_Y_PERLIN_INCREMENT;
-        zOffset += Z_PERLIN_INCREMENT;
+        yOffset += 0.01;
+        zOffset += 0.0005;
     }
 
     // 2: Update the particles 
