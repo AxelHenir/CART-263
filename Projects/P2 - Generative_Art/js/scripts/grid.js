@@ -1,4 +1,7 @@
 
+document.getElementById("generateButton").addEventListener("click",newDiagram);
+document.getElementById("saveButton").addEventListener("click",saveDiagram);
+
 let diagram;
 let c;
 
@@ -51,22 +54,31 @@ function setup(){
     c = createCanvas(1000,1000);
     c.parent("canvasContainer");
 
-    diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
-    diagram.newCell();
+    newDiagram();
 
 }
 
 function keyPressed(){
     switch(keyCode){
         case 81:
-            diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
-            diagram.newCell();
+            newDiagram();
             break;
 
         case 83:
-            saveCanvas("Grid","png");
+            saveDiagram();
             break;
     }
+}
+
+function newDiagram(){
+
+    diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height);
+    diagram.newCell();
+
+}
+
+function saveDiagram(){
+    saveCanvas("Grid","png");
 }
 
 function Cell(rows,cols,width,height){
