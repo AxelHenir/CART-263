@@ -106,7 +106,7 @@ function generateSentence(){
 function keyPressed(){
     switch(keyCode){
         case 81:
-            generate();
+            generateSentence();
             break;
 
         case 82:
