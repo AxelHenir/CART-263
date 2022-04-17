@@ -8,10 +8,6 @@ body {
     background-color: rgb(42, 42, 42);
 }
 
-#canvasContainer{
-    background-color: rgb(102, 102, 102);
-}
-
 #controlContainer{
 
     display: flex;

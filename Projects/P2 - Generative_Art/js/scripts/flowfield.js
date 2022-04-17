@@ -49,12 +49,16 @@ function draw(){
             let forceVector = p5.Vector.fromAngle(angle);
             forceVector.setMag(FORCE_MAGNITUDE); // Mag = strength of field
 
-            push();
-            stroke(0);
-            translate(i*scale,j*scale);
-            rotate(forceVector.heading());
-            line(0,0,25,0);
-            pop();
+            // Draw the flowfield indicators if the associated checkbox is checked
+            if(document.getElementById("flowIndicators").checked){
+                push();
+                stroke(0);
+                translate(i*scale + scale/2,j*scale + scale/2);
+                rotate(forceVector.heading());
+                line(0,0,25,0);
+                pop();
+            }
+            
 
             // This vector is stored in an array to be looked up later
             let index = i + j * cols;
