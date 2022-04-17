@@ -2,12 +2,15 @@
 
 let c;
 
-let iteration = 0;
-
 let diagram = [];
 
-const MAX_EXECUTIONS = 50000;
-const NUM_CIRCLES = 700;
+const MAX_EXECUTIONS = 175000;
+const NUM_CIRCLES = 1500;
+
+const MIN_RADIUS = 3;
+const MAX_RADIUS = 100;
+
+const CONSTRAIN_TO_CANVAS = false;
 
 
 function setup(){
@@ -38,14 +41,14 @@ function drawDiagram(){
 
 function newCirclePack(){
 
-    iteration = 0;
+    let iteration = 0;
 
     while(diagram.length < NUM_CIRCLES){
 
         let testCircle = {
             x:random(width),
             y:random(height),
-            r:random(100,5),
+            r:random(MAX_RADIUS,MIN_RADIUS),
         };
 
         let overlap = false;
@@ -71,6 +74,7 @@ function newCirclePack(){
         }
 
     }
+    console.log(diagram.length);
 
 }
 
