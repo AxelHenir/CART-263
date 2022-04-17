@@ -6,16 +6,23 @@
 
     <title>Grid</title>
 
-    <!-- CSS stylesheet(s) -->
+    <!-- CSS stylesheets -->
     <link rel="stylesheet" type="text/css" href="../css/grid.css"/>
 
-    <!-- Library script(s) go here -->
+    <!-- Library scripts -->
     <script src="../js/libraries/p5.min.js"></script>
     <script src="../js/libraries/p5.sound.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
-    <!-- HTML would go here if needed. -->
+
+    <!-- HTML -->
     <div id = "canvasContainer"></div>
     <div id = "controlContainer">
 
@@ -25,6 +32,12 @@
       <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceHasChild">
       <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceVariant">
       <input type="range" min="4" max="50" value="10" step="2" class="slider" id="minWidth">
+
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="offsetAmount">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="strokeSize">
+      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="roundedEdges">
+
+
 
       <input type = "button" class = "button" value = "Generate [Q]" id = "generateButton">
       <input type = "button" class = "button" value = "Save [S]" id = "saveButton">
