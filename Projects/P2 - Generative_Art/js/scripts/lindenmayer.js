@@ -1,11 +1,37 @@
 let c;
 
 let sentence;
-let len, angle, startingPt;
+let len, angle, startingPt, palette, backgroundColor;
 
 let rules = [];
 
 let RULESETS;
+
+document.getElementById("growButton").addEventListener("click",generateSentence);
+document.getElementById("restartButton").addEventListener("click",newDiagram);
+document.getElementById("saveButton").addEventListener("click",saveDiagram);
+
+const PALETTES = [
+
+    // Pastel
+    ["#FBF8CC","#FDE4CF","#FFCFD2","#F1C0E8","#CFBAF0","#A3C4F3","#90DBF4","#8EECF5","#98F5E1","#B9FBC0",],
+    // Synthwave
+    ["#FFBE0B","#FB5607","#FF006E","#8338EC","#3A86FF",],
+    // Coffee
+    ["#EDE0D4","#E6CCB2","#DDB892","#B08968","#7F5539",],
+    // Red n Blue
+    ["#e63946", "#f1faee", "#a8dadc", "#457b9d", "#1d3557"],
+    // Forest
+    ["#e9f5db", "#cfe1b9", "#b5c99a", "#97a97c", "#87986a", "#718355"],
+    // Heatwave
+    ["#ff7b00", "#ff8800", "#ff9500", "#ffa200", "#ffaa00", "#ffb700", "#ffc300", "#ffd000", "#ffdd00", "#ffea00"],
+    // Reptile
+    ["#05668d","#028090","#00a896","#02c39a","#f0f3bd"],
+    // Purp
+    ["#240046","#3c096c","#5a189a","#7b2cbf","#9d4edd","#c77dff","#e0aaff"],
+
+    
+];
 
 function setup(){
 
@@ -29,9 +55,9 @@ function setup(){
 function newDiagram(){
 
     selectRules();
-
     len = document.getElementById("length").value;
-
+    palette = random(PALETTES);
+    backgroundColor = random(palette);
     drawSentence();
 
 }
@@ -52,10 +78,13 @@ function selectRules(){
 // Reads the sentence and draws it according to a set of instructions
 function drawSentence(){
 
-    background(255);
+    background(backgroundColor);
 
     resetMatrix();
     translate(startingPt.x, startingPt.y);
+
+    let angleOffset = document.getElementById("angleOffset").value;
+    let strokeW = document.getElementById("strokeWeight").value;
 
     // For each character in the sentence, do its associated instruction
     for (let i = 0; i< sentence.length; i++){
@@ -65,23 +94,27 @@ function drawSentence(){
         switch(current){
 
             case "F":
+                stroke(random(palette));
+                strokeWeight(strokeW);
                 line(0,0,0,-len);
                 translate(0,-len);
                 break;
 
             case "G":
+                stroke(random(palette));
+                strokeWeight(strokeW);
                 line(0,0,0,-len);
                 translate(0,-len);
                 break;
 
             case "+":
                 angleMode(DEGREES);
-                rotate(angle);
+                rotate(angle + random(-angleOffset, angleOffset));
                 break;
 
             case "-":
                 angleMode(DEGREES);
-                rotate(-angle);
+                rotate(-angle + random(-angleOffset, angleOffset));
                 break;
 
             case "[":
@@ -131,7 +164,7 @@ function generateSentence(){
 
     // Set the sentence to the temp
     sentence = nextSentence;
-    console.log(sentence);
+    //console.log(sentence);
 
     // Illustrate the sentence
     drawSentence();
@@ -151,4 +184,8 @@ function keyPressed(){
             saveCanvas("Grid","png");
             break;
     }
+}
+
+function saveDiagram(){
+    saveCanvas("Flowfield","png");
 }
