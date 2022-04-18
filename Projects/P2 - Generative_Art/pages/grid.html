@@ -26,19 +26,51 @@
     <div id = "canvasContainer"></div>
     <div id = "controlContainer">
 
-      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="rows">
-      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="cols">
+      <div class = "inputIconPair">
+        <input type="range" min="1" max="10" value="2" step="1" class="slider" id="rows"> 
+        <img src="../assets/icons/rows.png" alt = "Rows" class="icon">
+      </div>
 
-      <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceHasChild">
-      <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceVariant">
-      <input type="range" min="4" max="50" value="10" step="2" class="slider" id="minWidth">
+      <div class = "inputIconPair">
+        <input type="range" min="1" max="10" value="2" step="1" class="slider" id="cols"> 
+        <img src="../assets/icons/cols.png" alt = "Rows" class="icon">
+      </div>
 
-      <input type="range" min="0" max="50" value="0" step="2" class="slider" id="offsetAmount">
-      <input type="range" min="0" max="10" value="0" step="1" class="slider" id="strokeSize">
-      <input type="range" min="0" max="25" value="0" step="1" class="slider" id="roundedEdges">
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceHasChild">
+        <img src="../assets/icons/subdivision.png" alt = "Rows" class="icon">
+      </div>
 
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="1" value="0.5" step="0.05" class="slider" id="chanceVariant">
+        <img src="../assets/icons/variant.png" alt = "Rows" class="icon">
+      </div>
 
+      <div class = "inputIconPair">
+        <input type="range" min="4" max="50" value="10" step="2" class="slider" id="minWidth">
+        <img src="../assets/icons/minimum.png" alt = "Rows" class="icon">
+      </div>
 
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="50" value="0" step="2" class="slider" id="offsetAmount">
+        <img src="../assets/icons/offset.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="25" value="0" step="1" class="slider" id="rotation">
+        <img src="../assets/icons/rotation.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="strokeSize">
+        <img src="../assets/icons/stroke.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="25" value="0" step="1" class="slider" id="roundedEdges">
+        <img src="../assets/icons/rounded.png" alt = "Rows" class="icon">
+      </div>
+      
       <input type = "button" class = "button" value = "Generate [Q]" id = "generateButton">
       <input type = "button" class = "button" value = "Save [S]" id = "saveButton">
 

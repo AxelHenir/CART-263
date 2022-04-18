@@ -50,8 +50,9 @@ function keyPressed(){
 
 function newDiagram(){
 
-    background(255);
-    diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height,random(PALETTES));
+    let palette = random(PALETTES);
+    background(random(palette));
+    diagram = new Cell(document.getElementById("cols").value,document.getElementById("rows").value,width,height,palette);
     diagram.newCell();
 
 }
@@ -83,6 +84,12 @@ function Cell(rows,cols,width,height,pal){
             } else {
                 stroke(255);
                 strokeWeight(document.getElementById("strokeSize").value);
+            }
+
+            let rotation = document.getElementById("rotation").value;
+            if(rotation != 0){
+                angleMode(DEGREES);
+                rotate(random(-rotation,rotation));
             }
 
             let offset = document.getElementById("offsetAmount").value;
