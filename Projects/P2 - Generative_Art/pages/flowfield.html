@@ -14,6 +14,11 @@
     <script src="../js/libraries/p5.min.js"></script>
     <script src="../js/libraries/p5.sound.min.js"></script>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
@@ -22,9 +27,25 @@
 
     <div id = "controlContainer">
 
-      <input type="checkbox" value="Flow Indicators" class = "checkBox" id="flowIndicators">
+      <div class = "inputIconPair">
+        <input type="checkbox" value="Flow Indicators" class = "checkBox" id="flowIndicators"> 
+        <img src="../assets/icons/rows.png" alt = "Rows" class="icon">
+      </div>
 
-      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="rows">
+      <div class = "inputIconPair">
+        <input type="range" min="25" max="500" value="100" step="25" class="slider" id="scale"> 
+        <img src="../assets/icons/subdivision.png" alt = "Rows" class="icon">
+      </div>
+
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="numParticles">
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="force">
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="noiseInc">
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="zNoiseInc">
+
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="particleMaxSpeed">
+      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="particleAlpha">
+
+      
       
       <input type = "button" class = "button" value = "Generate [Q]" id = "generateButton">
       <input type = "button" class = "button" value = "Save [S]" id = "saveButton">

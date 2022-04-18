@@ -3,7 +3,6 @@
 let c;
 
 let cols, rows;
-let scale = 50;
 
 
 let zOffset = 0;
@@ -31,6 +30,12 @@ function setup(){
 function draw(){
 
     background(255,255,255,20);
+
+    let scale = document.getElementById("scale").value;
+
+
+    cols = ceil(width/scale);
+    rows = ceil(height/scale);
 
     let yOffset = 0;
 
@@ -61,8 +66,7 @@ function draw(){
             
 
             // This vector is stored in an array to be looked up later
-            let index = i + j * cols;
-            flowfield[index] = forceVector;
+            flowfield[i + j * cols] = forceVector;
 
             // Increment x
             xOffset += 0.01;
@@ -88,25 +92,16 @@ function draw(){
 
 function refreshDiagram(){
 
-    cols = floor(width/scale);
-    rows = floor(height/scale);
+    zOffset = random(9999999);
 
-    
     particles = [];
     for(let i = 0; i < PARTICLES_AMOUNT; i++){
         particles.push(new Particle());
     }
 
-    flowfield = [];
-    flowfield = new Array(cols * rows);
-
     //console.log(cols,rows,particles,flowfield);
 
-    push();
-    fill(255);
-    rectMode(CENTER);
-    rect(width/2,height/2, 10000, 10000);
-    pop();
+    background(255);
 
 }
 
@@ -149,6 +144,8 @@ function Particle(){
     }
 
     this.follow = function(flowfield){
+
+        let scale = document.getElementById("scale").value;
         let x = floor(this.pos.x / scale);
         let y = floor(this.pos.y / scale);
 
@@ -171,6 +168,10 @@ function keyPressed(){
 
         case 81: // 81 = Q = refresh diagram
             refreshDiagram();
+            break;
+
+        case 83:
+            saveDiagram();
             break;
     }
 }
