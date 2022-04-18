@@ -27,8 +27,6 @@ function drawSentence(){
     resetMatrix();
     translate(width/2, height);
 
-    //console.log(sentence);
-
     // For each character in the sentence, do its associated instruction
     for (let i = 0; i< sentence.length; i++){
 
