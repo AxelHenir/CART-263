@@ -13,7 +13,6 @@ body {
     display: flex;
     flex-direction: column;
 
-    width: 250px;
     margin-left:15px;
 
     background-color: rgb(102, 102, 102);
@@ -90,6 +89,14 @@ body {
 
 #saveButton:hover{
     background-color: rgb(86, 195, 205);
+}
+
+#homeButton{
+    background-color: rgb(192, 182, 48);
+}
+
+#homeButton:hover{
+    background-color: rgb(226, 236, 131)
 }
 
 .checkBox{

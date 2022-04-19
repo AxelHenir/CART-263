@@ -22,10 +22,30 @@
     <div id = "canvasContainer"></div>
     <div id = "controlContainer">
 
-      <input type="range" min="1" max="10" value="2" step="1" class="slider" id="rows">
+      <div class = "inputIconPair">
+        <input type="range" min="2" max="100" value="50" step="2" class="slider" id="numCells"> 
+        <img src="../assets/icons/cols.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="siteStrokeWeight"> 
+        <img src="../assets/icons/cols.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="10" value="0" step="1" class="slider" id="strokeWeight"> 
+        <img src="../assets/icons/cols.png" alt = "Rows" class="icon">
+      </div>
+
+      <div class = "inputIconPair">
+        <input type="range" min="0" max="15" value="0" step="1" class="slider" id="jitterAmount"> 
+        <img src="../assets/icons/cols.png" alt = "Rows" class="icon">
+      </div>
 
       <input type = "button" class = "button" value = "Generate [Q]" id = "generateButton">
+      <input type = "button" class = "button" value = "New [R]" id = "newButton">
       <input type = "button" class = "button" value = "Save [S]" id = "saveButton">
+      <input type = "button" class = "button" value = "Home" id = "homeButton" onclick="location.href='../index.html';">
 
     </div>
 

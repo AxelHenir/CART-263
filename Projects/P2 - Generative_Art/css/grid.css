@@ -82,3 +82,11 @@ body {
 #saveButton:hover{
     background-color: rgb(86, 195, 205);
 }
+
+#homeButton{
+    background-color: rgb(192, 182, 48);
+}
+
+#homeButton:hover{
+    background-color: rgb(226, 236, 131)
+}
