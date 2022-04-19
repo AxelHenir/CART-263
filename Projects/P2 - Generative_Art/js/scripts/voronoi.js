@@ -1,8 +1,16 @@
+// VORONOI.JS - Generative art using vornoi diagrams
+// Allows the user to define parameters and generate random voronoi diagrams
+
+"use strict";
+
+// Canvaas variable
 let c;
 
+// Variable to hold all cells and color
 let cells = [];
 let palette;
 
+// SOme color palettes stored in arrays
 const PALETTES = [
 
     // Pastel
@@ -24,10 +32,12 @@ const PALETTES = [
 
 ];
 
+// Listeners for buttons
 document.getElementById("generateButton").addEventListener("click",generateVoronoiDiagram);
 document.getElementById("newButton").addEventListener("click",newDiagram);
 document.getElementById("saveButton").addEventListener("click",saveDiagram);
 
+// Creates the canvas and calls for the first diagram to be drawn
 function setup(){
 
     c = createCanvas(1000,1000);
@@ -37,18 +47,21 @@ function setup(){
 
 }
 
+// Adds the designated number of cells to the diagram
 function generateVoronoiDiagram(){
 
+    // Background color from palette
     background(random(palette));
 
+    // Get number of cells from slider
     let numCells = int(document.getElementById("numCells").value);
 
-    // Randomly generate all the sites
+    // Randomly generate all the sites using the amount from the slider
     for ( let i = 0 ; i < numCells ; i ++ ){
         voronoiSite(random(width), random(height), random(palette));
     }
 
-    // Edge stroke
+    // Edge stroke settings from slider
     if(int(document.getElementById("strokeWeight").value) > 0){
         voronoiCellStroke(255);
         voronoiCellStrokeWeight(int(document.getElementById("strokeWeight").value));
@@ -57,7 +70,7 @@ function generateVoronoiDiagram(){
         voronoiCellStrokeWeight(0);
     }
 
-    // Site Stroke 
+    // Site Stroke settings from slider
     if(int(document.getElementById("siteStrokeWeight").value) > 0){
         voronoiSiteStroke(255);
         voronoiSiteStrokeWeight(int(document.getElementById("siteStrokeWeight").value));
@@ -66,15 +79,17 @@ function generateVoronoiDiagram(){
         voronoiSiteStrokeWeight(0);
     }
 
-    // Jitter amount
+    // Jitter amount from slider
     if(int(document.getElementById("jitterAmount").value) > 0){
 
         voronoiJitterStepMax(30);
         voronoiJitterStepMin(10);
         voronoiJitterFactor(document.getElementById("jitterAmount").value);
 
+        // Calculate the diagram with jitter (true)
         voronoi(1000,1000,true);
     } else {
+        // Calculate the diagram with jitter (false)
         voronoi(1000,1000,false);
     }
     
@@ -83,27 +98,36 @@ function generateVoronoiDiagram(){
 
 }
 
+// Function which makes a new diagram
 function newDiagram(){
+
+    // Get a new color from the palette collection
     palette = random(PALETTES);
+
+    // Clear out the previous diagram
     voronoiClearSites();
+
+    // Generate a new diagram
     generateVoronoiDiagram();
 }
 
+// function which saves the diagram
 function saveDiagram(){
     saveCanvas("Voronoi","png");
 }
 
+// Handles all keyboard input
 function keyPressed(){
     switch(keyCode){
-        case 81:
+        case 81: // Q = Add to current diagram
             generateVoronoiDiagram();
             break;
 
-        case 82:
+        case 82: // R = Reset the diagram 
             newDiagram();
             break;
 
-        case 83:
+        case 83: // S = Save Diagram
             saveDiagram();
             break;
     }

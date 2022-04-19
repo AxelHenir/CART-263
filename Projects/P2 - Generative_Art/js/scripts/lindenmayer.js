@@ -1,16 +1,27 @@
+// LINDENMAYER.JS - L-System generative system
+// Uses known L systems and randomness to generate art
+
+"use strict";
+
+// Canvas variable
 let c;
 
+// Holds the current result after iteration
 let sentence;
+// Variable for drawing the diagram
 let len, angle, startingPt, palette, backgroundColor;
-
+// Holds the rules of the L system
 let rules = [];
 
+// Will hold all rulesets (see setup)
 let RULESETS;
 
+// Listeners for buttons
 document.getElementById("growButton").addEventListener("click",generateSentence);
 document.getElementById("restartButton").addEventListener("click",newDiagram);
 document.getElementById("saveButton").addEventListener("click",saveDiagram);
 
+// Some colors stored in arrays
 const PALETTES = [
 
     // Pastel
@@ -30,14 +41,17 @@ const PALETTES = [
     // Purp
     ["#240046","#3c096c","#5a189a","#7b2cbf","#9d4edd","#c77dff","#e0aaff"],
 
-    
 ];
 
+// Creates the canvas, the rules and calls for a new diagram to be drawn 
 function setup(){
 
     c = createCanvas(1000,1000);
     c.parent("canvasContainer");
 
+    // Rulesets contain a config rule and various transform rules
+    // Config: Axiom = starting state, Angle = preferred angle for best results, starting point = where to draw from
+    // Rule: If the current state is A, turn it into B.
     RULESETS = [
         [{axiom: "F", angle: 25, start: {x: width/2, y: height}},{a: "F", b: "FF+[+F-F-F]-[-F+F+F]"}], // Tree1 (25 deg)
         [{axiom: "G", angle: 25, start: {x: width/2, y: height}},{a: "G", b: "F+[[G]-G]-F[-FG]+G"}, {a: "F", b:"FF"}], // Tree2 (25 deg)
@@ -54,35 +68,55 @@ function setup(){
 // Generates a new diagram by selecting new rules and resetting all parameters
 function newDiagram(){
 
+    // Select a new L system to generate
     selectRules();
+
+    // reset the length of the elementary unit
     len = document.getElementById("length").value;
+
+    // Select a new color palette
     palette = random(PALETTES);
     backgroundColor = random(palette);
+
+    // Draw the current state
     drawSentence();
 
 }
 
+// Function which selects and stores a new ruleset for the diagram to obey
 function selectRules(){
+
+    // Empty current ruleset
     rules = [];
+
+    // Select a new ruleset and push it into the rules[] array
     let temp = random(RULESETS);
     temp.forEach(rule => rules.push(rule));
     
+    // The first rule is the config rule, remove it from rules
     let config = rules[0];
     rules.splice(0,1);
 
+    // Set the parameters according to config
     sentence = config.axiom;
     angle = config.angle;
     startingPt = config.start;
+
 }
 
-// Reads the sentence and draws it according to a set of instructions
+// Reads the sentence and draws it according to the set of rules
 function drawSentence(){
 
+    // Draw the BG
     background(backgroundColor);
 
+    // Return the transform matrix to default
     resetMatrix();
+
+    // Move ot the starting point of this diagram
     translate(startingPt.x, startingPt.y);
 
+    // Retrieve angle offset and stroke from sliders
     let angleOffset = document.getElementById("angleOffset").value;
     let strokeW = document.getElementById("strokeWeight").value;
 
@@ -90,38 +124,38 @@ function drawSentence(){
     for (let i = 0; i< sentence.length; i++){
 
         let current = sentence.charAt(i);
-
+        // Find what to do for any given char
         switch(current){
 
-            case "F":
+            case "F": // F = line
                 stroke(random(palette));
                 strokeWeight(strokeW);
                 line(0,0,0,-len);
                 translate(0,-len);
                 break;
 
-            case "G":
+            case "G": // G = line
                 stroke(random(palette));
                 strokeWeight(strokeW);
                 line(0,0,0,-len);
                 translate(0,-len);
                 break;
 
-            case "+":
+            case "+": // + = rotation left
                 angleMode(DEGREES);
                 rotate(angle + random(-angleOffset, angleOffset));
                 break;
 
-            case "-":
+            case "-": // - = rotation right
                 angleMode(DEGREES);
                 rotate(-angle + random(-angleOffset, angleOffset));
                 break;
 
-            case "[":
+            case "[": // [ = push
                 push();
                 break;
 
-            case "]":
+            case "]": // ] = pop
                 pop();
                 break;
 
@@ -133,9 +167,7 @@ function drawSentence(){
 // Analyzes current sentence and generates a new one based on the rules, calls to draw the sentence afterwards
 function generateSentence(){
 
-    //angle = document.getElementById("angle").value;
-
-    // Decrease length of branches
+    // Decrease length of branches in subsequent calls
     len *= document.getElementById("truncation").value;
 
     // Empty temporary sentence
@@ -170,6 +202,7 @@ function generateSentence(){
     drawSentence();
 }
 
+// Handles keyboard input
 function keyPressed(){
     switch(keyCode){
         case 81: // Q - grow
@@ -186,6 +219,7 @@ function keyPressed(){
     }
 }
 
+// Function that saves the diagram
 function saveDiagram(){
     saveCanvas("Flowfield","png");
 }

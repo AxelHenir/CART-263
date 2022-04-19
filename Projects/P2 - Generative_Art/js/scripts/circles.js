@@ -1,17 +1,19 @@
+// CIRCLES.JS - Circle packing generative system
+// Generates circles adn places them wihtin the confines of the diagram such that none touch
+
 "use strict";
 
+// Listeners for buttons
 document.getElementById("generateButton").addEventListener("click",newDiagram);
 document.getElementById("saveButton").addEventListener("click",saveDiagram);
 
+// Canvas variable
 let c;
 
+// Variable to hold diagram
 let diagram = [];
 
-const MAX_EXECUTIONS = 175000;
-const NUM_CIRCLES = 1500;
-
-const CONSTRAIN_TO_CANVAS = false;
-
+// Some colors stored in arrays
 const PALETTES = [
 
     // Pastel
@@ -33,7 +35,7 @@ const PALETTES = [
 
 ];
 
-
+// Creates the canvas and calls for a new diagram to be drawn
 function setup(){
 
     c = createCanvas(1000,1000);
@@ -43,25 +45,35 @@ function setup(){
         
 }
 
+// Calls appropriate functions to make a new diagram
 function newDiagram(){
+
+    // Empty current diagram
     diagram = [];
+    // Perform the calculations for new diagram, result will be stored in diagram[] array
     newCirclePack();
+    // Draws the contents of diagram[] array
     drawDiagram();
 }
 
+// Function that saves the canvas
 function saveDiagram(){
     saveCanvas("Circles","png");
 }
 
+// Function that draws the contents of diagram[]
 function drawDiagram(){
 
+    // Select a color from the palette collection
     let palette = random(PALETTES);
+    // Designate a BG color
     let backgroundColor = random(palette);
-
     background(backgroundColor);
 
+    // Retrieve the stroke setting from slider
     let strokeW = int(document.getElementById("strokeWeight").value);
 
+    // For each circle in the diagram[] array, draw it
     for( let k = 0 ; k < diagram.length ; k ++){
 
         push();
@@ -75,49 +87,57 @@ function drawDiagram(){
     } 
 }
 
-
-
+// Function which calculates the diagram's layout
+// Generate a circle, try to place it, if it collides with an existing circle or is outside the diagram, retry
 function newCirclePack(){
 
+    // Tracks how many times the function runs (this can be adjusted with a slider to produce heavier work)
     let iteration = 0;
 
+    // Retrieve minimum and maximum circle radii, the number of circ,es desired and the maximum number of executions for the function from sliders
     let minR = int(document.getElementById("minRadius").value);
     let maxR = int(document.getElementById("maxRadius").value);
-
     let numCircles = int(document.getElementById("numCircles").value);
     let maxExecutions = int(document.getElementById("maxExecutions").value);
 
+    // The big-bad while loop. Will try to place random circles in the diagram
     while(diagram.length < numCircles){
-
+        
+        // Generate a circle with random qualities
         let testCircle = {
             x:random(width),
             y:random(height),
             r:random(minR,maxR),
         };
 
+        // If the user wants to make a circular framed diagram, check if this circle is inside that frame
         let outside = false;
         if(document.getElementById("circleFrame").checked){
             let d = dist(testCircle.x,testCircle.y,width/2,height/2) + testCircle.r;
-            if(d >= width/2) outside = true;
+            if(d >= width/2) outside = true; // If it's outside, it will be discarded
         }
 
+        // Check that this circle doesn't overlap existing circles
         let overlap = false;
         for(let j = 0 ; j < diagram.length ; j ++){
+            //Check every other circle in diagram[] array
             let goodCircle = diagram[j];
             let d = dist(testCircle.x,testCircle.y,goodCircle.x,goodCircle.y);
             if(d < testCircle.r + goodCircle.r){
-                // Overlapping
-                overlap = true;
+                overlap = true; // If it overlaps, it will be discarded
                 break;
             }
         }
 
+        // Checks for if the circle is overlapping or outside the frame
         if(!overlap && !outside){
-            diagram.push(testCircle);
+            diagram.push(testCircle); // If it's good, it gets added to diagram[] array
         }
 
+        // i++ , check if we have tried so hard and got so far
         iteration++;
         if(iteration > maxExecutions){
+            // If we exceed the max executions, console message to tell the user (for those who care)
             console.log(maxExecutions,"Max Executions reached.");
             break;
         }
@@ -126,6 +146,7 @@ function newCirclePack(){
 
 }
 
+// Handles keyboard input
 function keyPressed(){
     switch(keyCode){
         case 81:

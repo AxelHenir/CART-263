@@ -1,19 +1,27 @@
-
+// FLOWFIELD.JS - Flowfield physics simulator with particles
+// Generates a grid where each cell contains a force vector
+// Force vectors will change direction based on perlin noise
+// Force vectors act upon particles which "draw" a scene as they get pushed around
+// Control the behavior of the particles and of the force vectors with sliders
 
 "use strict";
 
+// Canvas variable
 let c;
 
+// Flowfield variables
 let cols, rows;
 let zOffset = 0;
 let flowfield = [];
-let particles = [];
 let diagramPalette;
 let backgroundFill;
 
+// Particle variables
+let particles = [];
 let particleMaxSpeed;
 let particleSize;
 
+// Some colors stored in arrays 
 const PALETTES = [
 
     // Pastel
@@ -33,12 +41,13 @@ const PALETTES = [
     // Purp
     ["#240046","#3c096c","#5a189a","#7b2cbf","#9d4edd","#c77dff","#e0aaff"],
 
-    
 ];
 
+// Listeners for buttons
 document.getElementById("refreshButton").addEventListener("click",refreshDiagram);
 document.getElementById("saveButton").addEventListener("click",saveDiagram);
 
+// Creates the canvas and calls for the diagram to be refreshed
 function setup(){
 
     c = createCanvas(1000,1000);
@@ -48,8 +57,10 @@ function setup(){
 
 }
 
+// Main loop responsible for drawing the diagram
 function draw(){
 
+    // Check if the user wants the background to be redrawn each frame (checkbox)
     if(document.getElementById("drawBackground").checked)background(backgroundFill);
 
     // 1: Update the flowfield
@@ -64,28 +75,32 @@ function draw(){
 
 }
 
+// Updates the underlying flowfield by making a grid of vectors adn storing them in order in the flowfield[] array
 function updateFlowfield(){
 
+    // Retrieve scale, vector force and perlin noise increment values from sliders
     let scale = document.getElementById("scale").value;
     let force = int(document.getElementById("force").value);
-
     let perlinInc = float(document.getElementById("noiseInc").value);
     let zperlinInc = float(document.getElementById("zNoiseInc").value);
 
+    // Detemrine number of rows and cols based on desired scale
     cols = ceil(width/scale);
     rows = ceil(height/scale);
 
+    // Reset the y dimension perlin noise offset
     let yOffset = 0;
 
+    // Double for loop - iterate across all rows and columns
     for (let i = 0 ; i < rows; i++){
         let xOffset = 0;
         for(let j = 0; j < cols; j++){
             // Generate a perlin noise value (3rd dimensional perlin noise)
             let angle = noise(xOffset, yOffset, zOffset) * TWO_PI; // Multiply by another value here for additional effects!
 
-            // Make a vector with magnitude (X) at that angle
+            // Make a vector with magnitude force at that angle
             let forceVector = p5.Vector.fromAngle(angle);
-            forceVector.setMag(force); // Mag = strength of field
+            forceVector.setMag(force);
 
             // Draw the flowfield indicators if the associated checkbox is checked
             if(document.getElementById("flowIndicators").checked){
@@ -101,61 +116,74 @@ function updateFlowfield(){
             // This vector is stored in an array to be looked up later
             flowfield[i + j * cols] = forceVector;
 
-            // Increment x
+            // Increment perlin noise x
             xOffset += perlinInc;
-
         }
 
         
-        // Increment y and z
+        // Increment perlin noise y and z
         yOffset += perlinInc;
         zOffset += zperlinInc;
     }
 }
 
+// Deletes all particles and re-adds the desired amount, changes z offset for a new diagram 
 function refreshDiagram(){
 
+    // Choose a new color palette
     diagramPalette = random(PALETTES);
 
+    // Randomly choose a new offset for Z
     zOffset = random(99999);
 
+    // Retrieve the particle behaviors from sliders
     particleMaxSpeed = float(document.getElementById("particleMaxSpeed").value); 
     particleSize = int(document.getElementById("particleSize").value);
 
+    // Empty and then re-populate particles
     particles = [];
     for(let i = 0; i < document.getElementById("numParticles").value; i++){
         particles.push(new Particle(random(diagramPalette)));
     }
 
-    //console.log(cols,rows,particles,flowfield);
-
+    // Designate a BG color from selected palette
     backgroundFill =random(diagramPalette);
     background(backgroundFill);
 
 }
 
+// Particle "class". Has a position, velocity and acceleration. Has functions which allow the flowfield to act on the particles
 function Particle(fill){
 
+    // Position, velocity and acceleration vectors, spawn them randomly on the screen 
     this.pos = createVector(random(0,width),random(0,width));
     this.vel = createVector(0,0);
     this.acc = createVector(0,0);
 
     this.fill = fill;
 
+    // Main update function to update the behavior of each particle
     this.update = function() {
 
+        // Check if the particle is offscreen
         this.edges(); 
+        // Limit the speed
         this.vel.limit(particleMaxSpeed);
+        // Adjust the volocity and position
         this.vel.add(this.acc);
         this.pos.add(this.vel);
+        // Reset acceleration
         this.acc.mult(0);
 
     }
 
+    // Function applies a force to the particle
     this.applyForce = function(forceVector){
+        // Add the force to the particle's acceleration
         this.acc.add(forceVector);
     }
 
+    // Function which draws the particle
     this.show = function(){
         push();
         stroke(this.fill);
@@ -164,6 +192,7 @@ function Particle(fill){
         pop();
     }
 
+    // Function which checks to see if the particle has gone off canvas and resets it if it has
     this.edges = function(){
         
         if(this.pos.x > width) this.pos.x = 0;
@@ -173,19 +202,24 @@ function Particle(fill){
 
     }
 
+    // Function which assigns a forcevector to the particle based on its locationin the diagram
     this.follow = function(flowfield){
 
+        // Find which vector is acting on the particle
         let scale = document.getElementById("scale").value;
         let x = floor(this.pos.x / scale);
         let y = floor(this.pos.y / scale);
 
+        // The ith, jth vector can be found in the flowfield[] array at this index
         let index = x + y * cols;
 
+        // Call for the force to be applied to the particle
         this.applyForce(flowfield[index]);
     }
 
 }
 
+// Handles keyboard input
 function keyPressed(){
     switch(keyCode){
         case 32: // 32 = space , Pause/Unpause
@@ -201,12 +235,13 @@ function keyPressed(){
             refreshDiagram();
             break;
 
-        case 83:
+        case 83: // S = Save Diagram
             saveDiagram();
             break;
     }
 }
 
+// Function that saves the diagram
 function saveDiagram(){
     saveCanvas("Flowfield","png");
 }
