@@ -221,5 +221,5 @@ function keyPressed(){
 
 // Function that saves the diagram
 function saveDiagram(){
-    saveCanvas("Flowfield","png");
+    saveCanvas("Lindenmayer","png");
 }
