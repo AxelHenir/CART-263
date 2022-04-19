@@ -1,6 +1,4 @@
-# 1 MILLION PIXELS..
-
-..and way more possibilities. 1 Million is a project about exploring the many possibilities of generative art on the 1000 x 1000 pixel canvas. 
+# 1 MILLION
 
 ### Results in under a second
 
@@ -8,25 +6,25 @@ One of my favourite things about generative art is the instantaneousness of it. 
 
 ### 1 Million is about experimenting
 
-Generative art is one of the most experimenting-friendly forms of art and I want to encourage that experimental nature in my project. On each page, the user can interact with a basic generative system which demonstrates some fundamental principles of art. Using the control pannel, the user can explore how they affect the art generation and can save their favourite outputs. If a user really gets a good understanding of the controls, they wield the ability to produce thousands of iterations of their favourite designs in search of particularly interesting ones.
+Generative art is one of the most experimenting-friendly forms of art and I want to encourage that experimental nature in my project. On each page, you can interact with a basic generative system. Generating results is as easy as pressing a single button. Using the control pannel, you can explore how each input affects the art generation. Save your favourite outputs to keep for yourself or share with others. My intention is for you to have fun and explore the system and watch how small changes in parameters can yield wildly different results every time. 
 
-##### Page 1: Grids
-Explores:
-    Recursion, Gridwork, Subdivision, Variation, Pattern, Geometry
+#### Page 1: Grids
+    Explores:
+        Recursion, Gridwork, Subdivision, Variation, Pattern, Geometry
 
-##### Page 2: Flowfield
-Explores:
-    Physics Simulation, Particles, Time-based Art, Strokework
+#### Page 2: Flowfield
+    Explores:
+        Physics Simulation, Particles, Time-based Art, Strokework
 
-##### Page 3: Circles
-Explores:
-    Iteration, Random chance, Circles, Usage of space  
+#### Page 3: Circles
+    Explores:
+        Iteration, Random chance, Circles, Usage of space  
 
-##### Page 4: Lindenmayer
-Explores:
-    L-Systems, Transforming, Growth systems, Geometric patterns
+#### Page 4: Lindenmayer
+    Explores:
+        L-Systems, Transforming, Growth systems, Geometric patterns
 
-##### Page 5: Voronoi
-Explores:
-    Voronoi diagrams, Cells
+#### Page 5: Voronoi
+    Explores:
+        Voronoi diagrams, Cells
 
